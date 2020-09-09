@@ -69,9 +69,9 @@
     "sort": "npx sort-package-json",
     "sort-api": "antd-tools run sort-api-table",
     "start": "rimraf _site && mkdir _site && node ./scripts/generateColorLess.js && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
-    "start:preact": "node ./scripts/generateColorLess.js && cross-env NODE_ENV=development REACT_ENV=preact bisheng start -c ./site/bisheng.config.js",
+    "start:preact": "node .scripts/generateColorLess.js && cross-env NODE_ENV=development REACT_ENV=preact bisheng start -c ./site/bisheng.config.js",
     "test": "jest --config .jest.js --no-cache",
-    "test-all": "./scripts/test-all.sh",
+    "test-all": ".\\scripts\\test-all.sh",
     "test-node": "jest --config .jest.node.js --no-cache",
     "tsc": "tsc",
     "site:test": "jest --config .jest.site.js --cache=false"
