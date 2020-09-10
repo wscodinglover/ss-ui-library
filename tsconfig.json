@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-components-antd": ["components/index.tsx"],
-      "react-components-antd/es/*": ["components/*"]
+      "ss-ui-library": ["components/index.tsx"],
+      "ss-ui-library/es/*": ["components/*"]
     },
     "strictNullChecks": true,
     "moduleResolution": "node",
