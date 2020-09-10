@@ -12,10 +12,10 @@ import classNames from 'classnames';
 * */
 
 interface buttonProps {
-  basic: boolean,
-  yellow: boolean,
-  error: boolean,
-  gray: boolean,
+  basic: Boolean,
+  yellow: Boolean,
+  error: Boolean,
+  gray: Boolean,
 }
 
 function SS_Button (props: buttonProps) {

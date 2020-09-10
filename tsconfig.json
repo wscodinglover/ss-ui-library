@@ -14,8 +14,10 @@
     "noUnusedLocals": true,
     "noImplicitAny": true,
     "target": "es6",
-    "lib": ["dom", "es2017"],
-    "skipLibCheck": true
+    "lib": ["dom", "es2017", "es2015"],
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": true
   },
   "exclude": ["node_modules", "lib", "es"]
 }
