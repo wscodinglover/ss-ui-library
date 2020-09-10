@@ -14,7 +14,7 @@ title:
 The simplest use
 
 ```jsx
-import { Spin } from 'ss-ui-lib';
+import { Spin } from 'ss-ui-library';
 
 ReactDOM.render(
   <>

@@ -15,7 +15,7 @@ title:
 
 
 ```jsx
-import { Spin } from 'ss-ui-lib';
+import { Spin } from 'ss-ui-library';
 
 const ssLoading = {
   show: true,
