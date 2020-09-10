@@ -1,0 +1,37 @@
+@import "../../style/var/variable";
+.ant-calendar-picker{
+  color: @color_basic;
+  &:hover {
+    .ant-calendar-picker-input:not(.ant-input-disabled) {
+      border-color: @yellow_hover;
+    }
+  }
+  .ant-calendar-picker-input{
+    padding-right: 26px;
+    color: @color_basic;
+    background-color: @basic_input_back;
+    border-color: @basic_color;
+    box-shadow: none;
+  }
+  .ss-suffix-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+}
+
+.ss-picker-dropdown {
+  .ant-calendar{
+    background-color: transparent;
+    border: none;
+  }
+  .ant-calendar-input-wrap{
+    visibility: hidden;
+  }
+  .ant-calendar-date-panel{
+    background-color: @basic_color;
+    border: 1px solid @basic_light;
+    border-radius: 2px;
+  }
+}

@@ -11,15 +11,17 @@ import classNames from 'classnames';
 *
 * */
 
-interface buttonProps {
-  basic: Boolean,
-  yellow: Boolean,
-  error: Boolean,
-  gray: Boolean,
+interface ButtonProps {
+  basic: boolean,
+  yellow: boolean,
+  error: boolean,
+  gray: boolean,
+  icon: string,
+  children: React.ReactNode
 }
 
-function SS_Button (props: buttonProps) {
-  const {basic, yellow, error, gray, ...reset} = props;
+const SS_Button: React.FC<ButtonProps> = (props) => {
+  const {basic, yellow, error, gray, icon, children, ...reset} = props;
 
   return (
     <Button
@@ -28,7 +30,10 @@ function SS_Button (props: buttonProps) {
         {'ss-btn-yellow': yellow},
         {'ss-btn-error': error},
         {'ss-btn-gray': gray})}
-      {...reset} />
+      {...reset}>
+      {icon && <span className="sumscope-icon ss-btn-icon">{icon}</span>}
+      {children}
+    </Button>
   )
 }
 

@@ -1,0 +1,60 @@
+@import "../../style/var/variable";
+.ss-tabs{
+  color: @color_basic;
+  .ant-tabs-nav{
+    border-radius: 2px;
+    overflow: hidden;
+    &:before{
+      border-color: transparent;
+    }
+  }
+  .ant-tabs-tab{
+    background: #172422;
+    padding: 0 20px;
+    height: 22px;
+    line-height: 22px;
+    margin-right: 0;
+    border-right: 1px solid #1E1E1E;
+    min-width: 60px;
+    transition: all .5s;
+    &:hover {
+      color: @color_basic;
+      background: @basic_color;
+      .ant-tabs-tab-btn{
+        color: @color_basic;
+      }
+    }
+    &:active {
+      background: #121A19;
+    }
+    &:last-of-type {
+      border-right: 0;
+    }
+    &-active {
+      background: @yellow_color !important;
+      color: @color_black !important;
+      font-weight: normal;
+      .ant-tabs-tab-btn{
+        color: @color_black !important;
+      }
+    }
+    &-disabled {
+      background: @basic_disabled !important;
+      color: @color_basic_disabled !important;
+      .ant-tabs-tab-btn{
+        color: @color_basic_disabled !important;
+      }
+    }
+  }
+  .ant-tabs-ink-bar{
+    display: none !important;
+  }
+  .ant-tabs-tab-prev-icon, .ant-tabs-tab-next-icon {
+    color: @color_basic;
+  }
+}
+.ss-tabs-center {
+  .ant-tabs-nav-scroll {
+    text-align: center;
+  }
+}

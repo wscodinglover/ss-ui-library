@@ -1,7 +1,4 @@
 @import "../../style/var/variable";
-.ss-loading-box {
-  text-align: center;
-}
 .ss-loading {
   display: inline-block;
   min-width:16px;
@@ -14,8 +11,11 @@
   animation: dash 2s linear infinite;
 }
 .ss-loading-box{
-  text-align: center;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
   padding: 4px;
+  text-align: center;
   p{
     line-height: 22px;
     font-size: 12px;

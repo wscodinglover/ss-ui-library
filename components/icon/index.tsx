@@ -1,14 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 
-interface iconProps {
+interface IconProps {
   className: string,
   value: string,
   fontSize: string | number,
   color: string
 }
 
-function SS_Icon (props: iconProps) {
+function SS_Icon (props: IconProps) {
   const {className, value, fontSize, color} = props
   return (
     <span

@@ -24,6 +24,7 @@ ReactDOM.render(
     <br />
     <Button type="text">Text Button</Button>
     <Button type="link">Link Button</Button>
+    <Button type="danger">Link Button</Button>
   </>,
   mountNode,
 );

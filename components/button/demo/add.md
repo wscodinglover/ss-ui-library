@@ -18,7 +18,7 @@ import { Button } from 'ss-ui-library';
 
 ReactDOM.render(
   <>
-    <Button type="primary" basic loading>Test Button</Button>
+    <Button type="primary" basic>Test Button</Button>
     <Button basic>Test Button</Button>
     <Button type="dashed" basic>Test Button</Button>
     <Button type="text" basic>Test Button</Button>

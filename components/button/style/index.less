@@ -1,33 +1,39 @@
-.ss-btn {
+.ss-btn.ant-btn {
   height: 22px;
   padding: 0 10px;
-  border-radius: 2px!important;
   font-size: 12px;
+  border-radius: 2px;
+  .ss-btn-icon{
+    margin-right: 6px;
+  }
+}
+.ss-btn.ant-btn-round {
+  border-radius: 22px !important;
 }
 
 .ss-btn-basic.ant-btn {
+  color: #136C5E;
   background: none;
   border-color: #136C5E;
-  color: #136C5E;
   &:hover{
+    color: #308376;
     background: none;
     border-color: #308376;
-    color: #308376;
   }
   &:active{
+    color: #193D37;
     background: none;
     border-color: #193D37;
-    color: #193D37;
   }
   &:focus{
+    color: #FF9300;
     background: none;
     border-color: #FF9300;
-    color: #FF9300;
   }
   &.ant-btn-primary {
+    color: #FFEBC8;
     background: #136C5E;
     border-color: #136C5E;
-    color: #FFEBC8;
     &:hover{
       background: #308376;
       border-color: #308376;
@@ -37,18 +43,18 @@
       border-color: #193D37;
     }
     &:focus{
+      color: #1E1E1E;
       background: #FF9300;
       border-color: #FF9300;
-      color: #1E1E1E;
     }
   }
   &.ant-btn-text{
     border-color: transparent;
   }
   &.ss-btn-basic[disabled] {
+    color: #8F9598;
     background: #4A4D4C;
     border-color: #4A4D4C;
-    color: #8F9598;
   }
 }
 
