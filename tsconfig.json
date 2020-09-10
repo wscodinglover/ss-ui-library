@@ -17,7 +17,7 @@
     "lib": ["dom", "es2017", "es2015"],
     "skipLibCheck": true,
     "allowJs": true,
-    "checkJs": true
+    "checkJs": false
   },
-  "exclude": ["node_modules", "lib", "es"]
+  "exclude": ["node_modules", "lib", "es", "components/**/*.js", "components/**/*.jsx"]
 }
