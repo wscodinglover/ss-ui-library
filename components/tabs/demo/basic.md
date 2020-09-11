@@ -19,22 +19,18 @@ let data = [
     {
         key: 'All',
         tab: '全部',
-        render: '全部内容'
     },
     {
         key: 'success',
         tab: '成功',
-        render: '成功内容'
     },
     {
         key: 'pending',
         tab: '运行中',
-        render: '运行中内容'
     },
     {
         key: 'failed',
         tab: '失败',
-        render: '失败内容',
     }
 ]
 

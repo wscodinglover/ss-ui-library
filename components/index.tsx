@@ -31,3 +31,9 @@ export { default as Table } from './table';
 export { default as Tabs } from './tabs';
 
 export { default as DatePicker } from './date-picker';
+
+export { default as DrawerPanel } from './drawer-panel/index';
+
+export { default as Collapse } from './collapse/index';
+
+export { default as Input } from './input/index';
