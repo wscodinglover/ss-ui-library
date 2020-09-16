@@ -1,64 +1,123 @@
-import React from 'react';
+import React, { Component, createRef } from 'react';
 import {DatePicker} from 'antd'
 import classNames from 'classnames';
 import moment from 'moment';
+import 'moment/locale/zh-cn';
 
-const { MonthPicker, WeekPicker } = DatePicker;
+moment.locale('zh-cn');
 
-// 接口类型
+const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
+
 interface DatePickerProps {
   className: string,
   dropdownClassName: string,
-  // 选择框类型
   picker: string | undefined,
-  suffixIcon: React.ReactNode,
+  disabled: boolean,
+  defaultValue: any
 }
 
-// 选择框后缀图标
-const SuffixIcon = () => <span className="sumscope-icon ss-suffix-icon">&#xe765;</span>;
+// eslint-disable-next-line react/prefer-stateless-function
+export default class SS_DatePicker extends Component<DatePickerProps, any> {
+  pickerRef = createRef();
 
-// @ts-ignore
-class SS_DatePicker extends React.Component<DatePickerProps> {
-
-  pickerChange (date: (moment.Moment | null), dateString: string){
-    console.log(date, dateString);
+  static defaultProps = {
+    picker: 'date',
   }
 
-  render() {
-    const {className, dropdownClassName, picker, suffixIcon, ...reset} = this.props;
-    // eslint-disable-next-line default-case
-    switch (picker) {
-      case 'date':
-        return (
-          <DatePicker
-            className={classNames(className, "ss-picker")}
-            dropdownClassName={classNames(dropdownClassName, "ss-picker-dropdown")}
-            suffixIcon={suffixIcon || <SuffixIcon />}
-            onChange={this.pickerChange}
-            {...reset} />
-        );
-      case 'week':
-        return (
-          <WeekPicker
-            className={classNames(className, "ss-picker")}
-            dropdownClassName={classNames(dropdownClassName, "ss-picker-dropdown")}
-            suffixIcon={suffixIcon || <SuffixIcon />}
-            {...reset} />
-        );
-      case 'month':
-        return (
-          <MonthPicker
-            className={classNames(className, "ss-picker")}
-            dropdownClassName={classNames(dropdownClassName, "ss-picker-dropdown")}
-            suffixIcon={suffixIcon || <SuffixIcon />}
-            {...reset} />
-        );
+  state = {
+    showClearIcon: false,
+    value: this.props.defaultValue,
+  }
+
+  // 鼠标移入，如果有值且不禁用，显示clear icon
+  showClearIcon () {
+    if (this.state.value && !this.props.disabled) {
+      this.setState({
+        showClearIcon: true,
+      })
     }
   }
-}
 
-// default value
-SS_DatePicker.defaultProps = {
-  picker: 'date',
+  // 鼠标移出，因此clear icon
+  hideClearIcon () {
+    this.setState({
+      showClearIcon: false,
+    })
+  }
+
+  // 清空选择的日期
+  clearPickerValue () {
+    // @ts-ignore
+    this.pickerRef.current.picker.input.value = null
+    // @ts-ignore
+    this.pickerRef.current.picker.handleChange()
+    this.setState({
+      value: undefined,
+    })
+  }
+
+  // 日期值发生改变
+  onChangePickerVal (date: any, dateString: string) {
+    this.setState({
+      value: date,
+    }, () => {
+      // @ts-ignore
+      this.props.onChange(date, dateString)
+    })
+  }
+
+  // common常规
+  private renderCommonView() : JSX.Element {
+    const {className, picker, ...reset} = this.props;
+    // 常规
+    let DateComponents: any;
+    switch (picker) {
+      case 'week':
+        DateComponents = WeekPicker;
+        break;
+      case 'month':
+        DateComponents = MonthPicker;
+        break;
+      case 'range':
+        DateComponents = RangePicker;
+        break;
+      case 'date':
+        DateComponents = DatePicker;
+        break;
+      default:
+        DateComponents = DatePicker;
+        break;
+    }
+
+    return (
+      <DateComponents
+        ref={this.pickerRef}
+        className={classNames('ss-date-picker', className)}
+        dropdownClassName={classNames('ss-date-picker-dropdown', className)}
+        suffixIcon={<span className={classNames("sumscope-icon ss-calendar-icon", {'show': !this.state.showClearIcon})}>&#xe765;</span>}
+        value={this.state.value}
+        {...reset}
+        onChange={this.onChangePickerVal.bind(this)}
+      />
+    )
+  };
+
+  public render() {
+    return (
+      <div
+        className="ss-date-picker-wrap"
+        onMouseEnter={this.showClearIcon.bind(this)}
+        onMouseLeave={this.hideClearIcon.bind(this)}
+      >
+        {this.renderCommonView()}
+        <div
+          className={classNames("ss-clear-icon", {'show': this.state.showClearIcon})}
+          onMouseEnter={this.showClearIcon.bind(this)}
+          onClick={this.clearPickerValue.bind(this)}
+        >
+          <span className="sumscope-icon">&#xe777;</span>
+        </div>
+      </div>
+    )
+  }
 }
-export default SS_DatePicker;

@@ -16,12 +16,9 @@ title:
 ```jsx
 import { Input } from 'ss-ui-library';
 
-const {TextArea} = Input;
-
 ReactDOM.render(
   <div className="example">
     <Input placeholder="请输入姓名" />
-    <TextArea defaultValue="1231232" rows={4} />
   </div>
 , mountNode);
 ```
@@ -29,6 +26,9 @@ ReactDOM.render(
 .example{
     padding: 20px;
     background: #1e1e1e;
+}
+.example h4{
+    color: #fff;
 }
 ```
 <style>

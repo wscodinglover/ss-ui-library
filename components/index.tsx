@@ -37,3 +37,27 @@ export { default as DrawerPanel } from './drawer-panel/index';
 export { default as Collapse } from './collapse/index';
 
 export { default as Input } from './input/index';
+
+export { default as CheckBox } from './checkbox';
+
+export { default as Radio } from './radio';
+
+export { default as Menu } from './menu';
+
+export { default as Pagination } from './pagination';
+
+export { default as Popconfirm } from './popconfirm';
+
+export { default as Row } from './grid/Row';
+
+export { default as Col } from './grid/Col';
+
+export { default as Slider } from './slider';
+
+export { default as Switch } from './switch';
+
+export { default as InputNumber } from './input-number';
+/*
+* 方法
+* */
+export { default as notification } from './notification/index';

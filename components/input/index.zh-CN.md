@@ -31,7 +31,7 @@ subtitle: 输入框
 | value | 输入框内容 | string |  |  |
 | onChange | 输入框内容变化时的回调 | function(e) |  | 3.9.3 |
 | onPressEnter | 按下回车的回调 | function(e) |  |  |
-| allowClear | 可以点击清除图标删除内容 | boolean |  | 3.12.0 |
+| allowClear | `[TextArea暂不支持]`可以点击清除图标删除内容 | boolean |  | 3.12.0 |
 
 > 如果 `Input` 在 `Form.Item` 内，并且 `Form.Item` 设置了 `id` 和 `options` 属性，则 `value` `defaultValue` 和 `id` 属性会被自动设置。
 

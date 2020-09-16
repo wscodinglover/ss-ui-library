@@ -14,7 +14,7 @@ title:
 带移除图标的输入框，点击图标删除所有内容。
 
 ```jsx
-import { Input, Icon } from 'ss-ui-library';
+import { Input } from 'ss-ui-library';
 
 ReactDOM.render(
   <div className="example">

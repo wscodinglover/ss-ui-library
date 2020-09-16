@@ -49,6 +49,7 @@ moment.locale('zh-cn');
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
+| `[新增]`picker | 日期选择框类型,可选项为`date`\|`month`\|`week`\|`range` | string | date |  |
 | allowClear | 是否显示清除按钮 | boolean | true |  |
 | autoFocus | 自动获取焦点 | boolean | false |  |
 | className | 选择器 className | string | '' |  |
@@ -132,12 +133,6 @@ moment.locale('zh-cn');
 | onCalendarChange | 待选日期发生变化的回调 | function(dates: \[moment, moment\]) | 无 | 3.0.0 |
 | onChange | 日期范围发生变化的回调 | function(dates: \[moment, moment\], dateStrings: \[string, string\]) | 无 |  |
 | onOk | 点击确定按钮的回调 | function(dates: [moment](http://momentjs.com/)\[]) | - |  |
-
-<style>
-.code-box-demo .ant-calendar-picker {
-  margin: 0 8px 12px 0;
-}
-</style>
 
 ## FAQ
 

@@ -12,15 +12,12 @@ import { Spin } from 'antd';
 * */
 
 // 组件传递来的数据的类型定义
-interface spinProps {
-  // class
-  className: string,
+type spinProps = {
   // 加载内容
-  ssLoading: any,
-  indicator: any
+  ssLoading: any
 }
 
-interface ssIconProps {
+type ssIconProps = {
   // 加载内容
   text?: string,
   children: ReactNode,
@@ -30,11 +27,12 @@ interface ssIconProps {
 }
 
 function SS_Spin (props: spinProps) {
-  const {className, ssLoading, indicator, ...reset} = props;
+  // @ts-ignore
+  const {ssLoading, indicator, ...reset} = props;
   // 自定义部分显示ss模板还是其他自定义
   const Indicator = ssLoading && ssLoading.show ? <SSIcon {...ssLoading} /> : indicator
   return (
-      <Spin className={classNames(className, "ss-loading-box")}
+      <Spin className={classNames("ss-loading-box")}
             indicator={Indicator}
             {...reset}/>
     )
@@ -43,7 +41,7 @@ function SS_Spin (props: spinProps) {
 function SSIcon (props: ssIconProps) {
   const {outward, lineStroke, text, children} = props
   return (
-    <div>
+    <>
       <svg
         className="ss-loading"
         style={{width: `${outward}px`, height: `${outward}px`}}
@@ -60,7 +58,7 @@ function SSIcon (props: ssIconProps) {
         {text && <span>{text}</span>}
         {children}
       </p>
-    </div>
+    </>
   )
 }
 

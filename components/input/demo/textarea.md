@@ -1,5 +1,5 @@
 ---
-order: 0
+order: 3
 title:
   zh-CN: 文本域
   en-US: 文本域
@@ -20,7 +20,7 @@ const {TextArea} = Input;
 
 ReactDOM.render(
   <div className="example">
-    <TextArea defaultValue="1231232" rows={4} />
+    <TextArea placeholder="请输入内容" rows={4} />
   </div>
 , mountNode);
 ```

@@ -89,6 +89,9 @@ const eslintrc = {
     'jest/expect-expect': 0,
     'import/extensions': 0,
     'import/no-unresolved': [0, { ignore: ['ss-ui-library'] }],
+    'react/no-array-index-key': 0,
+    'react/no-string-refs': 0,
+    'react/jsx-no-bind': 0,
   },
   globals: {
     gtag: true,

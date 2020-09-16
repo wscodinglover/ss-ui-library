@@ -1,10 +1,24 @@
 .ss-btn.ant-btn {
+  position: relative;
   height: 22px;
   padding: 0 10px;
   font-size: 12px;
+  line-height: 20px;
   border-radius: 2px;
   .ss-btn-icon{
     margin-right: 6px;
+  }
+  .ss-btn-child {
+    display: inline-block;
+    &.hidden {
+      visibility: hidden;
+    }
+  }
+  .ss-loading-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 }
 .ss-btn.ant-btn-round {
