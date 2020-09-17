@@ -57,6 +57,10 @@ export { default as Slider } from './slider';
 export { default as Switch } from './switch';
 
 export { default as InputNumber } from './input-number';
+
+export { default as Select } from './select';
+
+export { default as Empty } from './empty';
 /*
 * 方法
 * */
