@@ -64,7 +64,7 @@ class SS_Slider extends Component<SliderProps, any> {
   }
 
   // 彩虹主题滑块渐变计算
-  rainbowTheme(value: number|number[]) {
+  rainbowTheme(value: any) {
     if (this.props.theme === 'rainbow') {
       const colorList: any[] = gradient(value, this.props)
       // @ts-ignore
@@ -77,7 +77,7 @@ class SS_Slider extends Component<SliderProps, any> {
   }
 
   // 滑动时，gradient负责计算滑块的rgb值
-  sliderChange (value: number|number[]) {
+  sliderChange (value: any) {
     // 彩虹主题时，执行渐变计算
     this.rainbowTheme(value)
   }
