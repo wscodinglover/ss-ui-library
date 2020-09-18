@@ -61,6 +61,8 @@ export { default as InputNumber } from './input-number';
 export { default as Select } from './select';
 
 export { default as Empty } from './empty';
+
+export { default as ConfigProvider } from './config-provider';
 /*
 * 方法
 * */

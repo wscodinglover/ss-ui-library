@@ -1,6 +1,7 @@
 import React from 'react';
-import {Table} from 'antd'
+import {Table, ConfigProvider} from 'antd'
 import classNames from 'classnames';
+import SS_Empty from '../empty';
 
 const { Column, ColumnGroup } = Table;
 
@@ -10,6 +11,7 @@ interface tableProps {
   className: string,
   // 列数据配置项
   columns: Array<Object>,
+  renderEmptyNode: React.ReactNode
 }
 
 // col接口类型
@@ -22,9 +24,11 @@ interface colProps {
 }
 
 function SS_Table(props: tableProps) {
-  const {className, columns, ...reset} = props
+  const {className, columns, renderEmptyNode, ...reset} = props
   return (
-    <>
+    // @ts-ignore
+    // eslint-disable-next-line react/jsx-pascal-case
+    <ConfigProvider renderEmpty={() => renderEmptyNode || <SS_Empty />}>
       <Table
         className={classNames(className, 'ss-table')}
         bordered
@@ -59,7 +63,7 @@ function SS_Table(props: tableProps) {
           })
         }
       </Table>
-    </>
+    </ConfigProvider>
   );
 }
 
