@@ -12,14 +12,16 @@ type PasswordProps = {
   className: string
 }
 
-function SS_Password (props: PasswordProps) {
+const SS_Password = React.forwardRef((props: PasswordProps, ref: any) => {
   const {className, ...reset} = props;
   return (
-    <Password
-      className={classNames(className, 'ss-input ss-input-password')}
-      {...reset}
-    />
+    <div ref={ref}>
+      <Password
+        className={classNames(className, 'ss-input ss-input-password')}
+        {...reset}
+      />
+    </div>
   )
-}
+})
 
 export default SS_Password;

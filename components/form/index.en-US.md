@@ -1,7 +1,7 @@
 ---
 category: Components
-subtitle: 空状态
-type: 数据展示
-title: Empty
+subtitle: 表单
+type: 数据录入
 cols: 1
+title: Form
 ---

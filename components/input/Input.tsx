@@ -74,11 +74,12 @@ class SS_Input extends React.Component<InputProps> {
     return (
       <Input
         ref="inputRef"
+        autoComplete="new-password"
         className={classNames(className, 'ss-input')}
         // @ts-ignore
         suffix={allowClear ? <SuffixIcon className={{'show': this.state.clearIconShow}} parent={this} /> : suffix}
-        {...reset}
         onChange={this.OnChange.bind(this)}
+        {...reset}
       />
     )
   }

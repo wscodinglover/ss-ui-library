@@ -13,19 +13,21 @@ type TextAreaProps = {
   size?: object | undefined,
 }
 
-function SS_TextArea(props: TextAreaProps) {
+const SS_TextArea = React.forwardRef((props: TextAreaProps, ref: any) => {
   const {className, size, ...reset} = props;
   // @ts-ignore
   const width = size && size.x ? `${size.x}px` : '100%'
   // @ts-ignore
   const height = size && size.y ? `${size.y}px` : 'auto'
   return (
-    <TextArea
-      className={classNames(className, 'ss-textarea', 'ss-input')}
-      style={{width, height}}
-      {...reset}
-    />
+    <div ref={ref}>
+      <TextArea
+        className={classNames(className, 'ss-textarea', 'ss-input')}
+        style={{width, height}}
+        {...reset}
+      />
+    </div>
   )
-}
+})
 
 export default SS_TextArea;

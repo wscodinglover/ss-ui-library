@@ -62,7 +62,7 @@ export { default as Select } from './select';
 
 export { default as Empty } from './empty';
 
-export { default as ConfigProvider } from './config-provider';
+export { default as Form } from './form';
 /*
 * 方法
 * */
