@@ -65,7 +65,13 @@ export { default as Empty } from './empty';
 export { default as Form } from './form';
 
 export { default as TreeSelect } from './select-tree';
+
+export { default as Layout } from './layout';
+
+export { default as Alert } from './alert';
 /*
 * 方法
 * */
-export { default as notification } from './notification/index';
+export { default as notification } from './notification';
+
+export { default as message } from './message';
