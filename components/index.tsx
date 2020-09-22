@@ -63,6 +63,8 @@ export { default as Select } from './select';
 export { default as Empty } from './empty';
 
 export { default as Form } from './form';
+
+export { default as TreeSelect } from './select-tree';
 /*
 * 方法
 * */

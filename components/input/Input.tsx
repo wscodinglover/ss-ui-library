@@ -11,6 +11,7 @@ type InputProps = {
   className: string,
   allowClear: boolean,
   defaultValue: any,
+  onChange: any,
   suffix: React.ReactNode | undefined
 }
 
@@ -58,6 +59,8 @@ class SS_Input extends React.Component<InputProps> {
     // 无输入内容时，clearIcon不显示，反之显示
     this.setState({
       clearIconShow: value !== '',
+    }, () => {
+      this.props.onChange(value)
     })
   }
 
@@ -69,12 +72,12 @@ class SS_Input extends React.Component<InputProps> {
   }
 
   render() {
-    const {className, allowClear, suffix, ...reset} = this.props;
-
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const {className, allowClear, suffix, onChange, ...reset} = this.props;
     return (
       <Input
         ref="inputRef"
-        autoComplete="new-password"
         className={classNames(className, 'ss-input')}
         // @ts-ignore
         suffix={allowClear ? <SuffixIcon className={{'show': this.state.clearIconShow}} parent={this} /> : suffix}

@@ -23,10 +23,6 @@ function hasErrors(fieldsError) {
 }
 
 class HorizontalLoginForm extends React.Component {
-  componentDidMount() {
-    // To disable submit button at the beginning.
-    this.props.form.validateFields();
-  }
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -46,30 +42,19 @@ class HorizontalLoginForm extends React.Component {
         <Form layout="inline" onSubmit={this.handleSubmit}>
             <Form.Item>
               {getFieldDecorator('username', {
-                rules: [{ required: true, message: 'Please input your username!' }],
+                rules: [{ required: true, message: '请输入用户名' }],
               })(
                 <Input
-                  prefix={<Icon value="&#xe827;" />}
                   placeholder="Username"
                 />
               )}
             </Form.Item>
             <Form.Item>
               {getFieldDecorator('password', {
-                rules: [{ required: true, message: 'Please input your Password!' }],
+                rules: [{ required: true, message: '请输入密码' }],
               })(
                 <Password
-                  prefix={<Icon value="&#xe82a;" style={{ color: 'rgba(0,0,0,.25)' }} />}
                   placeholder="Password"
-                />
-              )}
-            </Form.Item>
-            <Form.Item>
-              {getFieldDecorator('notice', {
-                rules: [{ required: true, message: 'Please input your notice!' }],
-              })(
-                <TextArea
-                  placeholder="notice"
                 />
               )}
             </Form.Item>
@@ -88,8 +73,7 @@ class HorizontalLoginForm extends React.Component {
   }
 }
 
-const WrappedHorizontalLoginForm = Form.create({ name: 'horizontal_login' })(HorizontalLoginForm);
-
+const WrappedHorizontalLoginForm = Form.create({name: 'horizontal_login'})(HorizontalLoginForm)
 ReactDOM.render(<div className="example"><WrappedHorizontalLoginForm /></div>, mountNode);
 ```
 ```css

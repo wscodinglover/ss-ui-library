@@ -16,9 +16,13 @@ title:
 ```jsx
 import { Input } from 'ss-ui-library';
 
+function onchange (value) {
+  console.log(value);
+}
+
 ReactDOM.render(
   <div className="example">
-    <Input placeholder="请输入姓名" allowClear />
+    <Input placeholder="请输入姓名" allowClear onChange={onchange} />
   </div>
 , mountNode);
 ```

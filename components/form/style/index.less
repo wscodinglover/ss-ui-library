@@ -4,13 +4,65 @@
   .ant-form-item-control{
     line-height: normal;
   }
+  .ant-form-explain {
+    display: none;
+  }
   .has-error {
+    .ss-input.ant-input,
     .ss-input.ant-input-affix-wrapper .ant-input,
     .ss-input.ss-textarea{
       border-color: @color_error;
       &:hover, &:focus {
         background: @yellow_color;
         border-color: @yellow_hover;
+      }
+    }
+    .ant-form-explain {
+      position: absolute;
+      top: -8px;
+      left: 0;
+      z-index: 999;
+      display: block;
+      min-height: auto;
+      padding: 5px 10px;
+      color: @color_black;
+      font-size: 12px;
+      line-height: normal;
+      background-color: @color_basic;
+      border: 1px solid @color_black;
+      border-radius: 2px;
+      //box-shadow: 0 0 4px @color_black;
+      transform: translateY(-100%);
+      .ss-form-help {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .sumscope-icon {
+          color: @yellow_color;
+          font-size: 16px;
+          margin-right: 8px;
+        }
+      }
+
+      &:after {
+        position:absolute;
+        bottom: -12px;
+        left: 12px;
+        width: 0;
+        height: 0;
+        content: "";
+        border: 6px solid @color_basic;
+        border-color: @color_basic transparent transparent transparent;
+      }
+      &:before {
+        position:absolute;
+        bottom: -13px;
+        left: 12px;
+        width: 0;
+        height: 0;
+        content: "";
+        border: 6px solid @color_black;
+        border-color: @color_black transparent transparent transparent;
       }
     }
   }

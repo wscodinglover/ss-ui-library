@@ -15,10 +15,12 @@ title:
 
 ```jsx
 import { Input } from 'ss-ui-library';
-
+const onchange = (value) => {
+  console.log(value);
+}
 ReactDOM.render(
   <div className="example">
-    <Input placeholder="请输入姓名" />
+    <Input placeholder="请输入姓名" onChange={onchange} />
   </div>
 , mountNode);
 ```
