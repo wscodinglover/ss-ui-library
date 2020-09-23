@@ -73,6 +73,8 @@ export { default as Alert } from './alert';
 export { default as Tooltip } from './tooltip';
 
 export { default as Tree } from './tree';
+
+export { default as Modal } from './modal';
 /*
 * 方法
 * */
