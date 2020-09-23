@@ -69,6 +69,10 @@ export { default as TreeSelect } from './select-tree';
 export { default as Layout } from './layout';
 
 export { default as Alert } from './alert';
+
+export { default as Tooltip } from './tooltip';
+
+export { default as Tree } from './tree';
 /*
 * 方法
 * */
