@@ -24,6 +24,16 @@ function getModuleData(props) {
         .filter(item => item)
         .slice(0, 2)
         .join('/');
+  // let moduleData;
+  // switch (moduleName) {
+  //   case 'docs/react':
+  //   case 'changelog':
+  //   case 'changelog-cn':
+  //     moduleData = [...props.picked['docs/react'], ...props.picked.changelog];
+  //     break;
+  //   default:
+  //     moduleData = props.picked[moduleName];
+  // }
   const moduleData =
     moduleName === 'components' ||
     moduleName === 'docs/react' ||
@@ -127,16 +137,33 @@ class MainContent extends Component {
       themeConfig.typeOrder,
     );
     return menuItems.map(menuItem => {
+      if (menuItem.title === 'Overview' || menuItem.title === '组件总览') {
+        return menuItem.children.map(leaf => this.generateMenuItem(false, leaf, footerNavIcons));
+      }
+      if (menuItem.type === 'type') {
+        return (
+          <Menu.ItemGroup title={menuItem.title} key={menuItem.title}>
+            {menuItem.children
+              .sort((a, b) => a.title.localeCompare(b.title))
+              .map(leaf => this.generateMenuItem(false, leaf, footerNavIcons))}
+          </Menu.ItemGroup>
+        );
+      }
       if (menuItem.children) {
         return (
-          <SubMenu title={getSubMenuTitle(menuItem)} key={menuItem.title}>
+          <SubMenu title={menuItem.title} key={menuItem.title}>
             {menuItem.children.map(child => {
               if (child.type === 'type') {
+                // return (
+                //   <Menu.ItemGroup title={child.title} key={child.title}>
+                //     {child.children
+                //       .sort((a, b) => a.title.charCodeAt(0) - b.title.charCodeAt(0))
+                //       .map(leaf => this.generateMenuItem(false, leaf, footerNavIcons))}
+                //   </Menu.ItemGroup>
+                // );
                 return (
                   <Menu.ItemGroup title={child.title} key={child.title}>
-                    {child.children
-                      .sort((a, b) => a.title.charCodeAt(0) - b.title.charCodeAt(0))
-                      .map(leaf => this.generateMenuItem(false, leaf, footerNavIcons))}
+                    {child.children.map(leaf => this.generateMenuItem(false, leaf, footerNavIcons))}
                   </Menu.ItemGroup>
                 );
               }
@@ -314,6 +341,10 @@ class MainContent extends Component {
     );
     return (
       <div className="main-wrapper">
+        {/*<h4 className="logo-theme">*/}
+        {/*  <img src="http://www.sumscope.com/favicon.ico" alt=""/>*/}
+        {/*  <span>SS UI Library</span>*/}
+        {/*</h4>*/}
         <Row>
           {isMobile ? (
             <MobileMenu key="Mobile-menu" wrapperClassName="drawer-wrapper">

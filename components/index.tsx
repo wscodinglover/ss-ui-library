@@ -81,3 +81,7 @@ export { default as Modal } from './modal';
 export { default as notification } from './notification';
 
 export { default as message } from './message';
+
+export { default as Observer } from './observer';
+
+export { default as Websocket } from './websocket';

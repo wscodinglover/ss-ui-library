@@ -118,8 +118,8 @@ class Header extends React.Component {
       .slice(0, -1)
       .join('/');
     let activeMenuItem = module || 'home';
-    if (activeMenuItem === 'components' || location.pathname === 'changelog') {
-      activeMenuItem = 'docs/react';
+    if (activeMenuItem === 'docs/react' || location.pathname === 'changelog') {
+      activeMenuItem = 'home';
     }
     const isZhCN = locale === 'zh-CN';
     const excludedSuffix = isZhCN ? 'en-US.md' : 'zh-CN.md';
@@ -146,6 +146,7 @@ class Header extends React.Component {
     });
 
     const menu = [
+      // 语言切换
       <Button
         ghost
         size="small"
@@ -167,8 +168,8 @@ class Header extends React.Component {
             <FormattedMessage id="app.header.menu.home" />
           </Link>
         </Menu.Item>
-        <Menu.Item key="docs/react">
-          <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN)}>
+        <Menu.Item key="components">
+          <Link to={utils.getLocalizedPathname('/components/button/', isZhCN)}>
             <FormattedMessage id="app.header.menu.components" />
           </Link>
         </Menu.Item>
@@ -198,7 +199,7 @@ class Header extends React.Component {
                 alt="logo"
                 src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
               />
-              <span>React Comps Antd</span>
+              <span>SS UI Library</span>
               <Santa />
             </Link>
           </Col>
