@@ -40,6 +40,7 @@ class DrawerPanel extends React.Component<PanelProps, any> {
 
   state = {
     open: Boolean(this.props.defaultopen),
+    allowIconStr: ''
   }
 
   // 切换显示内容区域
@@ -60,7 +61,27 @@ class DrawerPanel extends React.Component<PanelProps, any> {
         // eslint-disable-next-line no-unused-expressions
         onClose && onClose(this)
       }
+      this.allowIcon()
     })
+  }
+
+  // 箭头icon方向判别
+  allowIcon () {
+    if (this.props.placement.startsWith('top')) {
+      this.setState({
+        allowIconStr: this.state.open ? '&#xe82f;' : '&#xe795;'
+      })
+    }
+    if (this.props.placement.startsWith('bottom')) {
+      this.setState({
+        allowIconStr: this.state.open ? '&#xe795;' : '&#xe82f;'
+      })
+    }
+  }
+
+  componentDidMount() {
+    // 初始化判别方向icon
+    this.allowIcon()
   }
 
   render() {
@@ -72,6 +93,7 @@ class DrawerPanel extends React.Component<PanelProps, any> {
     } else {
       contentAnimateClass = this.state.open ? 'open' : 'close'
     }
+
     return (
       <div
         className={classNames(className,
@@ -82,8 +104,11 @@ class DrawerPanel extends React.Component<PanelProps, any> {
         <div
           className={classNames("ss-drawer-panel-btn",
             `ss-drawer-panel-btn-${placementObj[placement]}`)}
-          onClick={this.toggleContent.bind(this, onBtnClick, onOpen, onClose)}
-        />
+          onClick={this.toggleContent.bind(this, onBtnClick, onOpen, onClose)}>
+          <span
+            className="sumscope-icon"
+            dangerouslySetInnerHTML={{ __html: this.state.allowIconStr }} />
+        </div>
         <div
           className={classNames("ss-drawer-panel-content", contentAnimateClass)}>
           {children}

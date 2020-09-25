@@ -29,6 +29,11 @@ const socket = new Websocket({
     url: 'wss://real.okex.com:8443/ws/v3'
 })
 
+// 默认心跳请求为`ping`,可以自定义
+const socket = new Websocket({
+    heartBeatMsg: 'I am test heartbeat request'
+})
+
 常用API：
 
 /*--发送--*/

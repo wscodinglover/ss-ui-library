@@ -17,6 +17,9 @@ export default class Socket {
   // 心跳定时器
   private heartBeatTimer: any
 
+  // 心跳发送信息
+  private heartBeatMsg: any
+
   // socket连接成功的回调函数
   private openCallback: Function
 
@@ -40,6 +43,7 @@ export default class Socket {
 
   constructor({
                 url,
+                heartBeatMsg,
                 reconnectLimit,
                 openCallback,
                 messageCallback,
@@ -47,6 +51,7 @@ export default class Socket {
                 errorCallback,
               }: SocketParams) {
     this.url = url || config.DEFAULT_URL
+    this.heartBeatMsg = heartBeatMsg || config.DEFAULT_HEARTMSG
     this.reconnectLimit = reconnectLimit || config.RECONNECT_LIMIT
     this.openCallback = openCallback
     this.messageCallback = messageCallback
@@ -210,7 +215,7 @@ export default class Socket {
    */
   private startHeartBeat(): void {
     this.heartBeatTimer = setInterval(() => {
-      this.webSocket.send('ping')
+      this.webSocket.send(this.heartBeatMsg)
     }, config.HEART_INTERVAL)
   }
 

@@ -2,6 +2,10 @@
 
 .ss-Radio-wrap,
 .ant-radio-wrapper{
+  span.ant-radio + * {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
   display: flex;
   align-items: center;
   color: @color_basic;
@@ -88,7 +92,7 @@
     border-color: @basic_color;
     box-shadow: none;
     &:not(.ant-radio-button-wrapper-disabled):hover {
-      background: @basic_hover
+      background: @basic_color
     }
     &.ant-radio-button-wrapper-checked {
       color: @color_black;
@@ -126,7 +130,7 @@
     border: none;
     box-shadow: none;
     &:not(.ant-radio-button-wrapper-disabled):hover {
-      background: @basic_hover
+      background: @basic_color;
     }
     &.ant-radio-button-wrapper-checked {
       color: @color_black;

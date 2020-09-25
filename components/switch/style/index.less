@@ -10,22 +10,33 @@
     height: 14px;
     top: 4px;
     left: 4px;
-    &:before {
+    &::before {
       background-color: @gray_hover;
     }
   }
+  &::after {
+    background-color: @color_basic_disabled;
+  }
   &.ant-switch-checked{
     background-color: @basic_light;
+    &::after {
+      background-color: @color_basic;
+    }
     .ant-switch-handle {
       left: calc(100% - 18px);
-      &:before {
+      &::before {
         background-color: @color_basic;
       }
     }
   }
 
   &.ant-switch-small {
+    min-width: 22px;
     height: 12px;
+    &::after {
+      width: 8px;
+      height: 8px;
+    }
     .ant-switch-inner{
       transform:scale(0.6);
       -webkit-transform:scale(0.6);  /*兼容-webkit-引擎浏览器*/

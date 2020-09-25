@@ -4,6 +4,7 @@
   position: relative;
   display: inline-block;
   .ss-date-picker.ant-calendar-picker{
+    min-width: 120px;
     &:hover {
       .ant-input {
         border-color: @yellow_hover;
@@ -11,7 +12,8 @@
     }
     .ant-input {
       height: 22px;
-      color: @yellow_color;
+      padding: 0 4px;
+      color: @color_yellow;
       font-size: 12px;
       background-color: @basic_input_back;
       border-color: @basic_color;
@@ -30,6 +32,7 @@
     }
     .ss-calendar-icon {
       display: none;
+      right: 4px;
       color: @color_basic;
       line-height: 1.2;
       &.show {
@@ -43,7 +46,7 @@
   .ss-clear-icon{
     position: absolute;
     top: 50%;
-    right: 14px;
+    right: 4px;
     display: none;
     width: 12px;
     height: 12px;
@@ -89,12 +92,19 @@
 .ss-date-picker-dropdown {
   color: @gray_hover;
   .ant-calendar {
+    width: 234px;
+    font-size: 12px;
     background-color: @basic_color;
     border-color: @basic_hover;
     border-radius: 2px;
+    &-range {
+      width: 488px;
+    }
   }
   .ant-calendar-input-wrap {
     height: 30px;
+    padding: 0 4px;
+    line-height: 30px;
     border-bottom-color: @basic_hover;
     .ant-calendar-input {
       color: @color_basic;
@@ -371,5 +381,10 @@
   .ant-calendar-disabled-cell.ant-calendar-selected-day .ant-calendar-date::before{
     background: transparent;
     border-color: transparent;
+  }
+  .ant-calendar-range-middle {
+    height: 30px;
+    color: @color_basic;
+    line-height: 26px;
   }
 }

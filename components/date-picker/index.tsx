@@ -62,7 +62,7 @@ export default class SS_DatePicker extends Component<DatePickerProps, any> {
       value: date,
     }, () => {
       // @ts-ignore
-      this.props.onChange(date, dateString)
+      this.props.onChange && this.props.onChange(date, dateString)
     })
   }
 

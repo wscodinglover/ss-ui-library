@@ -6,8 +6,14 @@
   & >.ant-menu-item {
     padding: 0 10px !important;
   }
+  .ant-menu-submenu > .ant-menu {
+    background: @basic_input_back;
+  }
   .ant-menu-submenu-title{
     padding: 0 10px !important;
+    .ant-menu-submenu-arrow {
+      right: 8px;
+    }
   }
   .ant-menu-submenu-inline{
     .ant-menu-item{
@@ -16,10 +22,11 @@
   }
   .ant-menu-item, .ant-menu-submenu-title {
     width: 100%;
-    height: 36px !important;
+    height: 24px !important;
     margin-top: 0;
     margin-bottom: 0;
-    line-height: 36px !important;
+    font-size: 12px;
+    line-height: 24px !important;
     outline: none;
     &:not(:last-child){
       margin-bottom: 0;
@@ -31,7 +38,7 @@
 
   .sumscope-icon {
     font-size: 14px;
-    margin-right: 8px;
+    margin-right: 4px;
   }
 
   &-basic{
@@ -42,6 +49,13 @@
     .ant-menu-submenu-title{
       &:hover {
         color: @color_yellow;
+        background: @basic_color;
+      }
+    }
+    li.ant-menu-item-disabled,
+    .ant-menu-item-disabled{
+      &:hover {
+        background: transparent;
       }
     }
     .ant-menu-submenu-title {
@@ -67,9 +81,8 @@
       }
     }
     .ant-menu-item-selected{
-      background-color: @basic_color!important;
+      background: #0C4F44!important;
       color: @color_yellow;
-
     }
     .ant-menu-submenu-selected{
       color: @color_yellow;

@@ -1,13 +1,22 @@
 @import "../../style/var/variable";
-
+.ant-notification {
+  width: 300px;
+}
 .ss-market-notice{
   padding: 10px;
   background: @basic_color;
   border:1px solid @basic_hover;
   .ant-notification-notice-close {
     top: 8px;
-    right: 10px;
+    right: 8px;
     color: @color_basic;
+    .ant-notification-close-x {
+      display: flex;
+      i {
+        font-weight: bold;
+        font-size: 12px;
+      }
+    }
   }
   .ant-notification-notice-message{
     display: block;

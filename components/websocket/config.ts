@@ -5,6 +5,8 @@
 export default {
   // 默认服务地址
   DEFAULT_URL: '',
+  // 心跳请求信息
+  DEFAULT_HEARTMSG: 'ping',
   // 重连上限默认值
   RECONNECT_LIMIT: 7,
   // 重连间隔基值（2秒）

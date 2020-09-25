@@ -22,7 +22,7 @@ title: Switch
 | defaultChecked | 初始是否选中 | boolean | false |  |
 | disabled | 是否禁用 | boolean | false | 3.2.2 |
 | `[暂不支持]`loading | 加载中的开关 | boolean | false |  |
-| size | 开关大小，可选值：`default` `small` | string | default |  |
+| `[新增]`size | 开关大小，可选值：`default` `small` | string | default |  |
 | unCheckedChildren | 非选中时的内容 | string\|ReactNode |  |  |
 | onChange | 变化时回调函数 | Function(checked: boolean, event: Event) |  |  |
 | onClick | 点击时回调函数 | Function(checked: boolean, event: Event) |  | 3.13.0 |
