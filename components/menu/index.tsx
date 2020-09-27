@@ -2,12 +2,11 @@ import React from 'react';
 import {Menu} from 'antd'
 import classNames from 'classnames';
 
-const { SubMenu } = Menu;
+const { SubMenu, Item, ItemGroup } = Menu;
 
 type MenuProps = {
   className: string | undefined,
   dataSource: [object],
-  mode: string | undefined,
   children: React.ReactNode
 }
 
@@ -31,9 +30,11 @@ type DataSourceChildProps = {
 
 // eslint-disable-next-line react/prefer-stateless-function
 class SS_Menu extends React.Component<MenuProps, any> {
-  static defaultProps = {
-    mode: "inline",
-  }
+  static Item: any;
+
+  static SubMenu: any;
+
+  static ItemGroup: any;
 
   render() {
     const {className, dataSource, children, ...reset} = this.props;
@@ -82,5 +83,9 @@ class SS_Menu extends React.Component<MenuProps, any> {
     )
   }
 }
+
+SS_Menu.Item = Item;
+SS_Menu.ItemGroup = ItemGroup;
+SS_Menu.SubMenu = SubMenu;
 
 export default SS_Menu;

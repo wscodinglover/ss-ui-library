@@ -75,6 +75,8 @@ export { default as Tooltip } from './tooltip';
 export { default as Tree } from './tree';
 
 export { default as Modal } from './modal';
+
+export { default as Dropdown } from './drop-down';
 /*
 * 方法
 * */

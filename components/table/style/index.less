@@ -25,6 +25,65 @@
     border-right-color: @color_black !important;
     border-bottom-color: @color_black !important;
   }
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    .ant-checkbox-wrapper {
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          width: 12px;
+          height: 12px;
+          background-color: transparent;
+          border-color: @basic_hover;
+          border-width: 2px;
+        }
+        &-disabled {
+          .ant-checkbox-inner {
+            border-color: @basic_disabled !important;
+          }
+        }
+        &-checked {
+          &::after {
+            border-color: transparent;
+          }
+          &:hover {
+            &::after {
+              border-color: transparent;
+            }
+          }
+          .ant-checkbox-inner {
+            background-color: @yellow_color;
+            border-color: @yellow_color;
+            &::after {
+              border-color: @color_black;
+              transform: rotate(45deg) scale(1) translate(-66%, -50%);
+            }
+          }
+          &-disabled {
+            .ant-checkbox-inner {
+              background-color: @basic_disabled !important;
+              border-color: @basic_disabled !important;
+              &::after {
+                border-color: @color_black !important;
+              }
+            }
+          }
+        }
+        &-indeterminate {
+          .ant-checkbox-inner {
+            border-color: @yellow_color;
+            &::after {
+              width: 4px;
+              height: 4px;
+              background-color: @yellow_color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ant-table-tbody > tr.ant-table-row-selected td {
+    background: @basic_color;
+  }
   .ant-table-tbody > tr.ant-table-row:hover > td {
     background: @basic_color;
   }
