@@ -77,6 +77,8 @@ export { default as Tree } from './tree';
 export { default as Modal } from './modal';
 
 export { default as Dropdown } from './drop-down';
+
+export { default as Transfer } from './transfer';
 /*
 * 方法
 * */

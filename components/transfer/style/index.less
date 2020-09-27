@@ -1,0 +1,219 @@
+@import "../../style/var/variable";
+
+.ss-transfer {
+  &.ant-transfer {
+    color: @color_basic;
+    font-size: 12px;
+    .ant-transfer-list {
+      padding-top: 30px;
+      background: transparent;
+      border-color: @basic_color;
+      border-radius: 2px;
+      .ant-transfer-list-header {
+        height: 30px;
+        padding: 0 10px;
+        color: @color_basic;
+        line-height: 30px;
+        background: #172422;
+        border-bottom-color: @basic_color;
+        border-radius: 2px 2px 0 0;
+      }
+      .ant-transfer-list-body {
+        background: #172422;
+        .ant-transfer-list-content {
+          & >.LazyLoad {
+            animation: transferHighlightInAn 1s;
+          }
+          &::-webkit-scrollbar
+          {
+            width:6px;
+            height:6px;
+            background-color: #172422;
+          }
+          &::-webkit-scrollbar-track
+          {
+            background-color: #172422;
+            border-radius:6px;
+          }
+          &::-webkit-scrollbar-thumb
+          {
+            background-color:@basic_hover;
+            border-radius:6px;
+          }
+          .is-visible {
+            height: 22px !important;
+            line-height: 22px;
+            .ant-transfer-list-content-item {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              height: 22px;
+              min-height: 22px;
+              padding: 0 10px;
+              line-height: 22px;
+              .ant-transfer-list-content-item-text {
+                flex: 1;
+                margin-left: 4px;
+                padding-left: 4px;
+                transition: all .3s;
+              }
+              &:not(.ant-transfer-list-content-item-disabled):hover {
+                background-color: transparent;
+                .ant-transfer-list-content-item-text {
+                  background-color: @basic_hover;
+                }
+              }
+              &-disabled {
+                .ant-transfer-list-content-item-text {
+                  color: @color_basic_disabled;
+                }
+              }
+            }
+          }
+        }
+        &-with-search {
+          padding-top: 30px;
+          .ant-transfer-list-body-search-wrapper {
+            padding: 4px 10px;
+            .ant-transfer-list-search-action{
+              display: none;
+            }
+            .ant-input {
+              height: 22px;
+              padding: 0 4px;
+              color: @color_yellow;
+              font-size: 12px;
+              background: transparent;
+              border-color: @basic_color;
+              border-radius: 2px;
+              box-shadow: none;
+              &:hover {
+                border-color: @yellow_hover;
+              }
+              &:focus {
+                color: @color_black;
+                background: @yellow_color;
+                border-color: @yellow_hover;
+              }
+            }
+          }
+        }
+      }
+      &-with-footer {
+        padding-bottom: 30px;
+        .ant-transfer-list-footer {
+          padding: 4px 10px;
+          border-top-color: @basic_color;
+          border-radius: 0 0 2px 2px;
+          .ss-btn +.ss-btn {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+    .ant-transfer-operation {
+      .ant-btn {
+        &:first-child {
+          margin-bottom: 10px;
+        }
+        width: 22px;
+        height: 22px;
+        color: #FFFAF1;
+        background-color: @basic_hover;
+        border-color: @basic_hover;
+        border-radius: 2px;
+      }
+      .ant-btn[disabled] {
+        color: @gray_hover;
+        background-color: @gray_color;
+        border-color: @gray_color;
+      }
+    }
+    .ant-checkbox-wrapper {
+      width: 12px;
+      height: 12px;
+      line-height: 12px;
+      text-align: center;
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          width: 12px;
+          height: 12px;
+          background-color: transparent;
+          border-color: @basic_hover;
+          border-width: 2px;
+        }
+        &-disabled {
+          .ant-checkbox-inner {
+            border-color: @basic_disabled !important;
+          }
+        }
+        &-checked {
+          &::after {
+            border-color: transparent;
+          }
+          &:hover {
+            &::after {
+              border-color: transparent;
+            }
+          }
+          .ant-checkbox-inner {
+            background-color: @yellow_color;
+            border-color: @yellow_color;
+            &::after {
+              border-color: @color_black;
+              transform: rotate(45deg) scale(1) translate(-56%, -45%);
+            }
+          }
+          &-disabled {
+            .ant-checkbox-inner {
+              background-color: @basic_disabled !important;
+              border-color: @basic_disabled !important;
+              &::after {
+                border-color: @color_black !important;
+              }
+            }
+          }
+        }
+        &-indeterminate {
+          .ant-checkbox-inner {
+            border-color: @yellow_color;
+            &::after {
+              width: 4px;
+              height: 4px;
+              background-color: @yellow_color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.ant-transfer-customize-list {
+    .ant-table-wrapper .ant-table-small > .ant-table-content > .ant-table-body > table {
+      .ant-table-thead > tr > th {
+        background: @basic_color;
+      }
+      .ant-table-thead > tr > th,
+      .ant-table-tbody > tr > td {
+        padding: 0 10px;
+      }
+      .ant-table-thead > tr:first-child > th:first-child {
+        border-top-left-radius: 2px;
+      }
+      .ant-table-thead > tr:first-child > th:last-child {
+        border-top-right-radius: 2px;
+      }
+    }
+    .ant-transfer-list-body-with-search {
+      padding-top: 0 !important;
+    }
+  }
+}
+
+@keyframes transferHighlightInAn {
+  0% {
+    background: @basic_hover;
+  }
+  100% {
+    background: transparent;
+  }
+}
