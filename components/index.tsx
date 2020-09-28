@@ -79,6 +79,8 @@ export { default as Modal } from './modal';
 export { default as Dropdown } from './drop-down';
 
 export { default as Transfer } from './transfer';
+
+export { default as Calendar } from './calendar';
 /*
 * 方法
 * */
