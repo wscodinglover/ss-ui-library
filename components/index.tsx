@@ -81,9 +81,11 @@ export { default as Dropdown } from './drop-down';
 export { default as Transfer } from './transfer';
 
 export { default as Calendar } from './calendar';
+
+export { default as Chart } from './echarts-bar';
 /*
-* 方法
-* */
+ * 方法
+ * */
 export { default as notification } from './notification';
 
 export { default as message } from './message';
