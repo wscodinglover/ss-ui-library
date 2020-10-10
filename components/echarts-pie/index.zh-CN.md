@@ -1,17 +1,16 @@
 ---
 category: Components
-subtitle: 柱状图
+subtitle: 饼/环形图
 type: Echarts图表
-title: Bar
+title: Pie
 cols: 1
 ---
 
-基于 Echarts 柱状图图表展示。
+基于 Echarts 饼/环形图图表展示。
 
 ## 何时使用
 
-- 柱状图（或称条形图）。
-- 是一种通过柱形的高度（横向的情况下则是宽度）来表现数据大小的一种常用图表类型。
+- 饼图主要用于表现不同类目的数据在总和中的占比。每个的弧度表示数据数量的比例。
 
 ## 特别提示
 
@@ -22,9 +21,7 @@ defaultOption：
 - 在实际的项目中，请在默认的defaultOption配置中进行添加和删除配置选项。
 ```
 
-[默认的 defaultOption 配置](https://github.com/DavisBryant/ss-ui-library/tree/master/components/_utils/chartConfig/bar/config.ts)
-
-[非闭合环形图 defaultOption 配置](https://github.com/DavisBryant/ss-ui-library/tree/master/components/_utils/chartConfig/bar/round-non-closed-config.ts)
+[默认的 defaultOption 配置](https://github.com/DavisBryant/ss-ui-library/tree/master/components/_utils/chartConfig/pie/config.ts)
 
 onEvents：
 
@@ -57,7 +54,6 @@ opts：
 
 | 参数 | 说明 | 类型 | 默认值 | 是否必填 |
 | --- | --- | --- | --- | --- |
-| isPolarCircleChart | 是否为极坐标环形图表 | boolean | false | false |
 | option | echarts[选项配置](https://echarts.apache.org/option.html#title) | object | ！！使用[defaultOption](#特别提示)进行添加 | true |
 | notMerge | 何时 setOption（不合并数据）,[参考](https://echarts.apache.org/api.html#echartsInstance.setOption) | boolean | false |  |
 | lazyUpdate | setOption 时，懒加载更新数据,[参考](https://echarts.apache.org/api.html#echartsInstance.setOption) | boolean | false |  |

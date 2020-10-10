@@ -123,13 +123,17 @@ export default {
   ],
   series: [
     {
-      type: 'bar',
-      // 柱形外观设置
+      type: 'scatter',
+      showSymbol: false,
+      symbolSize: 6,
       itemStyle: {
         color: 'rgba(35,188,120,0.85)',
       },
-      // 柱形最大宽度
-      barMaxWidth: 42,
+      emphasis: {
+        itemStyle: {
+          color: 'rgba(35,188,120,0.85)',
+        },
+      },
     },
   ],
 };

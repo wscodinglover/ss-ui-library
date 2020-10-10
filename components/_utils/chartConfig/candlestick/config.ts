@@ -23,6 +23,24 @@ export default {
     },
   },
   tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        color: '#FFEBC8',
+        padding: [2, 5],
+        // 不需要显示阴影
+        shadowColor: 'transparent',
+      },
+      lineStyle: {
+        color: '#FF9300',
+        type: 'dotted',
+      },
+      crossStyle: {
+        color: '#FF9300',
+        type: 'dotted',
+      },
+    },
     backgroundColor: '#193D37',
     borderColor: '#308376',
     borderWidth: 1,
@@ -57,6 +75,7 @@ export default {
     splitLine: {
       // 默认显示
       show: true,
+      scale: true,
       lineStyle: {
         color: '#193D37',
       },
@@ -72,6 +91,7 @@ export default {
   },
   yAxis: {
     z: 2,
+    scale: true,
     // 坐标轴
     axisLine: {
       lineStyle: {
@@ -120,16 +140,13 @@ export default {
         },
       },
     },
+    {
+      type: 'inside',
+    },
   ],
   series: [
     {
-      type: 'bar',
-      // 柱形外观设置
-      itemStyle: {
-        color: 'rgba(35,188,120,0.85)',
-      },
-      // 柱形最大宽度
-      barMaxWidth: 42,
+      type: 'candlestick',
     },
   ],
 };

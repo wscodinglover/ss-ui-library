@@ -1,64 +1,66 @@
-@import "../../style/var/variable";
+@import '../../style/var/variable';
 
 .ss-switch {
-  background-color: @gray_color;
-  .ant-switch-inner{
-    color: @color_basic;
-  }
-  .ant-switch-handle {
-    width: 14px;
-    height: 14px;
-    top: 4px;
-    left: 4px;
-    &::before {
-      background-color: @gray_hover;
-    }
-  }
-  &::after {
-    background-color: @color_basic_disabled;
-  }
-  &.ant-switch-checked{
-    background-color: @basic_light;
-    &::after {
-      background-color: @color_basic;
+  &.ant-switch {
+    background-color: @gray_color;
+    .ant-switch-inner {
+      color: @color_basic;
     }
     .ant-switch-handle {
-      left: calc(100% - 18px);
+      width: 14px;
+      height: 14px;
+      top: 4px;
+      left: 4px;
       &::before {
+        background-color: @gray_hover;
+      }
+    }
+    &::after {
+      background-color: @color_basic_disabled;
+    }
+    &.ant-switch-checked {
+      background-color: @basic_light;
+      &::after {
         background-color: @color_basic;
       }
-    }
-  }
-
-  &.ant-switch-small {
-    min-width: 22px;
-    height: 12px;
-    &::after {
-      width: 8px;
-      height: 8px;
-    }
-    .ant-switch-inner{
-      transform:scale(0.6);
-      -webkit-transform:scale(0.6);  /*兼容-webkit-引擎浏览器*/
-      -moz-transform:scale(0.6);     /*兼容-moz-引擎浏览器*/
-      display:inline-block;
-      position: relative;
-      top: -3px;
-      margin: 0 0 0 10px;
-    }
-    .ant-switch-handle {
-      width: 8px;
-      height: 8px;
-      top: 2px;
-      left: 2px;
-    }
-    &.ant-switch-checked{
-      background-color: @basic_light;
       .ant-switch-handle {
-        left: calc(100% - 10px);
+        left: calc(100% - 18px);
+        &::before {
+          background-color: @color_basic;
+        }
       }
-      .ant-switch-inner{
-        margin: 0 10px 0 0;
+    }
+
+    &.ant-switch-small {
+      min-width: 22px;
+      height: 12px;
+      &::after {
+        width: 8px;
+        height: 8px;
+      }
+      .ant-switch-inner {
+        transform: scale(0.6);
+        -webkit-transform: scale(0.6); /*兼容-webkit-引擎浏览器*/
+        -moz-transform: scale(0.6); /*兼容-moz-引擎浏览器*/
+        display: inline-block;
+        position: relative;
+        top: -3px;
+        margin: 0 0 0 10px;
+      }
+      .ant-switch-handle {
+        width: 8px;
+        height: 8px;
+        top: 2px;
+        left: 2px;
+      }
+      &.ant-switch-checked {
+        background-color: @basic_light;
+        .ant-switch-handle {
+          left: calc(100% - 10px);
+        }
+        .ant-switch-inner {
+          margin: 0 10px 0 0;
+        }
       }
     }
   }

@@ -82,7 +82,17 @@ export { default as Transfer } from './transfer';
 
 export { default as Calendar } from './calendar';
 
-export { default as Chart } from './echarts-bar';
+export { default as BarChart } from './echarts-bar';
+
+export { default as LineChart } from './echarts-line';
+
+export { default as ScatterChart } from './echarts-scatter';
+
+export { default as RadarChart } from './echarts-radar';
+
+export { default as PieChart } from './echarts-pie';
+
+export { default as CandlestickChart } from './echarts-candlestick';
 /*
  * 方法
  * */

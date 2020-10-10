@@ -23,6 +23,13 @@ export default {
     },
   },
   tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      lineStyle: {
+        color: '#FF9300',
+        type: 'dotted',
+      },
+    },
     backgroundColor: '#193D37',
     borderColor: '#308376',
     borderWidth: 1,
@@ -69,6 +76,7 @@ export default {
         color: ['#121A19', '#172422'],
       },
     },
+    data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
   },
   yAxis: {
     z: 2,
@@ -123,13 +131,19 @@ export default {
   ],
   series: [
     {
-      type: 'bar',
-      // 柱形外观设置
+      type: 'line',
+      showSymbol: false,
+      symbolSize: 2,
       itemStyle: {
         color: 'rgba(35,188,120,0.85)',
       },
+      emphasis: {
+        itemStyle: {
+          color: 'rgba(35,188,120,0.85)',
+        },
+      },
       // 柱形最大宽度
-      barMaxWidth: 42,
+      data: [5, 20, 36, 10, 10, 20],
     },
   ],
 };

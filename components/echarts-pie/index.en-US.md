@@ -1,7 +1,7 @@
 ---
 category: Components
-subtitle: 柱状图
+subtitle: 饼/环形图
 type: Echarts图表
-title: Bar
+title: Pie
 cols: 1
 ---

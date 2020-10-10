@@ -1,7 +1,7 @@
 ---
 category: Components
-subtitle: 柱状图
+subtitle: 雷达图
 type: Echarts图表
-title: Bar
+title: Radar
 cols: 1
 ---

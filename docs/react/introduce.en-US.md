@@ -1,6 +1,6 @@
 ---
 order: 0
-title: Introduction
+title: Quick Start
 ---
 
 `ss-ui-library` is a component library based on Ant Design.

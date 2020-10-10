@@ -1,20 +1,20 @@
 ---
-order: 1
+order: 0
 title:
-  zh-CN: 横向展示
-  en-US: 横向展示
+  zh-CN: 基本风格
+  en-US: Basic Usage
 ---
 
 ## zh-CN
 
-横向展示，即将 `data` 加在 `Y轴` 上。
+简单的展示。
 
 ## en-US
 
-横向展示，即将 `data` 加在 `Y轴` 上。
+简单的展示。
 
 ```jsx
-import { BarChart } from 'ss-ui-library';
+import { LineChart } from 'ss-ui-library';
 
 const data = {
   xData: [
@@ -35,8 +35,12 @@ const data = {
 
 const getOption = () => {
   return {
-    yAxis: {
+    xAxis: {
+      type: 'category',
       data: data.xData,
+    },
+    yAxis: {
+      type: 'value',
     },
     series: [
       {
@@ -48,7 +52,7 @@ const getOption = () => {
 
 ReactDOM.render(
   <div className="example">
-    <BarChart option={getOption()} />
+    <LineChart option={getOption()} />
   </div>,
   mountNode,
 );

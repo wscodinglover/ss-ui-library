@@ -14,7 +14,7 @@ title:
 简单的展示。
 
 ```jsx
-import { Chart } from 'ss-ui-library';
+import { BarChart } from 'ss-ui-library';
 
 const data = {
   xData: [
@@ -48,7 +48,7 @@ const getOption = () => {
 
 ReactDOM.render(
   <div className="example">
-    <Chart option={getOption()} />
+    <BarChart option={getOption()} />
   </div>,
   mountNode,
 );

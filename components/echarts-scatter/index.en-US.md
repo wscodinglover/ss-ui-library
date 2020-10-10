@@ -1,7 +1,7 @@
 ---
 category: Components
-subtitle: 柱状图
+subtitle: 折线图
 type: Echarts图表
-title: Bar
+title: Line
 cols: 1
 ---
