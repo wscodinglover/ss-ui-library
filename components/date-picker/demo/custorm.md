@@ -46,7 +46,6 @@ class DateRange extends React.Component {
   };
 
   onChange = (field, value) => {
-debugger
     this.setState({
       [field]: value,
     });
@@ -69,42 +68,40 @@ debugger
   handleEndOpenChange = open => {
     this.setState({ endOpen: open });
   };
-  render(){
+  render() {
     const { startValue, endValue, endOpen } = this.state;
     return (
       <div className="example">
-       <DatePicker
-         disabledDate={this.disabledStartDate}
-         showTime
-         format="YYYY-MM-DD HH:mm:ss"
-         value={startValue}
-         placeholder="Start"
-         onChange={this.onStartChange}
-         onOpenChange={this.handleStartOpenChange}
-       />
-       <span className="ss-range-separator">至</span>
-       <DatePicker
-         disabledDate={this.disabledEndDate}
-         showTime
-         format="YYYY-MM-DD HH:mm:ss"
-         value={endValue}
-         placeholder="End"
-         onChange={this.onEndChange}
-         open={endOpen}
-         onOpenChange={this.handleEndOpenChange}
-       />
+        <DatePicker
+          disabledDate={this.disabledStartDate}
+          showTime
+          format="YYYY-MM-DD HH:mm:ss"
+          value={startValue}
+          placeholder="Start"
+          onChange={this.onStartChange}
+          onOpenChange={this.handleStartOpenChange}
+        />
+        <span className="ss-range-separator">至</span>
+        <DatePicker
+          disabledDate={this.disabledEndDate}
+          showTime
+          format="YYYY-MM-DD HH:mm:ss"
+          value={endValue}
+          placeholder="End"
+          onChange={this.onEndChange}
+          open={endOpen}
+          onOpenChange={this.handleEndOpenChange}
+        />
       </div>
-    )
+    );
   }
 }
-ReactDOM.render(
-  <DateRange />
-  ,mountNode,
-);
+ReactDOM.render(<DateRange />, mountNode);
 ```
+
 ```css
-  .ss-range-separator {
-    margin: 0 10px;
-    color: #fff;
-  }
+.ss-range-separator {
+  margin: 0 10px;
+  color: #fff;
+}
 ```

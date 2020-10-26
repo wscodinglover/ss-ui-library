@@ -1,6 +1,6 @@
 {
   "name": "ss-ui-library",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "An enterprise-class UI design language and React components implementation",
   "keywords": [
     "ant",
@@ -14,7 +14,7 @@
     "ui"
   ],
   "homepage": "http://ant.design/",
-  "bugs": {
+  "bugs": {gi
     "url": "https://github.com/DavisBryant/ss-ui-library/issues"
   },
   "repository": {

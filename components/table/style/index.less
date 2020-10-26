@@ -1,10 +1,10 @@
-@import "../../style/var/variable";
+@import '../../style/var/variable';
 .ss-table {
   .ant-table {
     color: @color_basic;
     font-size: 12px;
-    background: #121A19;
-    &.ant-table-small.ant-table-bordered .ant-table-content{
+    background: #121a19;
+    &.ant-table-small.ant-table-bordered .ant-table-content {
       border-right-width: 0;
     }
   }
@@ -18,6 +18,11 @@
     padding: 0 10px;
     border-right-color: @color_black !important;
     border-bottom-color: @color_black !important;
+  }
+  .ant-table-tbody > tr {
+    &.zebra-highlight {
+      background: #172422;
+    }
   }
   .ant-table-tbody > tr > td {
     height: 24px;
@@ -93,12 +98,12 @@
   .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
     background: @basic_color;
   }
-  .ant-table-container{
+  .ant-table-container {
     border-color: @color_black !important;
   }
-  .ant-table-header{
+  .ant-table-header {
     background: @basic_color;
-    &.ant-table-hide-scrollbar{
+    &.ant-table-hide-scrollbar {
       min-width: unset !important;
     }
     &::-webkit-scrollbar {
@@ -107,11 +112,11 @@
     &::-webkit-scrollbar-thumb {
       background: @basic_light;
       border-radius: 8px;
-      -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     }
     &::-webkit-scrollbar-track {
       background: @basic_color;
-      -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     }
     table {
       border-color: transparent;
@@ -119,12 +124,12 @@
   }
   .ant-table-scroll {
     .ant-table-body {
-      background: #121A19 !important;
+      background: #121a19 !important;
     }
   }
-  .ant-table-body{
+  .ant-table-body {
     table {
-      background: #121A19;
+      background: #121a19;
       border: none;
     }
     &::-webkit-scrollbar {
@@ -134,11 +139,11 @@
     &::-webkit-scrollbar-thumb {
       background: @basic_light;
       border-radius: 8px;
-      -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     }
     &::-webkit-scrollbar-track {
       background: @basic_color;
-      -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     }
   }
   .ant-table-title {
@@ -147,7 +152,7 @@
   }
 
   .ant-table-placeholder {
-    background: #121A19;
+    background: #121a19;
     border-color: #1e1e1e;
   }
   .ant-table-bordered.ant-table-empty .ant-table-placeholder {

@@ -1,5 +1,6 @@
 /* @remove-on-es-build-begin */
 // this file is not used if use https://github.com/ant-design/babel-plugin-import
+
 const ENV = process.env.NODE_ENV;
 if (
   ENV !== 'production' &&
@@ -93,6 +94,9 @@ export { default as RadarChart } from './echarts-radar';
 export { default as PieChart } from './echarts-pie';
 
 export { default as CandlestickChart } from './echarts-candlestick';
+
+// export { default as ConfigProvider } from './config-provider';
+
 /*
  * 方法
  * */

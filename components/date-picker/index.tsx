@@ -18,7 +18,8 @@ interface DatePickerProps {
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class SS_DatePicker extends Component<DatePickerProps, any> {
-  pickerRef = createRef();
+  // 声明ref
+  private pickerRef = createRef<HTMLDivElement>();
 
   static defaultProps = {
     picker: 'date',

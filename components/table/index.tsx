@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, ConfigProvider} from 'antd'
+import { Table, ConfigProvider } from 'antd';
 import classNames from 'classnames';
 import SS_Empty from '../empty';
 
@@ -8,23 +8,26 @@ const { Column, ColumnGroup } = Table;
 // 组件传递来的数据的类型定义
 interface tableProps {
   // class
-  className: string,
+  className: string;
   // 列数据配置项
-  columns: Array<Object>,
-  renderEmptyNode: React.ReactNode
+  columns: Array<object>;
+  zebra: boolean;
+  zebraClass?: string;
+  renderEmptyNode: React.ReactNode;
 }
 
 // col接口类型
 interface colProps {
   // 列名称
-  title?: any,
-  dataIndex?: any,
-  key?: string,
-  render?: any
+  title?: any;
+  dataIndex?: any;
+  key?: string;
+  render?: any;
 }
 
 function SS_Table(props: tableProps) {
-  const {className, columns, renderEmptyNode, ...reset} = props
+  const { className, columns, zebra, zebraClass, renderEmptyNode, ...reset } = props;
+  // @ts-ignore
   return (
     // @ts-ignore
     // eslint-disable-next-line react/jsx-pascal-case
@@ -32,36 +35,50 @@ function SS_Table(props: tableProps) {
       <Table
         className={classNames(className, 'ss-table')}
         bordered
-        {...reset}>
-        {
-          columns.map((col: colProps, index: number) => {
-            const {title, dataIndex, key, render, ...colReset} = col
-            if (title.children && title.children.length) {
-              return (
-                <ColumnGroup
-                  title={title.default}
-                  key={key ? `col-${index}-${Date.now()}` : Date.now()}>
-                  {
-                    title.children.map((child: String, cindex: number) => {
-                      return (<Column
-                        title={child}
-                        dataIndex={dataIndex[cindex]}
-                        key={key ? `${key[cindex]}-${index}-${Date.now()}` : Date.now()}
-                        render={render}
-                        {...colReset}/>)
-                    })
-                  }
-                </ColumnGroup>
-              )
+        // @ts-ignore
+        rowClassName={(record: any, index: number) => {
+          if (zebra) {
+            if ((index + 1) % 2 === 1) {
+              return zebraClass || 'zebra-highlight';
             }
-            return (<Column
+            return null;
+          }
+          return null;
+        }}
+        {...reset}
+      >
+        {columns.map((col: colProps, index: number) => {
+          const { title, dataIndex, key, render, ...colReset } = col;
+          if (title.children && title.children.length) {
+            return (
+              <ColumnGroup
+                title={title.default}
+                key={key ? `col-${index}-${Date.now()}` : Date.now()}
+              >
+                {title.children.map((child: String, cindex: number) => {
+                  return (
+                    <Column
+                      title={child}
+                      dataIndex={dataIndex[cindex]}
+                      key={key ? `${key[cindex]}-${index}-${Date.now()}` : Date.now()}
+                      render={render}
+                      {...colReset}
+                    />
+                  );
+                })}
+              </ColumnGroup>
+            );
+          }
+          return (
+            <Column
               title={title}
               dataIndex={dataIndex}
               key={`${col.key}${index}` || Date.now()}
               render={render}
-              {...colReset}/>)
-          })
-        }
+              {...colReset}
+            />
+          );
+        })}
       </Table>
     </ConfigProvider>
   );
@@ -71,6 +88,6 @@ function SS_Table(props: tableProps) {
 SS_Table.defaultProps = {
   // 默认不显示分页器
   pagination: false,
-}
+};
 
 export default SS_Table;

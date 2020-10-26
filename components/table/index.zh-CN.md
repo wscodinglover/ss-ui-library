@@ -63,6 +63,8 @@ const columns = [
 | --- | --- | --- | --- | --- |
 | `[废弃]`bordered | `[暂定为true]`是否展示外边框和列边框 | boolean | true |  |
 | `[修改]`pagination | 分页器，参考[配置项](#pagination)或 [pagination](/components/pagination/) 文档，设为 false 时不展示和进行分页 | object | false |  |
+| `[新增]`zebra | 背景是否呈现斑马线效果 | boolean | false |  |
+| `[新增]`zebraClass | 在 zebra = true 有效，斑马线自定义 class | string | - |  |
 | tableLayout | 表格元素的 [table-layout](https://developer.mozilla.org/zh-CN/docs/Web/CSS/table-layout) 属性，设为 `fixed` 表示内容不会影响列的布局 | - \| 'auto' \| 'fixed' | 无<hr />固定表头/列或使用了 `column.ellipsis` 时，默认值为 `fixed` | 3.24.0 |
 | childrenColumnName | 指定树形结构的列名 | string\[] | children | 3.4.2 |
 | columns | 表格列的配置描述，具体项见下表 | [ColumnProps](https://git.io/JeKZW)\[] | - |  |
@@ -92,7 +94,6 @@ const columns = [
 | onHeaderRow | 设置头部行属性 | Function(column, index) | - |  |
 | onRow | 设置行属性 | Function(record, index) | - |  |
 | getPopupContainer | 设置表格内各类浮层的渲染节点，如筛选菜单 | (triggerNode) => HTMLElement | `() => TableHtmlElement` | 3.21.0 |
-
 
 #### onRow 用法
 

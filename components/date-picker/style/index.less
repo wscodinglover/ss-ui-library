@@ -1,9 +1,9 @@
-@import "../../style/var/variable";
+@import '../../style/var/variable';
 
 .ss-date-picker-wrap {
   position: relative;
   display: inline-block;
-  .ss-date-picker.ant-calendar-picker{
+  .ss-date-picker.ant-calendar-picker {
     min-width: 120px;
     &:hover {
       .ant-input {
@@ -25,7 +25,7 @@
     .ant-input[disabled],
     .ant-input[disabled]:hover,
     .ant-input-disabled,
-    .ant-input-disabled:hover{
+    .ant-input-disabled:hover {
       color: @color_basic_disabled !important;
       background: @gray_input_back !important;
       border-color: @basic_disabled !important;
@@ -43,7 +43,7 @@
   .ant-calendar-picker-clear {
     display: none;
   }
-  .ss-clear-icon{
+  .ss-clear-icon {
     position: absolute;
     top: 50%;
     right: 4px;
@@ -56,7 +56,7 @@
     border-radius: 2px;
     transform: translateY(-50%);
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
     &:hover {
       background-color: @basic_hover;
     }
@@ -65,8 +65,8 @@
     }
     span {
       display: block;
-      -webkit-transform: scale(0.7);  /*兼容-webkit-引擎浏览器*/
-      -moz-transform: scale(0.7);     /*兼容-moz-引擎浏览器*/
+      -webkit-transform: scale(0.7); /*兼容-webkit-引擎浏览器*/
+      -moz-transform: scale(0.7); /*兼容-moz-引擎浏览器*/
       transform: scale(0.7);
     }
   }
@@ -132,14 +132,15 @@
       }
     }
     .ant-calendar-year-select,
-    .ant-calendar-month-select{
+    .ant-calendar-month-select,
+    .ant-calendar-day-select {
       display: inline-block;
       height: 100%;
       padding: 4px 10px;
       color: @color_basic;
       line-height: 100%;
       border-radius: 2px;
-      transition: all .3s;
+      transition: all 0.3s;
       &:hover {
         background: @basic_hover;
       }
@@ -195,14 +196,31 @@
     border-top-color: transparent;
     .ant-calendar-footer-btn {
       padding: 10px 0;
+      line-height: initial;
     }
-    .ant-calendar-today-btn {
-      display: inline;
+    .ant-calendar-today-btn,
+    .ant-calendar-ok-btn {
+      display: inline-block;
       padding: 4px 20px;
       color: @color_basic;
       font-size: 12px;
+      line-height: normal;
       background-color: @basic_hover;
+      border-width: 0;
       border-radius: 2px;
+    }
+    .ant-calendar-time-picker-btn {
+      color: @color_basic;
+      font-size: 12px;
+      &-disabled {
+        color: @color_basic_disabled;
+        cursor: not-allowed;
+      }
+    }
+    .ant-calendar-ok-btn-disabled {
+      color: @color_basic_disabled;
+      background-color: @basic_disabled;
+      cursor: not-allowed;
     }
   }
 
@@ -218,7 +236,7 @@
         line-height: 30px;
         &::before,
         &::after {
-          border-color: #fff
+          border-color: #fff;
         }
       }
       .ant-calendar-month-panel-year-select {
@@ -227,7 +245,7 @@
           color: @color_basic;
           padding: 2px 10px;
           font-size: 12px;
-          transition: all .3s;
+          transition: all 0.3s;
           &:hover {
             background: @basic_hover;
             border-radius: 2px;
@@ -265,7 +283,7 @@
         line-height: 30px;
         &::before,
         &::after {
-          border-color: #fff
+          border-color: #fff;
         }
       }
       .ant-calendar-year-panel-decade-select {
@@ -274,7 +292,7 @@
           color: @color_basic;
           padding: 2px 10px;
           font-size: 12px;
-          transition: all .3s;
+          transition: all 0.3s;
           &:hover {
             background: @basic_hover;
             border-radius: 2px;
@@ -312,7 +330,7 @@
         line-height: 30px;
         &::before,
         &::after {
-          border-color: #fff
+          border-color: #fff;
         }
       }
       .ant-calendar-decade-panel-century {
@@ -344,7 +362,7 @@
       background: transparent;
     }
     .ant-calendar-tbody {
-      tr{
+      tr {
         &:hover {
           background: @basic_input_back;
         }
@@ -359,7 +377,10 @@
   }
 
   .ant-calendar-range {
-    .ant-calendar-body, .ant-calendar-month-panel-body, .ant-calendar-year-panel-body, .ant-calendar-decade-panel-body {
+    .ant-calendar-body,
+    .ant-calendar-month-panel-body,
+    .ant-calendar-year-panel-body,
+    .ant-calendar-decade-panel-body {
       border-top-color: @basic_hover;
     }
   }
@@ -373,12 +394,12 @@
     background: @basic_hover;
   }
   .ant-calendar-disabled-cell .ant-calendar-date,
-  .ant-calendar-disabled-cell .ant-calendar-date:hover{
+  .ant-calendar-disabled-cell .ant-calendar-date:hover {
     color: @color_basic_disabled !important;
     background: @basic_disabled !important;
   }
   .ant-calendar-disabled-cell.ant-calendar-today .ant-calendar-date::before,
-  .ant-calendar-disabled-cell.ant-calendar-selected-day .ant-calendar-date::before{
+  .ant-calendar-disabled-cell.ant-calendar-selected-day .ant-calendar-date::before {
     background: transparent;
     border-color: transparent;
   }
@@ -386,5 +407,45 @@
     height: 30px;
     color: @color_basic;
     line-height: 26px;
+  }
+  .ant-calendar-time-picker-column-3 {
+    background-color: @basic_color;
+    border-top: 1px solid @basic_hover;
+    border-bottom: 1px solid @basic_hover;
+    box-shadow: 0 0 10px 0 #000;
+    .ant-calendar-time-picker-select {
+      color: @color_basic;
+      border-right: 1px solid @basic_hover;
+      &::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+      }
+      &::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: @basic_color;
+      }
+      &::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: @basic_hover;
+      }
+      &:last-child {
+        border-right-width: 0;
+      }
+      li {
+        &.ant-calendar-time-picker-select-option-selected {
+          background-color: @basic_hover;
+        }
+        &:hover {
+          background-color: @basic_hover;
+        }
+        &:focus {
+          color: @color_basic;
+        }
+      }
+    }
   }
 }

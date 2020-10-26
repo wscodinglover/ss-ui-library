@@ -6,13 +6,13 @@ title: Websocket
 order: 1
 ---
 
-websocket请求，经整晚测试，重连机制状况良好，待压力测试。
+websocket 请求，经整晚测试，重连机制状况良好，待压力测试。
 
 ## 何时使用
 
 - 大数据量。
 - 对数据实时性有要求的部分。
-- 大数据量如socket数据可通过发布订阅进行数据传递。
+- 大数据量如 socket 数据可通过发布订阅进行数据传递。
 
 ## API
 
@@ -76,12 +76,6 @@ socket.isSocketClose()
 * @return {Boolean} 是否正在关闭
 */
 socket.isSocketClosing()
-
-/**
-* 检查socket是否连接成功
-* @return {Boolean} 是否建立连接成功
-*/
-socket.isSocketOpen()
 
 /**
 * 检查socket是否连接成功
