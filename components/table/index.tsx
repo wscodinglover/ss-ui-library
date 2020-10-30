@@ -9,6 +9,7 @@ const { Column, ColumnGroup } = Table;
 interface tableProps {
   // class
   className: string;
+  rowClassName?: string;
   // 列数据配置项
   columns: Array<object>;
   zebra: boolean;
@@ -26,7 +27,22 @@ interface colProps {
 }
 
 function SS_Table(props: tableProps) {
-  const { className, columns, zebra, zebraClass, renderEmptyNode, ...reset } = props;
+  const { className, rowClassName, columns, zebra, zebraClass, renderEmptyNode, ...reset } = props;
+
+  // handle row class
+  const getRowClass = (_record: any, index: number): string | undefined => {
+    const rowclass = [];
+    if (zebra) {
+      if ((index + 1) % 2 === 1) {
+        rowclass.push(zebraClass || 'zebra-highlight');
+      }
+    }
+    if (rowClassName) {
+      rowclass.push(rowClassName);
+    }
+    return rowclass.join(' ');
+  };
+
   // @ts-ignore
   return (
     // @ts-ignore
@@ -36,15 +52,7 @@ function SS_Table(props: tableProps) {
         className={classNames(className, 'ss-table')}
         bordered
         // @ts-ignore
-        rowClassName={(record: any, index: number) => {
-          if (zebra) {
-            if ((index + 1) % 2 === 1) {
-              return zebraClass || 'zebra-highlight';
-            }
-            return null;
-          }
-          return null;
-        }}
+        rowClassName={getRowClass}
         {...reset}
       >
         {columns.map((col: colProps, index: number) => {

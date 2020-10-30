@@ -16,11 +16,12 @@ title:
 ```jsx
 import { Input } from 'ss-ui-library';
 
-const {Search} = Input;
+const { Search } = Input;
 
 ReactDOM.render(
   <div className="example">
     <Search placeholder="请输入搜索项" />
-  </div>
-, mountNode);
+  </div>,
+  mountNode,
+);
 ```
