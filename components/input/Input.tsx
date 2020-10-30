@@ -81,6 +81,7 @@ class SS_Input extends React.Component<InputProps> {
     // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, allowClear, suffix, onChange, ...reset } = this.props;
+    // @ts-ignore
     return (
       <Input
         ref="inputRef"
@@ -88,6 +89,7 @@ class SS_Input extends React.Component<InputProps> {
         // @ts-ignore
         suffix={
           allowClear ? (
+            // @ts-ignore
             <SuffixIcon className={{ show: this.state.clearIconShow }} parent={this} />
           ) : (
             suffix
