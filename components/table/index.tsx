@@ -9,7 +9,7 @@ const { Column, ColumnGroup } = Table;
 interface tableProps {
   // class
   className: string;
-  rowClassName?: string;
+  rowClassName?: Function;
   // 列数据配置项
   columns: Array<object>;
   zebra: boolean;
@@ -38,7 +38,7 @@ function SS_Table(props: tableProps) {
       }
     }
     if (rowClassName) {
-      rowclass.push(rowClassName);
+      rowclass.push(rowClassName(_record, index));
     }
     return rowclass.join(' ');
   };
