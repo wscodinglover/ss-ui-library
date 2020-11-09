@@ -1,7 +1,8 @@
 ---
 category: Components
 cols: 1
-type: 数据展示
+type: 导航
 title: Pagination
 subtitle: 分页
+order: 3
 ---

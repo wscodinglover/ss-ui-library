@@ -3,6 +3,7 @@ category: Components
 subtitle: 开关
 type: 数据录入
 title: Switch
+order: 7
 ---
 
 开关选择器。

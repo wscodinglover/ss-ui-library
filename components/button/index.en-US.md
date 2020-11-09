@@ -1,8 +1,9 @@
 ---
 category: Components
-subtitle: 按钮
-type: 数据展示
+type: 通用组件
 title: Button
+subtitle: 按钮
+order: 1
 ---
 
 field must be prompted:\*

@@ -3,6 +3,7 @@ category: Components
 subtitle: 树选择
 type: 数据录入
 title: TreeSelect
+order: 10
 ---
 
 树型选择控件。

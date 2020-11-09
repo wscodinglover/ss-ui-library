@@ -3,6 +3,7 @@ category: Components
 subtitle: 数字输入框
 type: 数据录入
 title: InputNumber
+order: 4
 ---
 
 通过鼠标或键盘，输入范围内的数值。

@@ -1,8 +1,9 @@
 ---
 category: Components
-type: 数据展示
+type: 数据录入
 title: Input
 subtitle: 输入框
+order: 5
 ---
 
 通过鼠标或键盘输入内容，是最基础的表单域的包装。

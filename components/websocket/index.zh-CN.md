@@ -3,7 +3,7 @@ category: Components
 subtitle: socket机制
 type: 公共方法API
 title: Websocket
-order: 1
+order: 2
 ---
 
 websocket 请求，经整晚测试，重连机制状况良好，待压力测试。

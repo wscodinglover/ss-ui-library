@@ -3,6 +3,7 @@ category: Components
 type: 数据展示
 title: Tabs
 subtitle: 标签页
+order: 7
 ---
 
 选项卡切换组件。
@@ -17,8 +18,8 @@ subtitle: 标签页
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
-| `[新增]`dataSource | tabs配置项数据| object([参考配置项](#dataSource)) | - |  |
-| `[新增]`theme | 自定义模板`目前仅支持ss`| string | 'ss' |  |
+| `[新增]`dataSource | tabs 配置项数据 | object([参考配置项](#dataSource)) | - |  |
+| `[新增]`theme | 自定义模板`目前仅支持ss` | string | 'ss' |  |
 | `[新增]`animated | 是否使用动画切换 Tabs，在 `tabPosition=top|bottom` 时有效 | boolean \| {inkBar:boolean, tabPane:boolean} | false, 当 type="card" 时为 false |  |
 | `[新增]`centered | 居中显示 | boolean | false |
 | activeKey | 当前激活 tab 面板的 key | string | 无 |  |
@@ -39,11 +40,11 @@ subtitle: 标签页
 
 ### dataSource
 
-| 参数        | 说明                                            | 类型                | 默认值 |
-| ----------- | ----------------------------------------------- | ------------------- | ------ |
-| icon        | 选项卡头icon图标                                  | ReactNode              | -      |
-| key         | 对应 activeKey                                  | string              | -      |
-| tab         | 选项卡头显示文字                                | string \| ReactNode | -      |
-| disabled    | 选项卡头是否禁用                                | boolean | -      |
-| render      | 选项卡显示区域内容                              | string \| ReactNode | -      |
-| closeIcon   | 自定义关闭图标，`在 type="editable-card"`时有效 | ReactNode           | -      |
+| 参数      | 说明                                            | 类型                | 默认值 |
+| --------- | ----------------------------------------------- | ------------------- | ------ |
+| icon      | 选项卡头 icon 图标                              | ReactNode           | -      |
+| key       | 对应 activeKey                                  | string              | -      |
+| tab       | 选项卡头显示文字                                | string \| ReactNode | -      |
+| disabled  | 选项卡头是否禁用                                | boolean             | -      |
+| render    | 选项卡显示区域内容                              | string \| ReactNode | -      |
+| closeIcon | 自定义关闭图标，`在 type="editable-card"`时有效 | ReactNode           | -      |

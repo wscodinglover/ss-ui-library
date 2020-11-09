@@ -4,6 +4,7 @@ type: 反馈
 noinstant: true
 title: Notification
 subtitle: 通知提醒框
+order: 4
 ---
 
 全局展示通知提醒信息。

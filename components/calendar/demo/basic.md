@@ -18,13 +18,15 @@ import { Calendar } from 'ss-ui-library';
 
 ReactDOM.render(
   <div className="example">
-    <Calendar />
+    <Calendar hideHeader />
   </div>,
- mountNode);
+  mountNode,
+);
 ```
+
 ```css
 .example {
-    padding: 20px;
-    background: #1E1E1E;
+  padding: 20px;
+  background: #1e1e1e;
 }
 ```

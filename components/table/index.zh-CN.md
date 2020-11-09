@@ -3,6 +3,7 @@ category: Components
 type: 数据展示
 title: Table
 subtitle: 表格
+order: 8
 ---
 
 展示行列数据。

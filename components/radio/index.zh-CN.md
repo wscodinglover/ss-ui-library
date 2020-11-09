@@ -1,8 +1,9 @@
 ---
 category: Components
-type: 数据展示
+type: 数据录入
 title: Radio
 subtitle: 单选框
+order: 6
 ---
 
 单选框。

@@ -1,10 +1,10 @@
 ---
 category: Components
-type: 数据展示
+type: 通用组件
 title: Button
 subtitle: 按钮
+order: 1
 ---
-
 
 按钮用于开始一个即时操作。
 
@@ -28,7 +28,9 @@ subtitle: 按钮
 - 加载中：用于异步操作等待反馈的时候，也可以避免多次提交。
 
 ## 新增部分
+
 以下是新增部分，四种主题色调
+
 ```
 * @notice: 基于antd Button组件，以下是自定义新增部分
 * @params: {Boolean} basic   深绿色主题

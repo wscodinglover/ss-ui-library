@@ -3,6 +3,7 @@ category: Components
 type: 数据展示
 title: DrawerPanel
 subtitle: 抽屉式折叠面板
+order: 2
 ---
 
 可以折叠/展开的内容区域。

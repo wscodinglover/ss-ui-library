@@ -1,9 +1,10 @@
 ---
 category: Components
 cols: 1
-type: 数据展示
+type: 导航
 title: Pagination
 subtitle: 分页
+order: 3
 ---
 
 采用分页的形式分隔长列表，每次只加载一个页面。

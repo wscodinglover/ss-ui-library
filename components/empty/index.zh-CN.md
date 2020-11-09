@@ -4,6 +4,7 @@ subtitle: 空状态
 type: 数据展示
 title: Empty
 cols: 1
+order: 4
 ---
 
 空状态时的展示占位图。
@@ -24,8 +25,8 @@ cols: 1
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | icon | 自定义图标 | string | - |  |
-| vertical | 当多层dom，如添加icon显示，是否垂直显示 | boolean | - |  |
-| description | 自定义描述内容 | string \| ReactNode | - | |
+| vertical | 当多层 dom，如添加 icon 显示，是否垂直显示 | boolean | - |  |
+| description | 自定义描述内容 | string \| ReactNode | - |  |
 | imageStyle | 图片样式 | CSSProperties | - |  |
 | image | 设置显示图片，为 string 时表示自定义图片地址。 | string \| ReactNode | `Empty.PRESENTED_IMAGE_DEFAULT` | 3.12.0 |
 

@@ -3,6 +3,7 @@ category: Components
 type: 数据展示
 title: Collapse
 subtitle: 折叠面板
+order: 1
 ---
 
 可以折叠/展开的内容区域。

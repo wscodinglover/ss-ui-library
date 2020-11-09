@@ -1,11 +1,11 @@
 ---
 category: Components
 cols: 1
-type: 数据展示
+type: 导航
 title: Menu
 subtitle: 导航菜单
+order: 2
 ---
-
 
 为页面和功能提供导航的菜单列表。
 
@@ -18,12 +18,12 @@ subtitle: 导航菜单
 ## API
 
 ```html
-<Menu>
+<menu>
   <Menu.Item>菜单项</Menu.Item>
   <SubMenu title="子菜单">
     <Menu.Item>子菜单项</Menu.Item>
   </SubMenu>
-</Menu>
+</menu>
 ```
 
 ### Menu

@@ -3,6 +3,7 @@ category: Components
 subtitle: 文字提示
 type: 数据展示
 title: Tooltip
+order: 6
 ---
 
 简单的文字提示气泡框。

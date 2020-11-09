@@ -3,6 +3,7 @@ category: Components
 subtitle: 警告提示
 type: 反馈
 title: Alert
+order: 1
 ---
 
 警告提示，展现需要关注的信息。

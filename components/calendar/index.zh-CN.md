@@ -4,13 +4,15 @@ type: 数据展示
 subtitle: 日历
 cols: 1
 title: Calendar
+order: 3
 ---
 
 按照日历形式展示数据的容器。
 
->```
->特别注释：
->因暂时无特殊卡片式样需求，暂时API中`fullscreen`为true，不可更改!
+> ```
+> 特别注释：
+> 因暂时无特殊卡片式样需求，暂时API中`fullscreen`为true，不可更改!
+> ```
 
 ## 何时使用
 
@@ -38,6 +40,7 @@ title: Calendar
 | --- | --- | --- | --- | --- |
 | `[新增]`isLunar | 是否显示中国农历 | boolean | false |  |
 | `[新增]`lunarFormat | 中国农历显示格式 | string | 'DD' |  |
+| `[新增]`hideHeader | 是否隐藏头部 | boolean | false |  |
 | dateCellRender | 自定义渲染日期单元格，返回内容会被追加到单元格 | function(date: moment): ReactNode | 无 |  |
 | dateFullCellRender | 自定义渲染日期单元格，返回内容覆盖单元格 | function(date: moment): ReactNode | 无 |  |
 | defaultValue | 默认展示的日期 | [moment](http://momentjs.com/) | 默认日期 |  |

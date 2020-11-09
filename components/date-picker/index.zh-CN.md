@@ -1,8 +1,9 @@
 ---
 category: Components
-type: 数据展示
+type: 数据录入
 title: DatePicker
 subtitle: 日期选择框
+order: 2
 ---
 
 输入或选择日期的控件。

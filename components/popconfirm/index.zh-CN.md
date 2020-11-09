@@ -3,6 +3,7 @@ category: Components
 subtitle: 气泡确认框
 type: 反馈
 title: Popconfirm
+order: 5
 ---
 
 点击元素，弹出气泡式的确认框。
@@ -15,7 +16,7 @@ title: Popconfirm
 
 ## API
 
-根据UI设计图，不需要取消按钮，若业务需要，后期可考虑开放.
+根据 UI 设计图，不需要取消按钮，若业务需要，后期可考虑开放.
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |

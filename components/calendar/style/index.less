@@ -1,31 +1,38 @@
-@import "../../style/var/variable";
+@import '../../style/var/variable';
 
 .ss-calendar {
   &.ant-fullcalendar-fullscreen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     .ant-fullcalendar {
       color: @color_basic;
       font-size: 16px;
       .ant-fullcalendar-calendar-body {
-        padding: 4px 10px;
+        height: 100%;
+        padding: 0;
         .ant-fullcalendar-table {
+          height: 100%;
           background: @basic_input_back;
-          border-top: 1px solid #1E1E1E;
-          border-left: 1px solid #1E1E1E;
+          border-top: 1px solid #1e1e1e;
+          border-left: 1px solid #1e1e1e;
           thead > tr > th {
             padding: 10px 4px;
             background: @basic_color;
-            border-right: 1px solid #1E1E1E;
-            border-bottom: 1px solid #1E1E1E;
+            border-right: 1px solid #1e1e1e;
+            border-bottom: 1px solid #1e1e1e;
             .ant-fullcalendar-column-header-inner {
               text-align: center;
             }
           }
           tbody > tr > td {
             font-size: 12px;
-            border-right: 1px solid #1E1E1E;
-            border-bottom: 1px solid #1E1E1E;
+            border-right: 1px solid #1e1e1e;
+            border-bottom: 1px solid #1e1e1e;
             .ss-calendar-date {
-              height: 100px;
+              height: 100%;
+              min-height: 40px;
               padding: 0 8px;
               .ss-calendar-value {
                 color: @color_basic;
@@ -39,7 +46,7 @@
                   display: inline-block;
                   font-weight: 300;
                   font-size: 12px;
-                  transform: scale(.8);
+                  transform: scale(0.8);
                 }
               }
               .tags-today {
@@ -51,7 +58,7 @@
                 text-align: center;
                 background: @basic_hover;
                 border-radius: 2px;
-                transform: scale(.8);
+                transform: scale(0.8);
               }
               .ss-calendar-content {
                 color: @color_basic;
@@ -59,9 +66,10 @@
               }
             }
             &.ant-fullcalendar-last-month-cell,
-            &.ant-fullcalendar-next-month-btn-day{
+            &.ant-fullcalendar-next-month-btn-day {
               .ss-calendar-date {
-                height: 100px;
+                height: 100%;
+                min-height: 40px;
                 padding: 0 8px;
                 .ss-calendar-value {
                   color: @color_basic_disabled;
@@ -77,7 +85,7 @@
               }
             }
             &.ant-fullcalendar-selected-day,
-            &.ant-fullcalendar-today{
+            &.ant-fullcalendar-today {
               .ss-calendar-date {
                 background: @basic_color;
                 outline: 1px solid @basic_hover;
@@ -87,18 +95,24 @@
         }
       }
       .ant-fullcalendar-month-panel-table {
+        height: 100%;
         background-color: @basic_input_back;
-        border-top: 1px solid #1E1E1E;
-        border-left: 1px solid #1E1E1E;
-        .ant-fullcalendar-month-panel-tbody > tr >td {
-          border-right: 1px solid #1E1E1E;
-          border-bottom: 1px solid #1E1E1E;
+        border-top: 1px solid #1e1e1e;
+        border-left: 1px solid #1e1e1e;
+        .ant-fullcalendar-month-panel-tbody > tr > td {
+          border-right: 1px solid #1e1e1e;
+          border-bottom: 1px solid #1e1e1e;
           .ant-fullcalendar-month {
+            height: 100%;
             margin: 0;
             border-top-width: 0;
             .ant-fullcalendar-value {
               color: @color_basic;
               font-size: 14px;
+            }
+            .ant-fullcalendar-content {
+              height: 100%;
+              min-height: 40px;
             }
           }
           &:hover {
@@ -161,11 +175,11 @@
           &::-webkit-scrollbar-thumb {
             background: @basic_light;
             border-radius: 6px;
-            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
           }
           &::-webkit-scrollbar-track {
             background: @basic_color;
-            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
           }
         }
         .ant-select-dropdown-menu-item {
@@ -179,6 +193,11 @@
             background-color: @basic_color;
           }
         }
+      }
+    }
+    &.hide-header {
+      .ant-fullcalendar-header {
+        display: none;
       }
     }
   }

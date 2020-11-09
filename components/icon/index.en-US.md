@@ -1,10 +1,10 @@
 ---
 category: Components
-type: 数据展示
-title: Button
-subtitle: 按钮
+type: 通用组件
+title: Icon
+subtitle: 图标
+order: 2
 ---
-
 
 按钮用于开始一个即时操作。
 
