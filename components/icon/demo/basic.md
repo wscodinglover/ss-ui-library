@@ -7,24 +7,27 @@ title:
 
 ## zh-CN
 
-引入Icon组件，传入value
+引入 Icon 组件，传入 value
 
 ## en-US
 
-引入Icon组件，传入value
+引入 Icon 组件，传入 value
 
-  ```jsx
+```jsx
 import { Icon } from 'ss-ui-library';
-
+const aaa = () => {
+  debugger;
+};
 ReactDOM.render(
   <>
-    <Icon value="&#xe7c0;" />
+    <Icon value="&#xe7c0;" onClick={aaa} />
     <Icon value="&#xe7de;" />
     <Icon value="&#xe83f;" />
   </>,
   mountNode,
 );
 ```
+
 <style>
 .sumscope-icon{
     margin-right: 20px;
