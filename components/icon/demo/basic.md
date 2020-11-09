@@ -15,12 +15,9 @@ title:
 
 ```jsx
 import { Icon } from 'ss-ui-library';
-const aaa = () => {
-  debugger;
-};
 ReactDOM.render(
   <>
-    <Icon value="&#xe7c0;" onClick={aaa} />
+    <Icon value="&#xe7c0;" />
     <Icon value="&#xe7de;" />
     <Icon value="&#xe83f;" />
   </>,
