@@ -121,7 +121,7 @@ class SS_Modal extends React.PureComponent<ModalInterface> {
       children,
       ...reset
     } = this.props;
-    const Title = <BuildTitle title={title || 'Basic Modal'} isMove={isMove} />;
+    const Title = <BuildTitle title={title || 'Basic Modal'} isMove={isMove || false} />;
     const ModalProps = {
       className: classNames('ss-modal', className),
       wrapClassName,
