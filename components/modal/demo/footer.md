@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title:
   zh-CN: 自定义页脚
   en-US: 自定义页脚
@@ -76,10 +76,11 @@ ReactDOM.render(
   </>
 , mountNode);
 ```
+
 ```css
 .custom-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 ```

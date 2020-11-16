@@ -18,6 +18,7 @@ order: 2
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
+| `[新增]`isMove | Modal 是否可移动拖拽 | boolean | false |  |
 | afterClose | Modal 完全关闭后的回调 | function | 无 |  |
 | bodyStyle | Modal body 样式 | object | {} |  |
 | cancelText | 取消按钮文字 | string\|ReactNode | 取消 |  |
@@ -25,7 +26,7 @@ order: 2
 | closable | 是否显示右上角的关闭按钮 | boolean | true |  |
 | closeIcon | 自定义关闭图标 | ReactNode | - | 3.22.0 |
 | confirmLoading | 确定按钮 loading | boolean | 无 |  |
-| destroyOnClose | 关闭时销毁 Modal 里的子元素 | boolean | false | 3.1.0 |
+| `[修改]`destroyOnClose | 关闭时销毁 Modal 里的子元素,默认为 true，与 antd 不同 | boolean | true | 3.1.0 |
 | footer | 底部内容，当不需要默认底部按钮时，可以设为 `footer={null}` | string\|ReactNode | 确定取消按钮 |  |
 | forceRender | 强制渲染 Modal | boolean | false | 3.12.0 |
 | getContainer | 指定 Modal 挂载的 HTML 节点, false 为挂载在当前 dom | HTMLElement \| `() => HTMLElement` \| Selectors \| false | document.body | 3.20.2 |

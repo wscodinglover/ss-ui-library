@@ -13,7 +13,7 @@ type SearchProps = {
 };
 
 function SearchIcon() {
-  return <span className="sumscope-icon icon-search">&#xe80b;</span>;
+  return <span className="sumscope-icon icon-ss-search">&#xe80b;</span>;
 }
 
 function SS_Search(props: SearchProps) {
