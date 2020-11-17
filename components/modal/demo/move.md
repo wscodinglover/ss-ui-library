@@ -49,6 +49,7 @@ class Demo extends React.Component {
           title="Basic Modal"
           visible={this.state.visible}
           isMove
+          moveKey="modal1"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >

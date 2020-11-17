@@ -51,6 +51,7 @@ type ModalInterface = {
   footer?: React.ReactNode | null;
   afterClose: any;
   isMove: boolean;
+  moveKey?: string;
 };
 
 class BuildTitle extends React.PureComponent<any> {
@@ -67,9 +68,16 @@ class BuildTitle extends React.PureComponent<any> {
   };
 
   componentDidMount() {
-    this.modalDom = document.getElementsByClassName(
-      'ant-modal-wrap', // modal的class是ant-modal
-    )[0];
+    const { moveKey } = this.props;
+    const moveKeyClass = `ss-modal-movekey-${moveKey}`;
+    const modalDom = document.getElementsByClassName(
+      moveKeyClass, // modal的class是ant-modal
+    );
+    if (modalDom.length > 1) {
+      // eslint-disable-next-line no-throw-literal
+      throw 'moveke发生重复添加';
+    }
+    this.modalDom = modalDom[0];
   }
 
   render() {
@@ -90,10 +98,11 @@ class SS_Modal extends React.PureComponent<ModalInterface> {
    * Modal 完全关闭后的回调
    *
    * */
-  AfterClose = (callback: any) => {
+  AfterClose = (callback: any, moveKey?: string) => {
     // eslint-disable-next-line no-useless-catch
     try {
-      const Node = document.getElementsByClassName('ant-modal-wrap');
+      const moveKeyClass = `ss-modal-movekey-${moveKey}`;
+      const Node = document.getElementsByClassName(moveKeyClass);
       if (Node[0]) {
         // @ts-ignore
         setTimeout(() => {
@@ -118,21 +127,32 @@ class SS_Modal extends React.PureComponent<ModalInterface> {
       title,
       footer,
       afterClose,
+      moveKey,
       children,
       ...reset
     } = this.props;
-    const Title = <BuildTitle title={title || 'Basic Modal'} isMove={isMove || false} />;
+    const TitleProps = {
+      title: title || 'Basic Modal',
+      isMove: isMove || false,
+      moveKey,
+    };
+    const Title = <BuildTitle {...TitleProps} />;
+    const moveKeyClass = moveKey && `ss-modal-movekey-${moveKey}`;
     const ModalProps = {
       className: classNames('ss-modal', className),
-      wrapClassName,
+      wrapClassName: classNames(moveKeyClass, wrapClassName),
       title: Title,
-      footer: footer || <DefaultFooterRender api={this} />,
-      afterClose: this.AfterClose(afterClose),
+      footer: footer || <DefaultFooterRender api={this.props} />,
+      afterClose: this.AfterClose(afterClose, moveKey),
       destroyOnClose: true,
       ...reset,
     };
     // @ts-ignore
-    return <Modal {...ModalProps}>{children}</Modal>;
+    return (
+      <Modal {...ModalProps} aa="asd">
+        {children}
+      </Modal>
+    );
   }
 }
 
