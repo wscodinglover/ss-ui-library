@@ -147,11 +147,9 @@ class SS_Modal extends React.PureComponent<ModalInterface> {
       destroyOnClose: true,
       ...reset,
     };
-    // @ts-ignore
     return (
-      <Modal {...ModalProps} aa="asd">
-        {children}
-      </Modal>
+      // @ts-ignore
+      <Modal {...ModalProps}>{children}</Modal>
     );
   }
 }
