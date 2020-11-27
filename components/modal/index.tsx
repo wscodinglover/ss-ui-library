@@ -52,6 +52,8 @@ type ModalInterface = {
   afterClose: any;
   isMove: boolean;
   moveKey?: string;
+  maskNotUse: boolean;
+  width?: number | string;
 };
 
 class BuildTitle extends React.PureComponent<any> {
@@ -67,8 +69,21 @@ class BuildTitle extends React.PureComponent<any> {
     this.modalDom.style.transform = transformStr;
   };
 
+  init = () => {
+    const { width } = this.props;
+    // @ts-ignore
+    const wrapNode = this.modalDom;
+    // @ts-ignore
+    const modalbody = wrapNode.querySelector('.ant-modal');
+    const modalTop = modalbody.offsetTop;
+    // @ts-ignore
+    this.modalDom.style = `left: 50%; top: ${modalTop}px;right: unset;bottom: unset; width: ${width ||
+      520}px; margin-left: ${width ? -width / 2 : -260}px; overflow: hidden`;
+    modalbody.style = `top: 0`;
+  };
+
   componentDidMount() {
-    const { moveKey } = this.props;
+    const { moveKey, isMove, maskNotUse } = this.props;
     const moveKeyClass = `ss-modal-movekey-${moveKey}`;
     const modalDom = document.getElementsByClassName(
       moveKeyClass, // modal的class是ant-modal
@@ -78,6 +93,9 @@ class BuildTitle extends React.PureComponent<any> {
       throw 'moveke发生重复添加';
     }
     this.modalDom = modalDom[0];
+    if (moveKey && isMove && maskNotUse) {
+      this.init();
+    }
   }
 
   render() {
@@ -129,11 +147,15 @@ class SS_Modal extends React.PureComponent<ModalInterface> {
       afterClose,
       moveKey,
       children,
+      width,
+      maskNotUse,
       ...reset
     } = this.props;
     const TitleProps = {
       title: title || 'Basic Modal',
       isMove: isMove || false,
+      width,
+      maskNotUse,
       moveKey,
     };
     const Title = <BuildTitle {...TitleProps} />;
@@ -145,6 +167,7 @@ class SS_Modal extends React.PureComponent<ModalInterface> {
       footer: footer || <DefaultFooterRender api={this.props} />,
       afterClose: this.AfterClose(afterClose, moveKey),
       destroyOnClose: true,
+      width,
       ...reset,
     };
     return (

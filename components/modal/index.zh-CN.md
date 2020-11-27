@@ -20,6 +20,7 @@ order: 2
 | --- | --- | --- | --- | --- |
 | `[新增]`isMove | Modal 是否可移动拖拽 | boolean | false |  |
 | `[新增]`moveKey | 设置为 isMove 时，必须添加，多个拖拽 modal 才能共存 | string | - |  |
+| `[新增]`maskNotUse | Modal 遮罩层不铺满窗口，在设置`moveKey`、`isMove=true`时生效 | string | - |  |
 | afterClose | Modal 完全关闭后的回调 | function | 无 |  |
 | bodyStyle | Modal body 样式 | object | {} |  |
 | cancelText | 取消按钮文字 | string\|ReactNode | 取消 |  |

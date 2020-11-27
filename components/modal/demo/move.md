@@ -9,9 +9,13 @@ title:
 
 可以对 modal 进行拖拽，设置`isMove`为`true`即可。
 
+备注：若使用`maskNotUse`属性进行穿透使用，在 modal 显示状态下，再次点击弹出 Modal，当前的 Modal 会返回原点
+
 ## en-US
 
 可以对 modal 进行拖拽，设置`isMove`为`true`即可。
+
+备注：若使用`maskNotUse`属性进行穿透使用，在 modal 显示状态下，再次点击弹出 Modal，当前的 Modal 会返回原点
 
 ```jsx
 import { Modal, Button } from 'ss-ui-library';

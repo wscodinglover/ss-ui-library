@@ -41,7 +41,6 @@
           return /-cn\/?$/.test(pathname);
         }
         function getLocalizedPathname(path, zhCN) {
-          debugger
           var pathname = path.startsWith('/') ? path : '/' + path;
           if (!zhCN) {
             // to enUS
