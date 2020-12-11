@@ -51,7 +51,7 @@ export { default as Layout } from './layout';
  * @moduleName Menu 菜单
  * @catalog 导航组件
  * */
-export { default as Menu } from './menu123';
+export { default as Menu } from './menu';
 
 /**
  * @moduleName ConfigProvider 全局化配置

@@ -15,6 +15,45 @@ order: 2
 
 更多布局和导航的使用可以参考：[通用布局](/components/layout)。
 
+## dataSource 参数素材参考
+
+```
+## 考虑到做权限控制时，有些入口是不需要开放的，故在dataSource中每层结构都加入了show的判断是否需要显示。
+## group是新增属性，用来是否需要加入GroupItem渲染。
+## 每层结构严格根据API自由加减参数，不要加入API没有的参数。
+const dataSource = [
+  {
+    key: 'item 1',
+    show: true,
+    title: 'test item 1'
+  },
+  {
+    key: 'sub Menu 1',
+    show: true,
+    title: 'sub menu 1',
+    group: {
+      key: 'sub Menu group item 1',
+      show: true,
+      title: 'sub Menu group item 1',
+      children: [
+        {
+          key: 'sub Menu group item children 1',
+          show: true,
+          title: 'sub Menu group item children 1'
+        }
+      ]
+    },
+    children: [
+      {
+        key: 'sub Menu item 1-1',
+        show: true,
+        title: 'test item 1'
+      }
+    ]
+  }
+]
+```
+
 ## API
 
 ```html
@@ -82,3 +121,9 @@ order: 2
 ### Menu.Divider
 
 菜单项分割线，只用在弹出菜单内。
+
+<style>
+.code-box-demo {
+   background: #1E1E1E;
+}
+</style>

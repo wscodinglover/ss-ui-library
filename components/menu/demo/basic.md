@@ -1,87 +1,38 @@
 ---
 order: 0
 title:
-  zh-CN: 内嵌菜单
-  en-US: 内嵌菜单
+  zh-CN: 基本使用
+  en-US: 基本使用
 ---
 
 ## zh-CN
 
-垂直菜单，子菜单内嵌在菜单区域。
+使用 `Menu` 提供的自组建进行渲染， 同时也提供了一个 dataSource 将数据内部一次性渲染方式。
 
 ## en-US
 
-垂直菜单，子菜单内嵌在菜单区域。
+使用 `Menu` 提供的自组建进行渲染， 同时也提供了一个 dataSource 将数据内部一次性渲染方式。
 
 ```jsx
-import { Menu, Icon } from 'ss-ui-library';
+import { Menu } from 'ss-ui-library';
 
-const muneData = [
-    {
-        key: 0,
-        title: <span><Icon value="&#xe773;" />菜单1</span>,
-        show: true,
-        disabled: true,
-    },
-    {
-        key: 1,
-        title: <span><Icon value="&#xe773;" />菜单2</span>,
-        show: true,
-        children: [
-            {
-                key: "sub1",
-                title: <span><Icon value="&#xe773;" />菜单2的sun item 1</span>,
-                show: true,
-                disabled: true
-            },
-            {
-                key: "sub2",
-                title: '菜单2的sun item 2',
-                show: true,
-            },
-            {
-                key: "sub3",
-                title: '菜单2的sun item 3',
-                show: true,
-                disabled: true,
-            },
-        ]
-    },
-    {
-        key: 2,
-        title: '菜单3',
-        show: true,
-        children: [
-            {
-                title: '菜单3的sun item 1',
-                show: true,
-            },
-            {
-                title: '菜单3的sun item 2',
-                show: true,
-            },
-            {
-                title: '菜单3的sun item 3',
-                show: true,
-            },
-        ]
-    },
-    {
-        key: 3,
-        title: '菜单4',
-        show: true,
-    },
-]
+const { SubMenu } = Menu;
 
 ReactDOM.render(
-  <>
-    <Menu
-      defaultOpenKeys={['1']}
-      defaultSelectedKeys={['sub1']}
-      dataSource={muneData}
-      mode="inline"
-      style={{width: 256}} />
-  </>,
+  <Menu mode="horizontal">
+    <Menu.Item key="item 1">item 1</Menu.Item>
+    <Menu.Item key="item 2">item 1</Menu.Item>
+    <SubMenu title="sub menu 1">
+      <Menu.ItemGroup title="Item group 1">
+        <Menu.Item key="sub menu item 1">sub menu item 1</Menu.Item>
+        <Menu.Item key="sub menu item 2">sub menu item 2</Menu.Item>
+      </Menu.ItemGroup>
+      <Menu.ItemGroup title="Item group 2">
+        <Menu.Item key="sub menu item 3">sub menu item 3</Menu.Item>
+        <Menu.Item key="sub menu item 4">sub menu item 4</Menu.Item>
+      </Menu.ItemGroup>
+    </SubMenu>
+  </Menu>,
   mountNode,
 );
 ```

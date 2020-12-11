@@ -1,8 +1,8 @@
 ---
 order: 2
 title:
-  zh-CN: 垂直菜单
-  en-US: 垂直菜单
+  zh-CN: 垂直模式菜单
+  en-US: 垂直模式菜单
 ---
 
 ## zh-CN
@@ -16,72 +16,73 @@ title:
 ```jsx
 import { Menu, Icon } from 'ss-ui-library';
 
-const muneData = [
-    {
-        key: 0,
-        title: <span><Icon value="&#xe773;" />菜单1</span>,
-        show: true,
-        disabled: true,
-    },
-    {
-        key: 1,
-        title: <span><Icon value="&#xe773;" />菜单2</span>,
-        show: true,
-        children: [
-            {
-                key: "sub1",
-                title: <span><Icon value="&#xe773;" />菜单2的sun item 1</span>,
-                show: true,
-                disabled: true
-            },
-            {
-                key: "sub2",
-                title: '菜单2的sun item 2',
-                show: true,
-            },
-            {
-                key: "sub3",
-                title: '菜单2的sun item 3',
-                show: true,
-                disabled: true,
-            },
-        ]
-    },
-    {
-        key: 2,
-        title: '菜单3',
-        show: true,
-        children: [
-            {
-                title: '菜单3的sun item 1',
-                show: true,
-            },
-            {
-                title: '菜单3的sun item 2',
-                show: true,
-            },
-            {
-                title: '菜单3的sun item 3',
-                show: true,
-            },
-        ]
-    },
-    {
-        key: 3,
-        title: '菜单4',
-        show: true,
-    },
-]
+const { SubMenu } = Menu;
 
-ReactDOM.render(
-  <>
-    <Menu
-      defaultOpenKeys={['1']}
-      defaultSelectedKeys={['sub1']}
-      dataSource={muneData}
-      mode="vertical"
-      style={{width: 256}} />
-  </>,
-  mountNode,
-);
+const dataSource = [
+  {
+    key: 'item 1',
+    show: true,
+    title: 'test item 1',
+  },
+  {
+    key: 'item 2',
+    show: true,
+    title: 'test item 2',
+    disabled: true,
+  },
+  {
+    key: 'sub Menu 1',
+    show: true,
+    title: 'sub menu 1',
+    disabled: true,
+    children: [
+      {
+        key: 'sub Menu item 1-1',
+        show: true,
+        title: 'test item 1',
+      },
+      {
+        key: 'sub Menu item 1-2',
+        show: true,
+        title: 'test item 2',
+      },
+    ],
+  },
+  {
+    key: 'sub Menu 2',
+    show: true,
+    title: 'sub menu 2',
+    group: {
+      key: 'sub Menu group item 1',
+      show: true,
+      title: 'sub Menu group item 1',
+      children: [
+        {
+          key: 'sub Menu group item children 1',
+          show: true,
+          title: 'sub Menu group item children 1',
+        },
+        {
+          key: 'sub Menu group item children 2',
+          show: true,
+          title: 'sub Menu group item children 2',
+        },
+      ],
+    },
+    children: [
+      {
+        key: 'sub Menu item 2-1',
+        show: true,
+        title: 'test item 1',
+      },
+      {
+        key: 'sub Menu item 2-2',
+        show: true,
+        title: 'test item 2',
+      },
+    ],
+  },
+];
+
+ReactDOM.render(<Menu dataSource={dataSource} style={{ width: 256 }} mode="vertical" />, mountNode);
 ```

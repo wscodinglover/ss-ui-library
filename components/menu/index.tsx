@@ -1,91 +1,130 @@
-import React from 'react';
-import {Menu} from 'antd'
-import classNames from 'classnames';
+/**
+ * ################################################################################
+ * # ModuleName: Menu 菜单
+ * # catalog: 导航组件
+ * # updateTime: 2020-12-11
+ * # auth: Davis
+ * ################################################################################
+ * # Component API新增或修改:
+ * # className    自定义class名称            @type{string}       @default[ss-btn]
+ * # dataSource   数据配置项                 @type{object[]}     @default[]
+ * # show         每层结构都有，是否需要
+ *                显示                      @type{object[]}     @default[]
+ * # group        dataSource存在时生效，
+ *                需要渲染GroupItem时添加     @type{object[]}     @default[]
+ * #################################################################################
+ * */
 
-const { SubMenu, Item, ItemGroup } = Menu;
+import React, { ReactNode } from 'react';
+import { Menu } from 'antd';
+import classnames from 'classnames';
+import SSSubMenu from './SubMenu';
+
+const { ItemGroup, Item } = Menu;
 
 type MenuProps = {
-  className: string | undefined,
-  dataSource: [object],
-  children: React.ReactNode
-}
+  className: string;
+  dataSource: object[];
+};
 
-type DataSourceProps = {
-  key: string | number | undefined,
-  icon: string
-  title: React.ReactNode | string,
-  show: boolean,
-  disabled: boolean,
-  children: [object]
-}
+type GroupItemProps = {
+  key?: string | number;
+  title: string | ReactNode;
+  show: boolean;
+  children: object[];
+};
 
-type DataSourceChildProps = {
-  key: string | number | undefined,
-  icon: string
-  title: React.ReactNode | string,
-  show: boolean,
-  disabled: boolean,
-  children: [object]
-}
+type MenuItemProps = {
+  key?: string | number;
+  title: string | ReactNode;
+  show: boolean;
+  group: GroupItemProps;
+  children: object[];
+};
 
-// eslint-disable-next-line react/prefer-stateless-function
-class SS_Menu extends React.Component<MenuProps, any> {
-  static Item: any;
+class SSMenu extends React.PureComponent<MenuProps, any> {
+  static Item: React.ComponentProps<any>;
 
-  static SubMenu: any;
+  static SubMenu: React.ComponentProps<any>;
 
-  static ItemGroup: any;
+  static ItemGroup: React.ComponentProps<any>;
+
+  /**
+   * GroupItem dataSource dom render
+   *
+   * */
+  private GroupItemRender = (group: GroupItemProps): ReactNode => {
+    if (group && JSON.stringify(group) !== '{}') {
+      const groupChildren: object[] = group.children;
+      const groupShow: boolean = group.show;
+      delete group.show;
+      return (
+        groupShow && (
+          // @ts-ignore
+          <ItemGroup {...group}>
+            {groupChildren.length &&
+              groupChildren.map((child: MenuItemProps) => {
+                const childTitle: string | ReactNode = child.title;
+                const childShowIndex: number = child.show ? 1 : 0;
+                delete child.show;
+                return childShowIndex ? <Item {...child}>{childTitle}</Item> : null;
+              })}
+          </ItemGroup>
+        )
+      );
+    }
+  };
+
+  /**
+   * dataSource dom render
+   *
+   * */
+  private menuItemRender = (): ReactNode => {
+    const { dataSource } = this.props;
+    return dataSource.map((item: MenuItemProps) => {
+      const { show, title, children, group, ...reset } = item;
+      const showIndex = show ? 1 : 0;
+      if (children && children.length) {
+        return (
+          showIndex && (
+            <SSSubMenu title={title} {...reset}>
+              {children.length &&
+                children.map((child: MenuItemProps) => {
+                  const childTitle: string | ReactNode = child.title;
+                  const childShowIndex: number = child.show ? 1 : 0;
+                  delete child.show;
+                  return childShowIndex && <Item {...child}>{childTitle}</Item>;
+                })}
+              {this.GroupItemRender(group)}
+            </SSSubMenu>
+          )
+        );
+      }
+      return showIndex && <Item {...reset}>{title}</Item>;
+    });
+  };
 
   render() {
-    const {className, dataSource, children, ...reset} = this.props;
+    const { className, children, dataSource, ...reset } = this.props;
+    const MenuParams = {
+      className: classnames('ss-menu', className),
+      ...reset,
+    };
     return (
-      // @ts-ignore
-      <Menu
-        className={classNames('ss-inline-menu ss-inline-menu-basic', className)}
-        {...reset}>
+      <Menu {...MenuParams}>
         {children}
-        {
-          dataSource && dataSource.map((item: DataSourceProps, index: number) => {
-            if (item.children && item.children.length) {
-              // 剔除show为false的情况
-              return item.show && (
-                <SubMenu
-                  popupClassName="ss-menu-popup"
-                  key={item.key || `sub${Date.now()}${index}`}
-                  title={item.title}
-                  disabled={item.disabled || false}>
-                  {
-                    item.children.map((child: DataSourceChildProps, cindex: number) => {
-                      // 剔除show为false的情况
-                      return child.show && (
-                        <Menu.Item key={child.key || `child-${Date.now()}-${index}-${cindex}`}
-                                   disabled={child.disabled || false}>
-                          {child.title}
-                        </Menu.Item>
-                      )
-                    })
-                  }
-                </SubMenu>
-              )
-            }
-
-            // 剔除show为false的情况
-            return item.show && (
-              <Menu.Item
-                key={item.key || `sub${Date.now()}${index}`}
-                disabled={item.disabled || false}>
-                {item.title}
-              </Menu.Item>
-            )
-          })
-        }
+        {dataSource && dataSource.length && this.menuItemRender()}
       </Menu>
-    )
+    );
   }
 }
 
-SS_Menu.Item = Item;
-SS_Menu.ItemGroup = ItemGroup;
-SS_Menu.SubMenu = SubMenu;
+/**
+ * 子组件挂载，ts需要定义类型
+ *
+ * */
+SSMenu.SubMenu = SSSubMenu;
+SSMenu.Item = Item;
+SSMenu.ItemGroup = ItemGroup;
 
-export default SS_Menu;
+export default SSMenu;
