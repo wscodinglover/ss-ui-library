@@ -1,66 +1,52 @@
+/**
+ * ##################################################################
+ * # ModuleName: Button 按钮
+ * # catalog: 通用组件
+ * # updateTime: 2020-12-11
+ * # auth: Davis
+ * #################################################################
+ * # Component API新增或修改:
+ * # className  自定义class名称    @type{string}       @default[ss-btn]
+ * # basic      深绿色主题         @type{boolean}      @default[false]
+ * # yellow     温暖主题           @type{boolean}      @default[false]
+ * # error      错误主题           @type{boolean}      @default[false]
+ * # gray       灰色主题           @type{boolean}      @default[false]
+ * # icon       内置图标           @type{string}       @default[]
+ * ##################################################################
+ * */
+
 import React from 'react';
-import {Button} from 'antd'
-import classNames from 'classnames';
-import SS_Spin from '../spin';
+import { Button } from 'antd';
+import classnames from 'classnames';
 
-/*
-* @notice: 基于antd Button组件，以下是自定义新增部分
-* @params: {Boolean} basic   深绿色主题
-* @params: {Boolean} yellow  温暖主题
-* @params: {Boolean} error   错误主题
-* @params: {Boolean} gray    灰色主题
-*
-* */
+// 类型定义
+type ButtonProps = {
+  className: string;
+  basic: false;
+  yellow: false;
+  error: false;
+  gray: false;
+  icon: string;
+};
 
-interface ButtonProps {
-  basic: boolean,
-  yellow: boolean,
-  error: boolean,
-  gray: boolean,
-  icon: string,
-  loading: boolean,
-  children: React.ReactNode
-}
+const SSButton: React.FC<ButtonProps> = props => {
+  const { className, basic, yellow, error, gray, icon, children, ...reset } = props;
+  // 定义主题class
+  const classNames =
+    (basic && 'bsaic') || (yellow && 'yellow') || (error && 'error') || (gray && 'gray');
+  // Button所需的参数
+  const ButtonParams = {
+    className: classnames('ss-btn', `ss-btn-${classNames}`, className),
+    ...reset,
+  };
+  // 图标
+  const IconDom = <span className="sumscope-icon icon-ss-item">{icon}</span>;
+  return (
+    <Button {...ButtonParams}>
+      {icon && IconDom}
+      {children}
+    </Button>
+  );
+};
 
-class SS_Button extends React.Component<ButtonProps, any> {
-  // default Value
-  static defaultProps = {
-    basic: false,
-    yellow: false,
-    error: false,
-    gray: false,
-  }
-
-  // eslint-disable-next-line class-methods-use-this
-  private loadingView() : JSX.Element {
-    const ssLoading = {
-      show: true,
-      lineStroke: '#FFEBC8',
-    }
-
-    return (
-      // eslint-disable-next-line react/jsx-pascal-case
-      <SS_Spin ssLoading={ssLoading} />
-    )
-  }
-
-  public render() {
-    const {loading, basic, yellow, error, gray, icon, children, ...reset} = this.props;
-
-    return (
-      <Button
-        className={classNames('ss-btn',
-          {'ss-btn-basic': basic},
-          {'ss-btn-yellow': yellow},
-          {'ss-btn-error': error},
-          {'ss-btn-gray': gray})}
-        {...reset}>
-        {icon && <span className="sumscope-icon ss-btn-icon">{icon}</span>}
-        <div className={classNames('ss-btn-child',{'hidden': loading})}>{children}</div>
-        {loading && this.loadingView()}
-      </Button>
-    )
-  }
-}
-
-export default SS_Button;
+export default SSButton;

@@ -1,12 +1,24 @@
-import React, { createContext } from 'react';
+/**
+ * ##################################################################
+ * # API
+ * prefixCls: 设置统一样式前缀    @type{string}     @default[ss]
+ *
+ *
+ *
+ * ##################################################################
+ * */
 
-const SS_Config_Provider = (props: any) => {
-  const { children, ...reset } = props;
-  // @ts-ignore
-  const globContext = createContext();
-  const { Provider } = globContext;
+import React from 'react';
+import { ConfigProvider } from 'antd';
 
-  return <Provider {...reset}>{children}</Provider>;
+type ConfigProviderProps = {};
+
+const SSConfigProvider: React.FC<ConfigProviderProps> = props => {
+  const { children } = props;
+  const ProviderProps = {
+    prefixCls: 'ss',
+  };
+  return <ConfigProvider {...ProviderProps}>{children}</ConfigProvider>;
 };
 
-export default SS_Config_Provider;
+export default SSConfigProvider;

@@ -3,7 +3,7 @@ import { Modal } from 'antd';
 import classNames from 'classnames';
 // @ts-ignore
 import DragM from 'dragm';
-import SS_Button from '../button';
+import SSButton from '../button';
 
 function DefaultFooterRender(props: any) {
   const { api } = props;
@@ -18,27 +18,30 @@ function DefaultFooterRender(props: any) {
     api.onOk && api.onOk(e);
   }
 
+  // @ts-ignore
+  // @ts-ignore
   return (
     <>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SS_Button
+      <SSButton
         // @ts-ignore
         type="primary"
+        // @ts-ignore
         gray
         onClick={onCancelClick}
       >
         {api.cancelText || '取消'}
-      </SS_Button>
+      </SSButton>
       {/* eslint-disable-next-line react/jsx-pascal-case */}
-      <SS_Button
-        // @ts-ignore
+      <SSButton
         type="primary"
+        // @ts-ignore
         basic
         onClick={onOkClick}
         loading={api.confirmLoading}
       >
         {api.okText || '确定'}
-      </SS_Button>
+      </SSButton>
     </>
   );
 }

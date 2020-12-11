@@ -1,0 +1,168 @@
+@import 'varible';
+.ant-menu {
+  &.ss-menu {
+    color: @c-white;
+    background-color: @c-green-input;
+    border-bottom-color: @c-green-basic;
+    &.ant-menu-horizontal {
+      line-height: 32px;
+    }
+    &.ant-menu-inline {
+      .ant-menu-item {
+        &-selected {
+          &::after {
+            display: none;
+          }
+        }
+      }
+      .ant-menu-submenu {
+        &-open {
+          .ant-menu-submenu-title {
+            color: @c-yellow-light;
+          }
+        }
+        .ant-menu-inline {
+          background-color: @c-green-input;
+          .ant-menu-item {
+            height: 30px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0 20px;
+            color: @c-white;
+            line-height: 30px;
+            &-active,
+            &-selected,
+            &:hover {
+              color: @c-yellow-light;
+              background-color: @c-green-active;
+            }
+            &-disabled {
+              color: @c-gray-hover !important;
+              background-color: transparent !important;
+            }
+          }
+          .ant-menu-item-group {
+            .ant-menu-item-group-title {
+              padding: 4px 10px;
+              color: @c-gray-hover;
+            }
+          }
+        }
+      }
+    }
+    &.ant-menu-vertical,
+    &.ant-menu-inline {
+      border-right-width: 0;
+      .ant-menu-item,
+      .ant-menu-submenu > .ant-menu-submenu-title {
+        height: 32px;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 32px;
+      }
+      .ant-menu-item-disabled:active,
+      .ant-menu-submenu-disabled:active,
+      .ant-menu-submenu-disabled > .ant-menu-submenu-title:active {
+        background-color: transparent !important;
+      }
+      .ant-menu-item:active,
+      .ant-menu-submenu-title:active {
+        color: @c-yellow-light;
+        background-color: @c-green-active;
+        border-color: @c-green-basic;
+      }
+      .ant-menu-submenu-title:active {
+        background-color: transparent !important;
+      }
+      .ant-menu-submenu {
+        &-disabled {
+          .ant-menu-submenu-title .ant-menu-submenu-arrow {
+            &::before,
+            &::after {
+              background: @c-gray-basic !important;
+            }
+          }
+        }
+        .ant-menu-submenu-title .ant-menu-submenu-arrow {
+          &::before,
+          &::after {
+            background: #fffaf1;
+          }
+        }
+      }
+    }
+    .ant-menu-item {
+      padding: 0 10px;
+      &-selected,
+      &-active {
+        color: @c-yellow-light;
+        background-color: @c-green-active;
+        border-color: @c-green-basic;
+      }
+      &-disabled {
+        color: @c-gray-hover !important;
+      }
+    }
+    .ant-menu-submenu {
+      &-selected,
+      &-active,
+      &:hover {
+        color: @c-yellow-light;
+        border-color: @c-green-basic;
+      }
+      &-selected {
+        background-color: @c-green-active;
+      }
+      .ant-menu-submenu-title {
+        padding: 0 10px;
+        &:hover {
+          color: @c-yellow-light;
+        }
+      }
+      &-disabled {
+        & > .ant-menu-submenu-title {
+          color: @c-gray-hover !important;
+        }
+      }
+    }
+  }
+}
+
+.ant-menu-submenu {
+  &.ss-menu-sub-popup {
+    color: @c-white;
+    background-color: @c-green-input;
+    & > .ant-menu {
+      color: @c-white;
+      background-color: @c-green-input;
+      border-radius: 2px;
+      .ant-menu-item {
+        height: 30px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0 20px;
+        line-height: 30px;
+        &-active,
+        &-selected,
+        &:hover {
+          color: @c-yellow-light;
+          background-color: @c-green-active;
+        }
+        &-disabled {
+          color: @c-gray-hover !important;
+          background-color: transparent !important;
+        }
+      }
+      .ant-menu-item-group {
+        .ant-menu-item-group-title {
+          padding: 4px 10px;
+          color: @c-gray-hover;
+        }
+      }
+    }
+
+    //.ant-menu-hidden {
+    //  display: block;
+    //}
+  }
+}

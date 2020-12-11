@@ -25,3 +25,9 @@ ReactDOM.render(<IconDisplay />, mountNode);
 | value     | icon 的 unicode 值       | string           | -            |
 | fontSize  | icon 大小自定义          | number \| string | 12 or '12px' |
 | color     | icon 颜色自定义          | string \| rgb    | -            |
+
+<style>
+.code-box-demo {
+    background: #1e1e1e;
+}
+</style>
