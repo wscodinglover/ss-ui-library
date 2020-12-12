@@ -1,19 +1,24 @@
 import React from 'react';
 import {Checkbox} from 'antd';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
-interface CheckboxProps {
-  className: string
+type CheckboxProps = {
+  className: string,
 }
 
-const SS_Checkbox = (props: CheckboxProps) => {
-  const {className, ...reset} = props;
-  return (
-    <Checkbox
-      className={classNames("ss-checkbox-wrap", className)}
-      {...reset}
-    />
-  )
+class SSCheckbox extends React.PureComponent<CheckboxProps, any> {
+  // 定义Group类型
+  static Group: React.ComponentProps<any>;
+
+  render () {
+    const {className, ...reset} = this.props;
+    return (
+      <Checkbox
+        className={classnames("ss-checkbox-wrap", className)}
+        {...reset}
+      />
+    )
+  }
 }
 
-export default SS_Checkbox;
+export default SSCheckbox;

@@ -1,0 +1,105 @@
+@import "varible";
+
+.ant-checkbox-group.ss-checkbox-wrap-group .ant-checkbox-wrapper,
+.ant-checkbox-wrapper.ss-checkbox-wrap {
+  color: @c-white;
+  font-size: 12px;
+  .ant-checkbox {
+    .ant-checkbox-inner {
+      width: 12px;
+      height: 12px;
+      background-color: transparent;
+      border-color: @c-green-basic;
+      border-width: 2px;
+    }
+    &-checked {
+      &::after {
+        border-color: transparent;
+      }
+      .ant-checkbox-inner {
+        background-color: @c-yellow-basic;
+        border-color: @c-yellow-basic;
+        &::after {
+          border-color: @c-black-dark;
+          transform: rotate(45deg) scale(0.8) translate(-76%, -40%);
+        }
+      }
+      &.ant-checkbox-disabled {
+        .ant-checkbox-inner {
+          background-color: @c-gray-basic;
+        }
+      }
+      &+ span {
+        color: @c-yellow-basic;
+      }
+    }
+    &-disabled {
+      .ant-checkbox-inner {
+        background-color: transparent;
+        border-color: @c-gray-basic !important;
+      }
+      &+ span {
+        color: @c-gray-hover;
+      }
+    }
+    &-indeterminate {
+      .ant-checkbox-inner {
+        background-color: transparent;
+        border-color: @c-yellow-basic !important;
+        &::after {
+          width: 4px;
+          height: 4px;
+          background-color: @c-yellow-basic;
+        }
+      }
+      &+ span {
+        color: @c-yellow-basic;
+      }
+    }
+    &+ span {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+  }
+  &:hover {
+    .ant-checkbox {
+      .ant-checkbox-inner {
+        background-color: @c-yellow-active;
+      }
+      &-checked {
+        .ant-checkbox-inner {
+          background-color: @c-yellow-hover;
+          border-color: @c-yellow-hover;
+        }
+        &.ant-checkbox-disabled {
+          .ant-checkbox-inner {
+            background-color: @c-gray-basic;
+          }
+          &+ span {
+            color: @c-gray-hover;
+          }
+        }
+        &+ span {
+          color: @c-yellow-hover;
+        }
+      }
+      &-disabled {
+        .ant-checkbox-inner {
+          background-color: transparent;
+        }
+      }
+      &-indeterminate {
+        .ant-checkbox-inner {
+          background-color: transparent;
+          border-color: @c-yellow-hover !important;
+          &::after {
+            background-color: @c-yellow-hover;
+          }
+        }
+        &+ span {
+          color: @c-yellow-hover;
+        }
+      }
+    }
+  }
+}

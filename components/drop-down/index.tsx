@@ -1,13 +1,24 @@
+/**
+ * ##################################################################
+ * # ModuleName: Dropdown 下拉菜单
+ * # catalog: 导航组件
+ * # updateTime: 2020-12-11
+ * # auth: Davis
+ * #################################################################
+ * # Component API新增或修改:
+ * # className          自定义class名称    @type{string}       @default[ss-btn]
+ * ##################################################################
+ * */
 import React from 'react';
 import {Dropdown} from 'antd';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
-function SS_Dropdown (props: any) {
+const SSDropDown: React.FC<any> = props => {
   const {className, overlayClassName, children, ...reset} = props;
   return (
     <Dropdown
-      className={classNames('ss-dropdown', className)}
-      overlayClassName={classNames('ss-dropdown-overlay', overlayClassName)}
+      className={classnames('ss-dropdown', className)}
+      overlayClassName={classnames('ss-dropdown-overlay', overlayClassName)}
       {...reset}
     >
       {children}
@@ -15,4 +26,4 @@ function SS_Dropdown (props: any) {
   )
 }
 
-export default SS_Dropdown;
+export default SSDropDown;

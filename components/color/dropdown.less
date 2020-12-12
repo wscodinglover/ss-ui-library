@@ -1,0 +1,26 @@
+@import "varible";
+.ant-dropdown {
+  color: @c-white;
+  .ant-dropdown-menu {
+    color: @c-white;
+    &.ss-menu {
+      color: @c-white;
+      background-color: @c-green-input;
+      border-radius: 2px;
+      .ant-dropdown-menu-item,
+      .ant-dropdown-menu-submenu-title{
+        padding: 0 10px;
+        color: @c-white;
+        &-selected,
+        &-active {
+          color: @c-yellow-light;
+          background-color: @c-green-active;
+          border-color: @c-green-basic;
+        }
+        &-disabled {
+          color: @c-gray-hover !important;
+        }
+      }
+    }
+  }
+}

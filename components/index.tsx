@@ -48,10 +48,32 @@ export { default as Col } from './col';
 export { default as Layout } from './layout';
 
 /**
+ * @moduleName DropDown 下拉菜单
+ * @catalog 导航组件
+ * */
+export { default as Dropdown } from './drop-down';
+
+/**
  * @moduleName Menu 菜单
  * @catalog 导航组件
  * */
 export { default as Menu } from './menu';
+
+/**
+ * @moduleName Pagination 分页器
+ * @catalog 导航组件
+ * */
+export { default as Pagination } from './pagination';
+
+/**
+ * @moduleName CheckBox 复选框
+ * @catalog 数据录入组件
+ * */
+export { default as CheckBox } from './checkbox';
+
+
+
+
 
 /**
  * @moduleName ConfigProvider 全局化配置
@@ -77,11 +99,7 @@ export { default as Collapse } from './collapse/index';
 
 export { default as Input } from './input/index';
 
-export { default as CheckBox } from './checkbox';
-
 export { default as Radio } from './radio';
-
-export { default as Pagination } from './pagination';
 
 export { default as Popconfirm } from './popconfirm';
 
@@ -106,8 +124,6 @@ export { default as Tooltip } from './tooltip';
 export { default as Tree } from './tree';
 
 export { default as Modal } from './modal';
-
-export { default as Dropdown } from './drop-down';
 
 export { default as Transfer } from './transfer';
 

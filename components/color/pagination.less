@@ -1,0 +1,123 @@
+@import "varible";
+.ant-pagination {
+  &.ss-pagination {
+    color: @c-white;
+    .ant-pagination-prev,
+    .ant-pagination-next,
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next,
+    .ant-pagination-item {
+      min-width: 22px;
+      height: 22px;
+      color: @c-white;
+      line-height: 22px;
+      border-radius: 2px;
+    }
+    .ant-pagination-prev,
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next {
+      margin-right: 4px;
+    }
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      .ant-pagination-item-link {
+        background-color: @c-green-basic;
+        border-color: @c-green-basic;
+        border-radius: 2px;
+        .anticon {
+          color: #FFFAF1;
+        }
+      }
+      &:hover {
+        .ant-pagination-item-link {
+          background-color: @c-green-hover;
+          border-color: @c-green-hover;
+        }
+      }
+      &:active {
+        .ant-pagination-item-link {
+          background-color: @c-green-active;
+          border-color: @c-green-active;
+        }
+      }
+      &.ant-pagination-disabled {
+        .ant-pagination-item-link {
+          background-color: @c-gray-basic;
+          border-color: @c-gray-basic;
+          border-radius: 2px;
+          .anticon {
+            color: @c-gray-hover;
+          }
+        }
+      }
+    }
+    .ant-pagination-item {
+      margin-right: 4px;
+      background-color: transparent;
+      border-color: transparent;
+      a{
+        color: @c-white;
+      }
+      &:hover {
+        background-color: @c-yellow-active;
+      }
+      &-active {
+        background-color: @c-yellow-basic;
+        &:hover {
+          background-color: @c-yellow-hover;
+        }
+        &:active {
+          background-color: @c-yellow-active;
+        }
+        a {
+          color: @c-black;
+        }
+      }
+    }
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next {
+      .ant-pagination-item-ellipsis {
+        color: @c-white;
+      }
+      .ant-pagination-item-link-icon {
+        color: @c-white;
+      }
+    }
+  }
+  &.ant-pagination-disabled {
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      .ant-pagination-item-link {
+        background-color: @c-gray-basic;
+        border-color: @c-gray-basic;
+        .anticon {
+          color: @c-gray-hover;
+        }
+      }
+      &:hover {
+        background-color: @c-gray-basic;
+      }
+    }
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next {
+      .ant-pagination-item-ellipsis {
+        color: @c-gray-hover;
+      }
+    }
+    .ant-pagination-item {
+      color: @c-gray-hover;
+      a {
+        color: @c-gray-hover;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+      &-active {
+        background-color: @c-gray-basic;
+        &:hover {
+          background-color: @c-gray-basic;
+        }
+      }
+    }
+  }
+}

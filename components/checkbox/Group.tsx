@@ -1,21 +1,21 @@
 import React from 'react';
 import {Checkbox} from 'antd';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 const {Group} = Checkbox;
 
-interface CheckboxProps {
+type CheckboxGroupProps = {
   className: string
 }
 
-const SS_Checkbox_Group = (props: CheckboxProps) => {
+const SSCheckboxGroup: React.FC<CheckboxGroupProps> = props => {
   const {className, ...reset} = props;
   return (
     <Group
-      className={classNames(className, "ss-checkbox-wrap-group")}
+      className={classnames(className, "ss-checkbox-wrap-group")}
       {...reset}
     />
   )
-}
+};
 
-export default SS_Checkbox_Group;
+export default SSCheckboxGroup;
