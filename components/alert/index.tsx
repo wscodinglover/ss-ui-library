@@ -1,16 +1,42 @@
+/**
+ * ##################################################################
+ * # ModuleName: Alert 警示提示
+ * # catalog: 反馈组件
+ * # updateTime: 2020-12-11
+ * # auth: Davis
+ * #################################################################
+ * # Component API新增或修改:
+ * # className  自定义class名称    @type{string}       @default[ss-alert]
+ * # icon       自定义图标         @type{string|ReactNode}      @default[]
+ * # closeText  自定义关闭按钮     @type{string|ReactNode}      @default[]
+ * ##################################################################
+ * */
+
 import React from 'react';
 import {Alert} from 'antd';
-import classNames from 'classnames';
+import {AlertProps} from 'antd/lib/alert'
+import Icon from 'ss-ui-library/es/icon'
+import classnames from 'classnames';
 
-const SS_Alert = (props: any) => {
-  const {className, icon, closeText, ...reset} = props;
+interface SSAlertProps extends AlertProps{
+  className?: string,
+  icon?: string | React.ReactNode,
+  closeText?: string | React.ReactNode,
+}
+
+const SSAlert: React.FC<SSAlertProps> = props => {
+  const {className, icon, closeText, closable, ...reset} = props;
+  const AlertParams = {
+    className: classnames('ss-alert', className),
+    icon: icon ? typeof icon === 'string' ? <Icon value={icon} /> : icon : <Icon value="&#xe841;" />,
+    closable,
+    closeText: closable ? closeText || <Icon value="&#xe77b;" /> : null,
+  }
   return (
     <Alert
-      className={classNames('ss-alert', className)}
-      icon={icon || <span className="sumscope-icon">&#xe841;</span>}
-      closeText={closeText || <div className="ss-clear-icon"><span className="sumscope-icon">&#xe777;</span></div>}
+      {...AlertParams}
       {...reset} />
   )
 }
 
-export default SS_Alert
+export default SSAlert

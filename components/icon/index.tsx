@@ -16,14 +16,14 @@
 import React from 'react';
 import classnames from 'classnames';
 
-interface IconProps {
-  className: string;
-  value: string;
-  fontSize: string | number;
+interface SSIconProps {
+  className?: string;
+  value?: string;
+  fontSize?: string | number;
   color?: string;
 }
 
-const SSIcon: React.FC<IconProps> = props => {
+const SSIcon: React.FC<SSIconProps> = props => {
   const { className, value, fontSize, color, ...reset } = props;
   const style = {
     fontSize: typeof fontSize === 'string' ? fontSize : `${fontSize}px`,

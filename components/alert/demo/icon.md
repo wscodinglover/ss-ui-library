@@ -41,6 +41,15 @@ ReactDOM.render(
       description="Error Description Error Description Error Description Error Description Error Description Error Description"
       closable
       showIcon
+      icon="&#xe79f;"
+      onClose={onClose}
+    />
+    <br/>
+    <Alert
+      message="Error Text"
+      description="Error Description Error Description Error Description Error Description Error Description Error Description"
+      closable
+      showIcon
       icon={<Icon value="&#xe79f;" />}
       onClose={onClose}
     />

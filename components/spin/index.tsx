@@ -1,55 +1,41 @@
-import React, { ReactNode } from 'react';
-import classNames from 'classnames';
-import { Spin } from 'antd';
-
-/*
- * @notice: Spin加载组件
- * @params: {color Hex | rgb} lineStroke   圆形加载线条颜色
- * @params: {number} outward   loading图标的外观大小，及宽高的值, 默认16
- * @params: {String} text  加载文字提示
- * @params: {reactNode} children  自定义加载文字,直接在Spin标签中写入children
- *
+/**
+ * ##################################################################
+ * # ModuleName: Spin 加载中
+ * # catalog: 反馈组件
+ * # updateTime: 2020-12-11
+ * # auth: Davis
+ * #################################################################
+ * # Component API新增或修改:
+ * # show         SPin的loading状态                @type{string}       @default[false]
+ * # text         自定义加载中字符串               @type{boolean}      @default[]
+ * # lineStroke   sumscope loading线条颜色         @type{boolean}      @default[#136C5E]
+ * # outward      sumscope loading外观大小（直径） @type{boolean}      @default[16]
+ * ##################################################################
  * */
+import React from 'react';
+import { Spin } from 'antd';
+import {SpinProps} from 'antd/lib/spin'
+import classnames from 'classnames';
 
-// 组件传递来的数据的类型定义
-type spinProps = {
-  // 加载内容
-  ssLoading: any;
-};
-
-type ssIconProps = {
-  // 加载内容
+type ssLoadingProps = {
+  show?: false,
   text?: string;
-  children: ReactNode;
   // 线条加载颜色
   lineStroke?: string | undefined;
-  outward: number | undefined;
-};
-
-function SS_Spin(props: spinProps) {
-  // @ts-ignore
-  const { ssLoading, indicator, spinning, ...reset } = props;
-  // 自定义部分显示ss模板还是其他自定义
-  let Indicator: any;
-  let Spinning: boolean;
-  if (ssLoading) {
-    Indicator = <SSIcon {...ssLoading} />;
-    Spinning = ssLoading.show;
-  } else {
-    Indicator = indicator;
-    Spinning = spinning !== undefined ? spinning : true;
-  }
-  return (
-    <Spin
-      className={classNames('ss-loading-box')}
-      indicator={Indicator}
-      spinning={Spinning}
-      {...reset}
-    />
-  );
+  outward?: number | undefined;
 }
 
-function SSIcon(props: ssIconProps) {
+// 组件传递来的数据的类型定义
+interface SSSpinProps extends SpinProps{
+  // 加载内容
+  ssLoading?: ssLoadingProps
+}
+
+/**
+ * Sumscope UI 标准Spin loading渲染
+ *
+ * */
+const SSSvgIcon: React.FC<ssLoadingProps> = props => {
   const { outward, lineStroke, text, children } = props;
   return (
     <>
@@ -65,14 +51,36 @@ function SSIcon(props: ssIconProps) {
         {children}
       </p>
     </>
+  )
+};
+
+const SSSpin: React.FC<SSSpinProps> = props => {
+  const { ssLoading, indicator, spinning, ...reset } = props;
+  // 自定义部分显示ss模板还是其他自定义
+  let Indicator: any;
+  let Spinning: boolean | undefined;
+  if (ssLoading && JSON.stringify(ssLoading) !== '{}') {
+    Indicator = <SSSvgIcon {...ssLoading} />;
+    Spinning = ssLoading.show;
+  } else {
+    Indicator = indicator;
+    Spinning = spinning !== undefined ? spinning : true;
+  }
+  return (
+    <Spin
+      className={classnames('ss-loading-box')}
+      indicator={Indicator}
+      spinning={Spinning}
+      {...reset}
+    />
   );
-}
+};
 
 // 默认值
-SSIcon.defaultProps = {
+SSSvgIcon.defaultProps = {
   lineStroke: '#136C5E',
   text: '',
   outward: 16,
 };
 
-export default SS_Spin;
+export default SSSpin;

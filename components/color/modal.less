@@ -1,0 +1,37 @@
+@import "varible";
+.ant-modal-wrap.ss-modal-wrapper {
+  display: block;
+  .ant-modal.ss-modal {
+    color: @c-white;
+    .ant-modal-content {
+      background-color: #0A0F0E;
+      border: 1px solid @c-green-active;
+      border-radius: 2px;
+      .ant-modal-close {
+        color: @c-white;
+        &-x {
+          width: 29px;
+          height: 29px;
+          font-size: 14px;
+          line-height: 29px;
+        }
+      }
+      .ant-modal-header {
+        padding: 4px 10px;
+        background: @c-green-active;
+        border-bottom-width: 0;
+        .ant-modal-title {
+          color: @c-white;
+          font-size: 14px;
+        }
+      }
+      .ant-modal-body {
+        padding: 10px;
+      }
+      .ant-modal-footer {
+        padding: 10px;
+        border-top-width: 0;
+      }
+    }
+  }
+}

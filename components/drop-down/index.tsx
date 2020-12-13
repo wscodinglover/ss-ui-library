@@ -11,9 +11,15 @@
  * */
 import React from 'react';
 import {Dropdown} from 'antd';
+import {DropDownProps} from 'antd/lib/dropdown'
 import classnames from 'classnames';
 
-const SSDropDown: React.FC<any> = props => {
+interface SSDropDownProps extends DropDownProps{
+  className: string,
+  overlayClassName: string,
+}
+
+const SSDropDown: React.FC<SSDropDownProps> = props => {
   const {className, overlayClassName, children, ...reset} = props;
   return (
     <Dropdown

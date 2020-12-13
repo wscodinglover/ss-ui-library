@@ -17,15 +17,16 @@
 
 import React, { ReactNode } from 'react';
 import { Menu } from 'antd';
+import {MenuProps} from 'antd/lib/menu'
 import classnames from 'classnames';
 import SSSubMenu from './SubMenu';
 
 const { ItemGroup, Item } = Menu;
 
-type MenuProps = {
+interface SSMenuProps extends MenuProps {
   className: string;
   dataSource: object[];
-};
+}
 
 type GroupItemProps = {
   key?: string | number;
@@ -42,7 +43,7 @@ type MenuItemProps = {
   children: object[];
 };
 
-class SSMenu extends React.PureComponent<MenuProps, any> {
+class SSMenu extends React.PureComponent<SSMenuProps, any> {
   static Item: React.ComponentProps<any>;
 
   static SubMenu: React.ComponentProps<any>;

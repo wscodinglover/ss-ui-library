@@ -72,6 +72,23 @@ export { default as Pagination } from './pagination';
 export { default as CheckBox } from './checkbox';
 
 
+/**
+ * @moduleName Alert 警告提示
+ * @catalog 反馈组件
+ * */
+export { default as Alert } from './alert';
+
+/**
+ * @moduleName Modal 模态框
+ * @catalog 反馈组件
+ * */
+export { default as Modal } from './modal';
+
+/**
+ * @moduleName Spin 加载中
+ * @catalog 反馈组件
+ * */
+export { default as Spin } from './spin';
 
 
 
@@ -84,8 +101,6 @@ export { default as ConfigProvider } from './config-provider';
 export { default as Star } from './star';
 
 export { default as version } from './version';
-
-export { default as Spin } from './spin';
 
 export { default as Table } from './table';
 
@@ -117,13 +132,9 @@ export { default as Form } from './form';
 
 export { default as TreeSelect } from './select-tree';
 
-export { default as Alert } from './alert';
-
 export { default as Tooltip } from './tooltip';
 
 export { default as Tree } from './tree';
-
-export { default as Modal } from './modal';
 
 export { default as Transfer } from './transfer';
 

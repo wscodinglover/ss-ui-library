@@ -17,19 +17,20 @@
 
 import React from 'react';
 import { Button } from 'antd';
+import {ButtonProps} from 'antd/lib/button'
 import classnames from 'classnames';
 
 // 类型定义
-type ButtonProps = {
-  className: string;
-  basic: false;
-  yellow: false;
-  error: false;
-  gray: false;
-  icon: string;
-};
+interface SSButtonProps extends ButtonProps {
+  className?: string,
+  basic?: boolean,
+  yellow?: boolean,
+  error?: boolean,
+  gray?: boolean,
+  icon?: string,
+}
 
-const SSButton: React.FC<ButtonProps> = props => {
+const SSButton: React.FC<SSButtonProps> = props => {
   const { className, basic, yellow, error, gray, icon, children, ...reset } = props;
   // 定义主题class
   const classNames =

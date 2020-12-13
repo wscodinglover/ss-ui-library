@@ -14,7 +14,7 @@ title:
 显示关闭按钮，点击可关闭警告提示。
 
 ```jsx
-import { Alert, Icon } from 'ss-ui-library';
+import { Alert } from 'ss-ui-library';
 
 const onClose = e => {
   console.log(e, 'I was closed.');

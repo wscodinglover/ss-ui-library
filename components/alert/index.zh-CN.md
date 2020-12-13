@@ -25,5 +25,5 @@ order: 1
 | icon | 自定义图标，`showIcon` 为 `true` 时有效 | ReactNode | - | 3.10.0 |
 | message | 警告提示内容 | string\|ReactNode | 无 |  |
 | showIcon | 是否显示辅助图标 | boolean | false，`banner` 模式下默认值为 true |  |
-| `[废弃]`type | `[UI暂无外观设置]`指定警告提示的样式，有四种选择 `success`、`info`、`warning`、`error` | string | `info`，`banner` 模式下默认值为 `warning` |  |
+| `[废弃]`type | `[UI暂无外观设置, 保留error]`指定警告提示的样式，有四种选择 `success`、`info`、`warning`、`error` | string | `info`，`banner` 模式下默认值为 `warning` |  |
 | onClose | 关闭时触发的回调函数 | (e: MouseEvent) => void | 无 |  |

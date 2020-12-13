@@ -1,0 +1,83 @@
+@import "varible";
+
+.ant-alert.ss-alert{
+  &.ant-alert-no-icon{
+    .ant-alert-message {
+      margin-left: 0;
+    }
+  }
+  &.ant-alert-closable {
+    .ant-alert-message {
+      margin-right: 10px;
+    }
+  }
+  &.ant-alert-with-description {
+    position: relative;
+    display: inline-block;
+    padding-left: 35px;
+    &.ant-alert-no-icon {
+      padding-left: 10px;
+    }
+    .ant-alert-close-icon {
+      position: absolute;
+      top: 4px;
+      right: 10px;
+    }
+    .ant-alert-message {
+      margin-left: 0;
+      font-size: 14px;
+    }
+    .ant-alert-icon.icon-ss-item.sumscope-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      color: #D98817;
+      font-size: 14px;
+      transform: translateY(-50%);
+      .icon-ss-item.sumscope-icon {
+        color: #D98817;
+        font-size: 14px;
+      }
+    }
+  }
+  &.ant-alert-error {
+    color: @c-white;
+    background-color: @c-error-basic;
+    .ant-alert-message {
+      color: @c-white;
+    }
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+  color: @c-black;
+  font-size: 12px;
+  background-color: @c-alert-back;
+  border-color: transparent;
+  border-radius: 2px;
+  .ant-alert-icon.icon-ss-item.sumscope-icon  {
+    position: unset;
+    color: #D98817;
+    font-size: 14px;
+  }
+  .ant-alert-message {
+    flex: 1;
+    width: 100%;
+    margin-left: 10px;
+    color: @c-black;
+  }
+  .ant-alert-description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .ant-alert-close-icon {
+    position: unset;
+    .icon-ss-item {
+      display: inline-block;
+      color: @c-yellow-active;
+      font-size: 14px;
+      border-radius: 2px;
+    }
+  }
+}

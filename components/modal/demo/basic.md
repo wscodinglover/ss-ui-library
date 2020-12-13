@@ -51,9 +51,9 @@ class Demo extends React.Component {
               onOk={this.handleOk}
               onCancel={this.handleCancel}
           >
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
+              <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
+              <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
+              <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
           </Modal>
       </div>
     )

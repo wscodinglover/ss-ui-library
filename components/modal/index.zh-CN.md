@@ -16,6 +16,8 @@ order: 2
 
 ## API
 
+`备注：不支持使用modal.confirm/update....等方法，构建实际dom的Modal已满足项目需要，如需扩展该功能，后续再进行添加`
+
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | `[新增]`isMove | Modal 是否可移动拖拽 | boolean | false |  |

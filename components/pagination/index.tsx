@@ -14,13 +14,14 @@
  * */
 import React from 'react';
 import {Pagination} from "antd";
+import {PaginationProps} from 'antd/lib/pagination'
 import classNames from 'classnames'
 
-type PaginationProps = {
+interface SSPaginationProps extends PaginationProps {
   className: string
 }
 
-const SSPagination: React.FC<PaginationProps> = props => {
+const SSPagination: React.FC<SSPaginationProps> = props => {
   const {className, ...reset} = props
   return (
     <Pagination

@@ -14,7 +14,7 @@ title:
 Classic page layouts.
 
 ```jsx
-import { Alert, Icon } from 'ss-ui-library';
+import { Alert } from 'ss-ui-library';
 
 ReactDOM.render(
   <div className="example">

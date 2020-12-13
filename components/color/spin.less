@@ -1,0 +1,69 @@
+@import "varible";
+.ss-loading {
+  display: inline-block;
+  min-width:16px;
+  min-height: 16px;
+  animation: rotate 2s linear infinite;
+}
+.cir-loading {
+  stroke-width: 2;
+  animation: dash 2s linear infinite;
+  fill: none;
+}
+.ss-loading-box{
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  p{
+    margin-bottom: 0;
+    color: @c-white;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+  }
+}
+
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  10% {
+    stroke-dasharray: 20, 200;
+    stroke-dashoffset: 0;
+  }
+  20% {
+    stroke-dasharray: 40, 200;
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dasharray: 60, 200;
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dasharray: 80, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100, 200;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 200, 200;
+    stroke-dashoffset: -200;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
