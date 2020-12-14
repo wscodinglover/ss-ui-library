@@ -1,0 +1,41 @@
+@import 'varible';
+
+.ant-collapse.ss-collapse {
+  font-size: 12px;
+  background-color: @c-green-input;
+  border-color: @c-green-active;
+  border-radius: 2px;
+  & > .ant-collapse-item {
+    border-bottom-color: @c-green-active;
+    &.ant-collapse-item-active {
+      & > .ant-collapse-header {
+        color: @c-yellow-hover;
+      }
+    }
+    &.ant-collapse-item-disabled {
+      & > .ant-collapse-header {
+        color: @c-gray-hover;
+        background-color: @c-gray-basic;
+      }
+    }
+    & > .ant-collapse-header {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 30px;
+      color: @c-white;
+      font-size: 12px;
+      .ant-collapse-arrow {
+        left: 10px !important;
+      }
+    }
+  }
+  .ant-collapse-content {
+    color: @c-white;
+    background-color: @c-green-td;
+    border-top-color: @c-green-active;
+    .ant-collapse-content-box {
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+}

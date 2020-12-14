@@ -1,0 +1,98 @@
+@import 'varible';
+.ant-popover.ss-popover {
+  .ant-popover-content {
+    border: 1px solid @c-green-hover;
+    border-radius: 2px;
+    .ant-popover-inner {
+      background-color: @c-green-active;
+      border-radius: 2px;
+      &-content {
+        padding: 10px;
+        .ant-popover-message {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0;
+          color: @c-white;
+          font-size: 12px;
+          .anticon {
+            position: unset;
+          }
+          .icon-ss-item {
+            display: inline-block;
+            padding: 0 10px;
+            color: #de8e0b;
+            font-size: 24px;
+          }
+          &-title {
+            flex: 1;
+            width: 100%;
+            padding: 24px 10px;
+          }
+        }
+        .ant-popover-buttons {
+          margin-bottom: 0;
+          text-align: center;
+          .ant-btn {
+            &:first-of-type {
+              display: none;
+            }
+            &:last-of-type {
+              margin-left: 0;
+              padding: 0 18px;
+              color: @c-white;
+              font-size: 12px;
+              background-color: @c-green-basic;
+              border-color: @c-green-basic;
+              border-radius: 2px;
+              &:hover {
+                background-color: @c-green-hover;
+                border-color: @c-green-hover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.ant-popover-placement-top,
+  &.ant-popover-placement-topLeft,
+  &.ant-popover-placement-topRight {
+    & > .ant-popover-content {
+      & > .ant-popover-arrow {
+        border-right-color: @c-green-active;
+        border-bottom-color: @c-green-active;
+      }
+    }
+  }
+  &.ant-popover-placement-left,
+  &.ant-popover-placement-leftTop,
+  &.ant-popover-placement-leftBottom {
+    & > .ant-popover-content {
+      & > .ant-popover-arrow {
+        border-top-color: @c-green-active;
+        border-right-color: @c-green-active;
+      }
+    }
+  }
+  &.ant-popover-placement-bottom,
+  &.ant-popover-placement-bottomLeft,
+  &.ant-popover-placement-bottomRight {
+    & > .ant-popover-content {
+      & > .ant-popover-arrow {
+        border-top-color: @c-green-active;
+        border-left-color: @c-green-active;
+      }
+    }
+  }
+  &.ant-popover-placement-right,
+  &.ant-popover-placement-rightTop,
+  &.ant-popover-placement-rightBottom {
+    & > .ant-popover-content {
+      & > .ant-popover-arrow {
+        border-bottom-color: @c-green-active;
+        border-left-color: @c-green-active;
+      }
+    }
+  }
+}

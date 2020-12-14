@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 // 方向对应的class
 const placementObj = {
@@ -18,38 +18,29 @@ const placementObj = {
 };
 
 type PanelProps = {
-  className: string;
+  className?: string;
   placement: string;
-  animated: boolean;
-  defaultopen: number;
-  onBtnClick: any;
-  onOpen: any;
-  onClose: any;
+  animated?: boolean;
+  defaultopen?: number;
+  onBtnClick?: any;
+  onOpen?: any;
+  onClose?: any;
 };
-class DrawerPanel extends React.Component<PanelProps, any> {
-  // default value
+
+class DrawerPanel extends React.PureComponent<PanelProps, any> {
   static defaultProps = {
     animated: false,
     // 0: false 1: true
     defaultopen: 1,
     placement: 'bottom',
   };
-  //
-  // // 类型检测
-  // static propTypes = {
-  //   // 自定义class
-  //   className: PropTypes.string,
-  //   placement: PropTypes.string,
-  //   animated: PropTypes.bool,
-  //   defaultopen: PropTypes.number
-  // }
 
   state = {
     open: Boolean(this.props.defaultopen),
     allowIconStr: '',
   };
 
-  placementPadClass() {
+  placementPadClass = () => {
     const { placement } = this.props;
     let placeClass: any;
     if (placement.startsWith('top')) {
@@ -68,56 +59,64 @@ class DrawerPanel extends React.Component<PanelProps, any> {
       pad: `pad-${placeClass}`,
       place: ['top', 'bottom'].includes(placeClass) ? 'row' : 'col',
     };
-  }
+  };
 
-  // 切换显示内容区域
-  toggleContent(onBtnClick: any, onOpen: any, onClose: any) {
-    const { open } = this.state;
+  /**
+   * 切换显示内容区域
+   *
+   * */
+  toggleContent = () => {
+    const openStatus = this.state.open;
+    const { onBtnClick, onOpen, onClose } = this.props;
     this.setState(
       {
-        open: !open,
+        open: !openStatus,
       },
       () => {
-        // eslint-disable-next-line no-shadow
         const { open } = this.state;
-        // eslint-disable-next-line no-unused-expressions
-        onBtnClick && onBtnClick(open, this);
+        if (onBtnClick) {
+          onBtnClick(open);
+        }
         // 显示后的回调
-        if (open) {
-          // eslint-disable-next-line no-unused-expressions
-          onOpen && onOpen(this);
-        } else {
-          // eslint-disable-next-line no-unused-expressions
-          onClose && onClose(this);
+        if (open && onOpen) {
+          onOpen(this);
+        }
+        if (open && onClose) {
+          onClose(this);
         }
         this.allowIcon();
       },
     );
-  }
+  };
 
-  // 箭头icon方向判别
-  allowIcon() {
-    if (this.props.placement.startsWith('top')) {
+  /**
+   * 箭头icon方向判别
+   *
+   * */
+  allowIcon = () => {
+    const { open } = this.state;
+    const { placement } = this.props;
+    if (placement.startsWith('top')) {
       this.setState({
-        allowIconStr: this.state.open ? '&#xe82f;' : '&#xe795;',
+        allowIconStr: open ? '&#xe82f;' : '&#xe795;',
       });
     }
-    if (this.props.placement.startsWith('bottom')) {
+    if (placement.startsWith('bottom')) {
       this.setState({
-        allowIconStr: this.state.open ? '&#xe795;' : '&#xe82f;',
+        allowIconStr: open ? '&#xe795;' : '&#xe82f;',
       });
     }
-    if (this.props.placement.startsWith('left')) {
+    if (placement.startsWith('left')) {
       this.setState({
-        allowIconStr: this.state.open ? '&#xe7cc;' : '&#xe803;',
+        allowIconStr: open ? '&#xe7cc;' : '&#xe803;',
       });
     }
-    if (this.props.placement.startsWith('right')) {
+    if (placement.startsWith('right')) {
       this.setState({
-        allowIconStr: this.state.open ? '&#xe803;' : '&#xe7cc;',
+        allowIconStr: open ? '&#xe803;' : '&#xe7cc;',
       });
     }
-  }
+  };
 
   componentDidMount() {
     // 初始化判别方向icon
@@ -125,48 +124,41 @@ class DrawerPanel extends React.Component<PanelProps, any> {
   }
 
   render() {
-    const {
-      className,
-      children,
-      placement,
-      animated,
-      onBtnClick,
-      onOpen,
-      onClose,
-      ...reset
-    } = this.props;
+    const { open, allowIconStr } = this.state;
+    const { className, placement, animated, children, ...reset } = this.props;
+
     // 内容区域的class定义规则
-    let contentAnimateClass = '';
+    let contentAnimateClass: string = '';
     if (animated) {
-      contentAnimateClass = this.state.open ? 'slide-open' : 'slide-close';
+      contentAnimateClass = open ? 'slide-open' : 'slide-close';
     } else {
-      contentAnimateClass = this.state.open ? 'open' : 'close';
+      contentAnimateClass = open ? 'open' : 'close';
     }
 
+    const DrawerPanelProps = {
+      className: classnames(
+        'ss-drawer-panel',
+        `ss-drawer-panel-${this.placementPadClass().place}`,
+        `ss-drawer-panel-${this.placementPadClass().pad}`,
+        { 'ss-drawer-panel-hide': !open },
+        className,
+      ),
+      ...reset,
+    };
+
+    const DrawerPanelBtnProps = {
+      className: classnames(
+        'ss-drawer-panel-btn',
+        `ss-drawer-panel-btn-${placementObj[placement]}`,
+      ),
+      onClick: this.toggleContent,
+    };
     return (
-      <div
-        className={classNames(
-          className,
-          'ss-drawer-panel',
-          `ss-drawer-panel-${this.placementPadClass().place}`,
-          `ss-drawer-panel-${this.placementPadClass().pad}`,
-          { 'ss-drawer-panel-hide': !this.state.open },
-        )}
-        {...reset}
-      >
-        <div
-          className={classNames(
-            'ss-drawer-panel-btn',
-            `ss-drawer-panel-btn-${placementObj[placement]}`,
-          )}
-          onClick={this.toggleContent.bind(this, onBtnClick, onOpen, onClose)}
-        >
-          <span
-            className="sumscope-icon"
-            dangerouslySetInnerHTML={{ __html: this.state.allowIconStr }}
-          />
+      <div {...DrawerPanelProps}>
+        <div {...DrawerPanelBtnProps}>
+          <span className="sumscope-icon" dangerouslySetInnerHTML={{ __html: allowIconStr }} />
         </div>
-        <div className={classNames('ss-drawer-panel-content', contentAnimateClass)}>{children}</div>
+        <div className={classnames('ss-drawer-panel-content', contentAnimateClass)}>{children}</div>
       </div>
     );
   }

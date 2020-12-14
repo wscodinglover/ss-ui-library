@@ -14,14 +14,11 @@ yarn add ss-ui-library
 
 ## 🔨 Usage
 
-```jsx
-import { Star } from 'ss-ui-library';
+````jsx
+import { Button } from 'ss-ui-library';
 
 const App = () => (
-  <>
-    <Star />
-    <span>name</span>
-  </>
+  <Button type='primary' basic>test btn</Button>
 );
 ```
 
@@ -32,3 +29,4 @@ import 'ss-ui-library/dist/ss-ui-library.css'; // or 'ss-ui-library/dist/ss-ui-l
 ```
 
 Or use [babel-plugin-import](https://ant.design/docs/react/getting-started#Import-on-Demand).
+````

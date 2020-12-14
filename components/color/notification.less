@@ -1,0 +1,30 @@
+@import 'varible';
+
+.ant-notification {
+  width: auto;
+  color: @c-white;
+}
+.ant-notification-notice.ss-notification {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: @c-green-active;
+  border: 1px solid @c-green-hover;
+  border-radius: 2px;
+  .ant-notification-notice-content {
+    .ant-notification-notice-message {
+      margin-bottom: 0;
+      padding-right: 10px;
+      color: @c-white;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .ant-notification-notice-description {
+      font-size: 12px;
+    }
+  }
+  .ant-notification-notice-close {
+    top: 10px;
+    right: 10px;
+    color: @c-white;
+  }
+}

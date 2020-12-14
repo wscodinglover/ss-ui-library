@@ -1,64 +1,65 @@
-@import "../../style/var/variable";
-
-.ss-popconfirm.ant-popover{
-  .ant-popover-inner {
-    background: @basic_color;
-    border: 1px solid @basic_hover;
-    max-width: 300px;
-    .ant-popover-inner-content {
-      padding: 8px 16px;
-    }
-    .ant-popover-message{
-      color: @color_basic;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      padding-top: 8px;
-      padding-bottom: 16px;
-      .sumscope-icon{
-        font-size: 24px;
-        color: @color_yellow;
-        display: block;
-        width: 80px;
-        text-align: center;
-      }
-      .ant-popover-message-title{
-        padding: 0 10px;
-      }
-    }
-    .ant-popover-buttons{
-      text-align: center;
-      margin-bottom: 0;
-      button:first-child {
-        display: none;
-      }
-      button:last-child {
-        min-width: 80px;
-        height: 22px;
-        margin-left: 0;
-        font-size: 12px;
-        color: @color_basic;
-        background: @basic_light;
-        border: 0;
-        &:hover {
-          background: @basic_hover;
-        }
-      }
-    }
-  }
-  .ant-popover-content .ant-popover-arrow{
-    border-right-color: @basic_hover;
-    border-bottom-color: @basic_hover;
-    z-index: 0;
-    &:before {
-      content: '';
-      position: absolute;
-      top: -5.5px;
-      left: -5px;
-      width: 8px;
-      height: 8px;
-      z-index: 10;
-      background: @basic_color;
-    }
-  }
-}
+@import '../../color/popover';
+//@import "../../style/var/variable";
+//
+//.ss-popconfirm.ant-popover{
+//  .ant-popover-inner {
+//    background: @basic_color;
+//    border: 1px solid @basic_hover;
+//    max-width: 300px;
+//    .ant-popover-inner-content {
+//      padding: 8px 16px;
+//    }
+//    .ant-popover-message{
+//      color: @color_basic;
+//      font-size: 12px;
+//      display: flex;
+//      align-items: center;
+//      padding-top: 8px;
+//      padding-bottom: 16px;
+//      .sumscope-icon{
+//        font-size: 24px;
+//        color: @color_yellow;
+//        display: block;
+//        width: 80px;
+//        text-align: center;
+//      }
+//      .ant-popover-message-title{
+//        padding: 0 10px;
+//      }
+//    }
+//    .ant-popover-buttons{
+//      text-align: center;
+//      margin-bottom: 0;
+//      button:first-child {
+//        display: none;
+//      }
+//      button:last-child {
+//        min-width: 80px;
+//        height: 22px;
+//        margin-left: 0;
+//        font-size: 12px;
+//        color: @color_basic;
+//        background: @basic_light;
+//        border: 0;
+//        &:hover {
+//          background: @basic_hover;
+//        }
+//      }
+//    }
+//  }
+//  .ant-popover-content .ant-popover-arrow{
+//    border-right-color: @basic_hover;
+//    border-bottom-color: @basic_hover;
+//    z-index: 0;
+//    &:before {
+//      content: '';
+//      position: absolute;
+//      top: -5.5px;
+//      left: -5px;
+//      width: 8px;
+//      height: 8px;
+//      z-index: 10;
+//      background: @basic_color;
+//    }
+//  }
+//}

@@ -71,6 +71,11 @@ export { default as Pagination } from './pagination';
  * */
 export { default as CheckBox } from './checkbox';
 
+/**
+ * @moduleName Collapse 折叠面板
+ * @catalog 数据展示组件
+ * */
+export { default as Collapse } from './collapse/index';
 
 /**
  * @moduleName Alert 警告提示
@@ -85,20 +90,34 @@ export { default as Alert } from './alert';
 export { default as Modal } from './modal';
 
 /**
+ * @moduleName message 全局提示
+ * @catalog 反馈组件
+ * */
+export { default as message } from './message';
+
+/**
+ * @moduleName notification 通知提醒框
+ * @catalog 反馈组件
+ * */
+export { default as notification } from './notification';
+
+/**
+ * @moduleName Popconfirm 气泡确认框
+ * @catalog 反馈组件
+ * */
+export { default as Popconfirm } from './popconfirm';
+
+/**
  * @moduleName Spin 加载中
  * @catalog 反馈组件
  * */
 export { default as Spin } from './spin';
-
-
 
 /**
  * @moduleName ConfigProvider 全局化配置
  * @catalog 其他
  * */
 export { default as ConfigProvider } from './config-provider';
-
-export { default as Star } from './star';
 
 export { default as version } from './version';
 
@@ -110,13 +129,9 @@ export { default as DatePicker } from './date-picker';
 
 export { default as DrawerPanel } from './drawer-panel/index';
 
-export { default as Collapse } from './collapse/index';
-
 export { default as Input } from './input/index';
 
 export { default as Radio } from './radio';
-
-export { default as Popconfirm } from './popconfirm';
 
 export { default as Slider } from './slider';
 
@@ -151,13 +166,6 @@ export { default as RadarChart } from './echarts-radar';
 export { default as PieChart } from './echarts-pie';
 
 export { default as CandlestickChart } from './echarts-candlestick';
-
-/*
- * 方法
- * */
-export { default as notification } from './notification';
-
-export { default as message } from './message';
 
 export { default as Observer } from './observer';
 

@@ -16,24 +16,29 @@ title:
 ```jsx
 import { Button, notification } from 'ss-ui-library';
 
-const openNotification = (placement) => {
-  notification({
+const openNotification = placement => {
+  notification.open({
     message: 'Notification Title',
     description:
       'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-    placement
+    placement,
   });
 };
 
 ReactDOM.render(
   <>
-    <Button type="primary" yellow onClick={() => openNotification('topLeft')}>topLeft</Button>
-    <br/>
-    <Button type="primary" yellow onClick={() => openNotification('topRight')}>topRight</Button>
-    <br/>
-    <Button type="primary" yellow onClick={() => openNotification('bottomLeft')}>bottomLeft</Button>
-    <br/>
-    <Button type="primary" yellow onClick={() => openNotification('bottomRight')}>bottomRight</Button>
+    <Button type="primary" basic onClick={() => openNotification('topLeft')}>
+      topLeft
+    </Button>
+    <Button type="primary" basic onClick={() => openNotification('topRight')}>
+      topRight
+    </Button>
+    <Button type="primary" basic onClick={() => openNotification('bottomLeft')}>
+      bottomLeft
+    </Button>
+    <Button type="primary" basic onClick={() => openNotification('bottomRight')}>
+      bottomRight
+    </Button>
   </>,
   mountNode,
 );

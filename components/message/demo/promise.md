@@ -24,7 +24,7 @@ const success = () => {
 };
 
 ReactDOM.render(
-  <Button type="primary" yellow onClick={success}>
+  <Button type="primary" basic onClick={success}>
     Display sequential messages
   </Button>,
   mountNode,

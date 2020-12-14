@@ -26,7 +26,7 @@ const openMessage = () => {
 };
 
 ReactDOM.render(
-  <Button type="primary" yellow onClick={openMessage}>
+  <Button type="primary" basic onClick={openMessage}>
     Open the message box
   </Button>,
   mountNode,

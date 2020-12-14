@@ -15,13 +15,12 @@ yarn add ss-ui-library
 ## 🔨 示例
 
 ````jsx
-import { Star } from 'ss-ui-library';
+import { Button } from 'ss-ui-library';
 
 const App = () => (
-  <>
-    <Star/><span>姓名</span>
-  </>
+  <Button type='primary' basic>test btn</Button>
 );
+```
 
 引入样式：
 

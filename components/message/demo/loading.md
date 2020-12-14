@@ -20,12 +20,12 @@ const info = () => {
   const config = {
     content: 'This is test text',
     duration: 0,
-  }
+  };
   message.loading(config);
 };
 
 ReactDOM.render(
-  <Button type="primary" yellow onClick={info}>
+  <Button type="primary" basic onClick={info}>
     loading
   </Button>,
   mountNode,

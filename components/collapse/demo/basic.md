@@ -16,7 +16,7 @@ title:
 ```jsx
 import { Collapse } from 'ss-ui-library';
 
-const {Panel} = Collapse;
+const { Panel } = Collapse;
 
 function callback(key) {
   console.log(key);
@@ -29,18 +29,26 @@ const text = `
 `;
 
 ReactDOM.render(
-  <>
+  <div className="example">
     <Collapse defaultActiveKey={['1']} onChange={callback}>
-        <Panel header="This is panel header 1" key="1">
-          <p>{text}</p>
-        </Panel>
-        <Panel header="This is panel header 2" key="2">
-          <p>{text}</p>
-        </Panel>
-        <Panel header="This is panel header 3" key="3" disabled>
-          <p>{text}</p>
-        </Panel>
+      <Panel header="This is panel header 1" key="1">
+        <p>{text}</p>
+      </Panel>
+      <Panel header="This is panel header 2" key="2">
+        <p>{text}</p>
+      </Panel>
+      <Panel header="This is panel header 3" key="3" disabled>
+        <p>{text}</p>
+      </Panel>
     </Collapse>
-  </>
-, mountNode);
+  </div>,
+  mountNode,
+);
+```
+
+```css
+.example {
+  padding: 20px;
+  background: #1e1e1e;
+}
 ```

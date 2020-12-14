@@ -14,24 +14,24 @@
  * ##################################################################
  * */
 
-import React from 'react'
-import {Modal} from 'antd'
-import {ModalProps} from 'antd/lib/modal'
+import React from 'react';
+import { Modal } from 'antd';
+import { ModalProps } from 'antd/lib/modal';
 import Button from 'ss-ui-library/es/button';
 // @ts-ignore
 import DragM from 'dragm';
-import classnames from 'classnames'
+import classnames from 'classnames';
 
-interface SSModalProps extends ModalProps{
-  classNmae?: string,
-  wrapClassName?: string,
-  isMove?: boolean,
-  moveKey?: string,
-  maskNotUse?: string,
-  afterClose?: any
+interface SSModalProps extends ModalProps {
+  classNmae?: string;
+  wrapClassName?: string;
+  isMove?: boolean;
+  moveKey?: string;
+  maskNotUse?: string;
+  afterClose?: any;
 }
 
-class BuildTitle  extends React.PureComponent<SSModalProps, any> {
+class BuildTitle extends React.PureComponent<SSModalProps, any> {
   private modalDom: React.ReactNode | null;
 
   constructor(props: any) {
@@ -77,7 +77,7 @@ class BuildTitle  extends React.PureComponent<SSModalProps, any> {
   };
 
   render() {
-    const {title, isMove, moveKey} = this.props;
+    const { title, isMove, moveKey } = this.props;
     return isMove && moveKey && moveKey !== '' ? (
       <DragM updateTransform={this.updateTransform}>
         <div>{title}</div>
@@ -90,9 +90,8 @@ class BuildTitle  extends React.PureComponent<SSModalProps, any> {
 
 class SSModal extends React.PureComponent<SSModalProps, any> {
   constructor(props: SSModalProps) {
-    super(props)
-    this.state = {
-    }
+    super(props);
+    this.state = {};
   }
 
   /**
@@ -101,59 +100,65 @@ class SSModal extends React.PureComponent<SSModalProps, any> {
    *
    * */
   private defaultFooterRender = () => {
-    const {onOk, onCancel, confirmLoading} = this.props;
+    const { onOk, onCancel, confirmLoading } = this.props;
 
     return (
       <>
-        <Button
-          type='primary'
-          gray
-          onClick={onCancel}
-        >
+        <Button type="primary" gray onClick={onCancel}>
           取消
         </Button>
-        <Button
-          type='primary'
-          basic
-          loading={confirmLoading}
-          onClick={onOk}
-        >
+        <Button type="primary" basic loading={confirmLoading} onClick={onOk}>
           确定
         </Button>
       </>
-    )
-  }
+    );
+  };
 
-    AfterClose = (callback: any, isMove?: boolean, moveKey?: string) => {
+  AfterClose = (callback: any, isMove?: boolean, moveKey?: string) => {
+    if (isMove) {
       // eslint-disable-next-line no-useless-catch
-      if (isMove) {
-        try {
-          const moveKeyClass = `ss-modal-movekey-${moveKey}`;
-          const Node = document.getElementsByClassName(moveKeyClass);
-          if (Node[0]) {
-            setTimeout(() => {
-              // @ts-ignore
-              Node[0].style.transform = 'translate(0px, 0px)';
-            }, 300);
-          }
-          if (callback) {
-            callback();
-          }
-        } catch (e) {
-          throw e;
+      try {
+        const moveKeyClass = `ss-modal-movekey-${moveKey}`;
+        const Node = document.getElementsByClassName(moveKeyClass);
+        if (Node[0]) {
+          setTimeout(() => {
+            // @ts-ignore
+            Node[0].style.transform = 'translate(0px, 0px)';
+          }, 300);
         }
-      } else {
         if (callback) {
           callback();
         }
+      } catch (e) {
+        throw e;
       }
-    };
+    } else if (callback) {
+      callback();
+    }
+  };
 
   public render() {
-    const {className, wrapClassName, footer, title, isMove, moveKey, maskNotUse, width, afterClose, children, ...reset} = this.props;
-    const moveKeyClassName = isMove && moveKey && moveKey !== '' ? `ss-modal-movekey-${moveKey}` : '';
+    const {
+      className,
+      wrapClassName,
+      footer,
+      title,
+      isMove,
+      moveKey,
+      maskNotUse,
+      width,
+      afterClose,
+      children,
+      ...reset
+    } = this.props;
+    const moveKeyClassName =
+      isMove && moveKey && moveKey !== '' ? `ss-modal-movekey-${moveKey}` : '';
     const TitleParams = {
-      title, isMove, moveKey, maskNotUse, width
+      title,
+      isMove,
+      moveKey,
+      maskNotUse,
+      width,
     };
     const ModalParams = {
       className: classnames('ss-modal', className),
@@ -162,15 +167,13 @@ class SSModal extends React.PureComponent<SSModalProps, any> {
       title: <BuildTitle {...TitleParams} />,
       destroyOnClose: true,
       afterClose: this.AfterClose(afterClose, isMove, moveKey),
-      ...reset
-    }
+      ...reset,
+    };
     return (
       // @ts-ignore
-      <Modal {...ModalParams}>
-        {children}
-      </Modal>
-    )
+      <Modal {...ModalParams}>{children}</Modal>
+    );
   }
 }
 
-export default SSModal
+export default SSModal;

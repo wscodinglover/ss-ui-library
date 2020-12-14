@@ -1,4 +1,4 @@
-import {message} from 'antd';
+import { message } from 'antd';
 
-const SS_Message = message;
-export default SS_Message;
+const SSMessage = message;
+export default SSMessage;

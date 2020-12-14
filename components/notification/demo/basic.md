@@ -17,7 +17,7 @@ title:
 import { Button, notification } from 'ss-ui-library';
 
 const openNotification = () => {
-  notification({
+  notification.open({
     message: 'Notification Title',
     description:
       'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
@@ -26,7 +26,9 @@ const openNotification = () => {
 
 ReactDOM.render(
   <>
-    <Button type="primary" yellow onClick={openNotification}>Open the notification box</Button>
+    <Button type="primary" basic onClick={openNotification}>
+      Open the notification box
+    </Button>
   </>,
   mountNode,
 );
