@@ -66,8 +66,13 @@ $ yarn add ss-ui-library
 ## 示例
 
 ```jsx
-import { Star } from 'ss-ui-library';
-ReactDOM.render(<div><Star/><span>姓名</span><div/>, mountNode);
+import { Button } from 'ss-ui-library';
+ReactDOM.render(
+  <Button type="primary" basic>
+    test btn
+  </Button>,
+  mountNode,
+);
 ```
 
 引入样式：
@@ -84,30 +89,30 @@ import 'ss-ui-library/dist/ss-ui-library.css'; // or 'ss-ui-library/dist/ss-ui-l
 
 - 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)（推荐）。
 
-  ```js
-  // .babelrc or babel-loader option
-  {
+```js
+// .babelrc or babel-loader option
+{
     "plugins": [
-      ["import", {
-        "libraryName": "ss-ui-library",
-        "libraryDirectory": "es",
-        "style": "css" // `style: true` 会加载 less 文件
-      }]
+          ["import", {
+            "libraryName": "ss-ui-library",
+            "libraryDirectory": "es",
+            "style": "css" // `style: true` 会加载 less 文件
+          }]
     ]
-  }
-  ```
+}
+```
 
-  然后只需从 ss-ui-library 引入模块即可，无需单独引入样式。等同于下面手动引入的方式。
+然后只需从 ss-ui-library 引入模块即可，无需单独引入样式。等同于下面手动引入的方式。
 
-  ```jsx
-  // babel-plugin-import 会帮助你加载 JS 和 CSS
-  import { Star } from 'ss-ui-library';
-  ```
+```jsx
+// babel-plugin-import 会帮助你加载 JS 和 CSS
+import { Button } from 'ss-ui-library';
+```
 
 - 手动引入
 
   ```jsx
-  import Star from 'ss-ui-library/es/star'; // 加载 JS
-  import 'ss-ui-library/es/star/style/css'; // 加载 CSS
-  // import 'ss-ui-library/es/star/style';         // 加载 LESS
+  import Button from 'ss-ui-library/es/button'; // 加载 JS
+  import 'ss-ui-library/es/button/style/css'; // 加载 CSS
+  // import 'ss-ui-library/es/button/style';         // 加载 LESS
   ```

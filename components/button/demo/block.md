@@ -18,10 +18,18 @@ import { Button } from 'ss-ui-library';
 
 ReactDOM.render(
   <>
-    <Button type="primary" basic block>Test Button</Button>
-    <Button type="primary" yellow block>Test Button</Button>
-    <Button type="primary" error block>Test Button</Button>
-    <Button type="primary" gray block>Test Button</Button>
+    <Button type="primary" basic block>
+      测试按钮
+    </Button>
+    <Button type="primary" yellow block>
+      测试按钮
+    </Button>
+    <Button type="primary" error block>
+      测试按钮
+    </Button>
+    <Button type="primary" gray block>
+      测试按钮
+    </Button>
   </>,
   mountNode,
 );

@@ -18,7 +18,8 @@
     "skipLibCheck": true,
     "allowJs": true,
     "checkJs": false,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "removeComments": false
   },
   "exclude": ["node_modules", "lib", "es", "components/**/*.js", "components/**/*.jsx"]
 }
