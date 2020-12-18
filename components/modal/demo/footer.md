@@ -52,7 +52,7 @@ class Demo extends React.Component {
   public render () {
     return (
       <div>
-          <Button type="primary" yellow onClick={this.showModal}>
+          <Button type="primary" basic onClick={this.showModal}>
             Open Modal
           </Button>
           <Modal

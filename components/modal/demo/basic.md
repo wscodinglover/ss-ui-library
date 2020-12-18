@@ -39,30 +39,31 @@ class Demo extends React.Component {
     });
   };
 
-  render () {
+  render() {
     return (
       <div>
-          <Button type="primary" yellow onClick={this.showModal}>
-            Open Modal
-          </Button>
-          <Modal
-              title="Basic Modal"
-              visible={this.state.visible}
-              onOk={this.handleOk}
-              onCancel={this.handleCancel}
-          >
-              <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
-              <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
-              <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
-          </Modal>
+        <Button type="primary" basic onClick={this.showModal}>
+          Open Modal
+        </Button>
+        <Modal
+          title="Basic Modal"
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+        >
+          <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
+          <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
+          <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
+        </Modal>
       </div>
-    )
+    );
   }
 }
 
 ReactDOM.render(
   <>
-    <Demo/>
-  </>
-, mountNode);
+    <Demo />
+  </>,
+  mountNode,
+);
 ```

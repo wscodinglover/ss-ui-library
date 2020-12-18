@@ -53,7 +53,7 @@ class Demo extends React.Component {
     const { visible, confirmLoading, ModalText } = this.state;
     return (
       <div>
-        <Button type="primary" yellow onClick={this.showModal}>
+        <Button type="primary" basic onClick={this.showModal}>
           Open Modal with async logic
         </Button>
         <Modal
