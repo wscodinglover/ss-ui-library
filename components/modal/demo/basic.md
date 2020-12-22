@@ -50,6 +50,7 @@ class Demo extends React.Component {
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
+          footer={null}
         >
           <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>
           <div>「语雀」是一个「专业的云端知识库」，孵化自 蚂蚁金服 。</div>

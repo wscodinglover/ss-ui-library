@@ -160,10 +160,15 @@ class SSModal extends React.PureComponent<SSModalProps, any> {
       maskNotUse,
       width,
     };
+    let Footer: any = footer || this.defaultFooterRender();
+    if (footer === null) {
+      Footer = null;
+    }
     const ModalParams = {
       className: classnames('ss-modal', className),
       wrapClassName: classnames('ss-modal-wrapper', moveKeyClassName, wrapClassName),
-      footer: footer || this.defaultFooterRender(),
+      // eslint-disable-next-line no-nested-ternary
+      footer: Footer,
       title: <BuildTitle {...TitleParams} />,
       destroyOnClose: true,
       afterClose: this.AfterClose(afterClose, isMove, moveKey),

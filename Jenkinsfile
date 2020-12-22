@@ -18,35 +18,9 @@ pipeline {
     post {
         success {
             echo "'${env.JOB_NAME} [${env.BUILD_NUMBER}]' 构建成功"
-            emailext (
-                subject: "'${env.JOB_NAME} [${env.BUILD_NUMBER}]' 构建成功",
-                body: """
-                详情：
-                SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'
-                状态：${env.JOB_NAME} jenkins 更新运行正常
-                URL ：${env.BUILD_URL}
-                项目名称 ：${env.JOB_NAME}
-                项目更新进度：${env.BUILD_NUMBER}
-                """,
-                to: "1078624522@qq.com",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-            )
         }
         failure {
             echo "'${env.JOB_NAME} [${env.BUILD_NUMBER}]' 构建失败"
-            emailext (
-                subject: "'${env.JOB_NAME} [${env.BUILD_NUMBER}]' 构建失败",
-                body: """
-                详情：
-                SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'
-                状态：${env.JOB_NAME} jenkins 运行失败
-                URL ：${env.BUILD_URL}
-                项目名称 ：${env.JOB_NAME}
-                项目更新进度：${env.BUILD_NUMBER}
-                """,
-                to: "1078624522@qq.com",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-            )
         }
     }
 }
