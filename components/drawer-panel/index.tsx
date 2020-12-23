@@ -125,7 +125,7 @@ class DrawerPanel extends React.PureComponent<PanelProps, any> {
 
   render() {
     const { open, allowIconStr } = this.state;
-    const { className, placement, animated, children, ...reset } = this.props;
+    const { className, placement, animated, children } = this.props;
 
     // 内容区域的class定义规则
     let contentAnimateClass: string = '';
@@ -143,7 +143,6 @@ class DrawerPanel extends React.PureComponent<PanelProps, any> {
         { 'ss-drawer-panel-hide': !open },
         className,
       ),
-      ...reset,
     };
 
     const DrawerPanelBtnProps = {
