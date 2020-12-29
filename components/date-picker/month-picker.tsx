@@ -1,11 +1,11 @@
 import React from 'react';
-import AntDatePicker from 'antd/lib/date-picker';
+import { DatePicker } from 'antd';
 import { MonthPickerProps } from 'antd/es/date-picker/interface';
 import classnames from 'classnames';
 import moment from 'moment';
 import SSIcon from 'ss-ui-library/es/icon';
 
-const MonthPicker = AntDatePicker.MonthPicker;
+const MonthPicker = DatePicker.MonthPicker;
 
 class SSMonthPicker extends React.PureComponent<MonthPickerProps, any> {
   constructor(props: MonthPickerProps) {

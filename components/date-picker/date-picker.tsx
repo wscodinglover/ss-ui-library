@@ -1,5 +1,5 @@
 import React from 'react';
-import AntDatePicker from 'antd/lib/date-picker';
+import { DatePicker } from 'antd';
 import { DatePickerDecorator } from 'antd/lib/date-picker/interface';
 import classnames from 'classnames';
 import moment from 'moment';
@@ -8,9 +8,9 @@ import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
 
-const AntMonthPicker = AntDatePicker.MonthPicker;
-const AntWeekPicker = AntDatePicker.WeekPicker;
-const AntRangePicker = AntDatePicker.RangePicker;
+const AntMonthPicker = DatePicker.MonthPicker;
+const AntWeekPicker = DatePicker.WeekPicker;
+const AntRangePicker = DatePicker.RangePicker;
 
 interface SSDatePickerProps extends DatePickerDecorator {
   className?: string;
@@ -138,7 +138,7 @@ class SSDatePicker extends React.PureComponent<SSDatePickerProps, any> {
     let reactNode: React.ComponentProps<any>;
     switch (picker) {
       case 'date':
-        reactNode = <AntDatePicker {...shareParams} {...datePickerParams} />;
+        reactNode = <DatePicker {...shareParams} {...datePickerParams} />;
         break;
       case 'month':
         reactNode = <AntMonthPicker {...shareParams} {...monthPickerParams} />;
@@ -150,7 +150,7 @@ class SSDatePicker extends React.PureComponent<SSDatePickerProps, any> {
         reactNode = <AntRangePicker {...shareParams} {...rangePickerParams} />;
         break;
       default:
-        reactNode = <AntDatePicker {...shareParams} {...datePickerParams} />;
+        reactNode = <DatePicker {...shareParams} {...datePickerParams} />;
         break;
     }
     return reactNode;

@@ -1,11 +1,11 @@
 import React from 'react';
-import AntDatePicker from 'antd/lib/date-picker';
+import { DatePicker } from 'antd';
 import { WeekPickerProps } from 'antd/es/date-picker/interface';
 import classnames from 'classnames';
 import moment from 'moment';
 import SSIcon from 'ss-ui-library/es/icon';
 
-const WeekPicker = AntDatePicker.WeekPicker;
+const WeekPicker = DatePicker.WeekPicker;
 
 class SSWeekPicker extends React.PureComponent<WeekPickerProps, any> {
   constructor(props: WeekPickerProps) {

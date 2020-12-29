@@ -1,11 +1,11 @@
 import React from 'react';
-import AntDatePicker from 'antd/lib/date-picker';
+import { DatePicker } from 'antd';
 import { RangePickerProps } from 'antd/es/date-picker/interface';
 import classnames from 'classnames';
 import moment from 'moment';
 import SSIcon from 'ss-ui-library/es/icon';
 
-const RangePicker = AntDatePicker.RangePicker;
+const RangePicker = DatePicker.RangePicker;
 
 class SSRangePicker extends React.PureComponent<RangePickerProps, any> {
   constructor(props: RangePickerProps) {

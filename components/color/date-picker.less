@@ -1,5 +1,5 @@
 @import 'varible';
-.ant-calendar-picker.ss-calendar-picker {
+.ant-calendar-picker {
   color: @c-white;
   font-size: 12px;
   &:focus {
@@ -13,7 +13,9 @@
   }
   &:hover {
     .ant-input {
-      border-color: @c-yellow-basic;
+      &.ant-calendar-picker-input:not(.ant-input-disabled) {
+        border-color: @c-yellow-basic;
+      }
       &-disabled {
         border-color: @c-gray-basic;
       }
@@ -98,7 +100,7 @@
   }
 }
 
-.ss-calendar-picker-container.ant-calendar-picker-container {
+.ant-calendar-picker-container {
   display: block;
   color: @c-gray-hover;
   .ant-calendar {
@@ -120,8 +122,6 @@
       }
     }
     .ant-calendar-cell {
-      height: 24px;
-      padding: 0;
       &.ant-calendar-disabled-cell {
         &.ant-calendar-selected-day {
           .ant-calendar-date {
@@ -210,7 +210,6 @@
         .ant-calendar-time-picker-inner {
           background: @c-green-active;
           .ant-calendar-time-picker-select {
-            height: 174px;
             font-size: 12px;
             border-color: @c-green-basic;
             ul {
@@ -567,11 +566,5 @@
     .ant-calendar-body {
       border-top-color: @c-green-basic;
     }
-  }
-
-  .ant-calendar-range .ant-calendar-decade-panel-table,
-  .ant-calendar-range .ant-calendar-year-panel-table,
-  .ant-calendar-range .ant-calendar-month-panel-table {
-    height: 174px;
   }
 }
