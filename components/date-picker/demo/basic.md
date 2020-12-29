@@ -9,12 +9,17 @@ title:
 
 最简单的用法，在浮层中可以选择或者输入日期。
 
+两种使用方法，除了原本 antd 提供的方法，还封装了 `picker` 类型直接定义。
+
 ## en-US
 
 最简单的用法，在浮层中可以选择或者输入日期。
 
+两种使用方法，除了原本 antd 提供的方法，还封装了 `picker` 类型直接定义。
+
 ```jsx
 import { DatePicker } from 'ss-ui-library';
+const { MonthPicker, WeekPicker, RangePicker } = DatePicker;
 
 function onChange(date, dateString) {
   console.log(date, dateString);
@@ -22,23 +27,18 @@ function onChange(date, dateString) {
 
 ReactDOM.render(
   <div className="example">
+    <h4>DatePicker</h4>
     <DatePicker onChange={onChange} />
-    <br/>
-    <br/>
+    <h4>MonthPicker</h4>
     <DatePicker onChange={onChange} picker="month" />
-    <br/>
-    <br/>
+    <MonthPicker onChange={onChange} />
+    <h4>WeekPicker</h4>
     <DatePicker onChange={onChange} picker="week" />
-    <br/>
-    <br/>
+    <WeekPicker onChange={onChange} />
+    <h4>RangePicker</h4>
     <DatePicker onChange={onChange} picker="range" />
+    <RangePicker onChange={onChange} />
   </div>,
   mountNode,
 );
-```
-```css
-.example {
-    background: #1e1e1e;
-    padding: 20px;
-}
 ```

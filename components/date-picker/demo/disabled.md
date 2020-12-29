@@ -15,20 +15,16 @@ title:
 
 ```jsx
 import { DatePicker } from 'ss-ui-library';
+const { MonthPicker, WeekPicker } = DatePicker;
+
 import moment from 'moment';
 
 ReactDOM.render(
   <div className="example">
     <DatePicker disabled />
-    <br/>
-    <br/>
-    <DatePicker picker="month" defaultValue={moment('2015/01/01', 'YYYY/MM/DD')} disabled />
-    <br/>
-    <br/>
-    <DatePicker picker="week" disabled />
-    <br/>
-    <br/>
-    <DatePicker picker="range" disabled />
+    <DatePicker disabled picker="month" />
+    <DatePicker disabled picker="week" />
+    <DatePicker disabled picker="range" />
   </div>,
   mountNode,
 );

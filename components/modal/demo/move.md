@@ -49,18 +49,23 @@ class Demo extends React.Component {
         <Button type="primary" basic onClick={this.showModal}>
           Open Modal
         </Button>
-        <Modal
-          title="Basic Modal"
-          visible={this.state.visible}
-          isMove
-          moveKey="modal1"
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Modal>
+        {this.state.visible && (
+          <Modal
+            isMove
+            moveKey="modal1"
+            title="Basic Modal"
+            maskNotUse
+            mask={false}
+            maskClosable={false}
+            visible={this.state.visible}
+            onOk={this.handleOk}
+            onCancel={this.handleCancel}
+          >
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+          </Modal>
+        )}
       </div>
     );
   }

@@ -138,3 +138,17 @@ moment.locale('zh-cn');
 ## FAQ
 
 - [当我指定了 DatePicker/RangePicker 的 mode 属性后，点击后无法选择年份/月份？](/docs/react/faq#当我指定了-DatePicker/RangePicker-的-mode-属性后，点击后无法选择年份/月份？)
+
+<style>
+[id^="components-date-picker-demo-"] .example {
+  background: #1e1e1e;
+  padding: 20px;
+}
+[id^="components-date-picker-demo-"] .example h4 {
+  color: #fff;
+}
+[id^="components-date-picker-demo-"] .ant-calendar-picker {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+</style>

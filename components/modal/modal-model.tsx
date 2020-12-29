@@ -137,7 +137,7 @@ class SSModal extends React.PureComponent<SSModalProps, any> {
     }
   };
 
-  public render() {
+  render() {
     const {
       className,
       wrapClassName,

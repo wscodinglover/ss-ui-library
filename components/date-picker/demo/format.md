@@ -27,15 +27,8 @@ const monthDateFormat = 'MM/YYYY';
 ReactDOM.render(
   <div className="example">
     <DatePicker onChange={onChange} format={dateFormat} />
-    <br/>
-    <br/>
     <DatePicker onChange={onChange} picker="month" format={monthDateFormat} />
-    <br/>
-    <br/>
     <DatePicker onChange={onChange} picker="week" format={weekDateFormat} />
-    <br/>
-    <br/>
-    <DatePicker onChange={onChange} picker="range" format={dateFormat} />
   </div>,
   mountNode,
 );

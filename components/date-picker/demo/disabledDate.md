@@ -32,9 +32,3 @@ ReactDOM.render(
   mountNode,
 );
 ```
-```css
-.example {
-    background: #1e1e1e;
-    padding: 20px;
-}
-```
