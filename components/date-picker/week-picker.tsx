@@ -10,8 +10,9 @@ const WeekPicker = DatePicker.WeekPicker;
 class SSWeekPicker extends React.PureComponent<WeekPickerProps, any> {
   constructor(props: WeekPickerProps) {
     super(props);
+    const { defaultValue } = this.props;
     this.state = {
-      value: null,
+      value: defaultValue,
     };
   }
 

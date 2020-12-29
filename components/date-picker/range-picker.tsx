@@ -10,8 +10,9 @@ const RangePicker = DatePicker.RangePicker;
 class SSRangePicker extends React.PureComponent<RangePickerProps, any> {
   constructor(props: RangePickerProps) {
     super(props);
+    const { defaultValue } = this.props;
     this.state = {
-      value: null,
+      value: defaultValue,
     };
   }
 

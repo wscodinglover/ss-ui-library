@@ -21,6 +21,7 @@ interface SSDatePickerProps extends DatePickerDecorator {
   allowClear?: boolean;
   value?: any;
   onChange?: any;
+  defaultValue?: any;
 }
 
 class SSDatePicker extends React.PureComponent<SSDatePickerProps, any> {
@@ -32,8 +33,9 @@ class SSDatePicker extends React.PureComponent<SSDatePickerProps, any> {
 
   constructor(props: SSDatePickerProps) {
     super(props);
+    const { defaultValue } = this.props;
     this.state = {
-      value: null,
+      value: defaultValue,
     };
   }
 

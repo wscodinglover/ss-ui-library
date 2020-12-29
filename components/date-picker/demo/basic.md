@@ -19,6 +19,7 @@ title:
 
 ```jsx
 import { DatePicker } from 'ss-ui-library';
+import moment from 'moment';
 const { MonthPicker, WeekPicker, RangePicker } = DatePicker;
 
 function onChange(date, dateString) {
@@ -27,11 +28,15 @@ function onChange(date, dateString) {
 
 ReactDOM.render(
   <div className="example">
+    <h4>DatePicker</h4>
     <DatePicker onChange={onChange} />
+    <h4>DatePicker</h4>
     <DatePicker onChange={onChange} picker="month" />
     <MonthPicker onChange={onChange} />
+    <h4>MonthPicker</h4>
     <DatePicker onChange={onChange} picker="week" />
     <WeekPicker onChange={onChange} />
+    <h4>RangerPicker</h4>
     <DatePicker onChange={onChange} picker="range" />
     <RangePicker onChange={onChange} />
   </div>,

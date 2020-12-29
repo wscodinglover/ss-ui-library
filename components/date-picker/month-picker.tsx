@@ -10,8 +10,9 @@ const MonthPicker = DatePicker.MonthPicker;
 class SSMonthPicker extends React.PureComponent<MonthPickerProps, any> {
   constructor(props: MonthPickerProps) {
     super(props);
+    const { defaultValue } = this.props;
     this.state = {
-      value: null,
+      value: defaultValue,
     };
   }
 
