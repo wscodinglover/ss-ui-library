@@ -3,7 +3,7 @@ import AntDatePicker from 'antd/lib/date-picker';
 import { DatePickerDecorator } from 'antd/lib/date-picker/interface';
 import classnames from 'classnames';
 import moment from 'moment';
-import SSIcon from '../../lib/icon';
+import SSIcon from 'ss-ui-library/es/icon';
 import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
