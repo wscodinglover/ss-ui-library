@@ -1,0 +1,232 @@
+@import 'varible';
+@import 'radio';
+
+.ant-fullcalendar-fullscreen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.ss-fullcalendar-header-hidden {
+  .ant-fullcalendar-header {
+    display: none;
+  }
+}
+.ant-fullcalendar-header {
+  padding: 8px 0;
+  .ant-radio-group {
+    margin-left: 8px !important;
+    font-size: 12px;
+  }
+  .ant-select {
+    color: @c-white;
+    font-size: 12px;
+    .ant-select-selection {
+      background-color: @c-green-input;
+      border-color: @c-green-active;
+      border-radius: 2px;
+      &--single {
+        height: 22px;
+      }
+      .ant-select-selection__rendered {
+        margin-left: 4px;
+        margin-right: 16px;
+        line-height: 20px;
+      }
+      .ant-select-arrow {
+        right: 4px;
+        margin-top: -4px;
+        color: @c-white;
+        font-size: 9px;
+      }
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
+  .ant-select-dropdown-hidden {
+    //display: block;
+  }
+  .ant-select-dropdown {
+    color: @c-white;
+    background-color: @c-green-input;
+    border-radius: 2px;
+    .ant-select-dropdown-menu {
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background-color: @c-green-basic;
+      }
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: @c-green-basic;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: @c-green-active;
+      }
+      &-item {
+        padding: 0 10px;
+        color: @c-white;
+        font-size: 12px;
+        &:hover {
+          background-color: @c-green-hover;
+        }
+        &-selected {
+          &:hover {
+            background-color: transparent;
+          }
+          color: @c-yellow-hover;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+.ant-fullcalendar.ss-fullcalendar {
+  flex: 1;
+  color: @c-white;
+  font-size: 14px;
+  .ant-fullcalendar-calendar-body {
+    height: 100%;
+    padding: 0;
+    .ant-fullcalendar-table {
+      height: 100%;
+      thead > tr > th {
+        padding: 10px 4px;
+        text-align: center;
+        background: #182422;
+        border-right: 1px solid #0a0e0d;
+        border-bottom: 1px solid #0a0e0d;
+      }
+      .ant-fullcalendar-tbody > tr > td {
+        background: #121b1a;
+        border-right: 1px solid #0a0e0d;
+        border-bottom: 1px solid #0a0e0d;
+        &:hover {
+          .ant-fullcalendar-date {
+            background: #192e2c;
+            outline: 1px solid @c-green-active;
+          }
+        }
+        .ant-fullcalendar-date {
+          height: 100%;
+          margin: 0;
+          border-top-width: 0;
+          transition: all 0.3s;
+          .ant-fullcalendar-value {
+            display: none;
+            height: auto;
+            color: @c-white;
+            line-height: normal;
+            text-align: left;
+          }
+          .ant-fullcalendar-content {
+            height: auto;
+            .ss-fullcalendar-item {
+              min-height: 50px;
+              color: @c-white;
+              .ant-fullcalendar-item-value {
+                text-align: left;
+                .ant-fullcalendar-item-value-solar {
+                  display: inline-block;
+                  width: 24px;
+                  height: 24px;
+                  line-height: 24px;
+                  text-align: center;
+                }
+                .lunar.ant-fullcalendar-item-value-lunar {
+                  margin-left: 8px;
+                  color: @c-white;
+                  font-size: 12px;
+                }
+              }
+              .ant-fullcalendar-item-content {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        &.ant-fullcalendar-selected-day {
+          .ant-fullcalendar-date {
+            background: #192e2c;
+            outline: 1px solid @c-green-active;
+            .ss-fullcalendar-item {
+              .ant-fullcalendar-item-value {
+                .ant-fullcalendar-item-value-solar {
+                  background: @c-green-basic;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+        &.ant-fullcalendar-disabled-cell {
+          .ant-fullcalendar-date {
+            .ss-fullcalendar-item {
+              color: @c-gray-hover;
+            }
+          }
+          &.ant-fullcalendar-selected-day {
+            .ant-fullcalendar-date {
+              background: transparent;
+              outline: none;
+              .ss-fullcalendar-item {
+                color: @c-gray-hover;
+                .ant-fullcalendar-item-value-solar {
+                  background: @c-gray-basic;
+                }
+              }
+            }
+          }
+          &:hover {
+            .ant-fullcalendar-date {
+              background: transparent;
+              outline: none;
+            }
+          }
+        }
+        &.ant-fullcalendar-last-month-cell,
+        &.ant-fullcalendar-next-month-btn-day {
+          .ant-fullcalendar-date {
+            .ss-fullcalendar-item {
+              color: @c-gray-hover;
+            }
+          }
+        }
+      }
+    }
+    .ant-fullcalendar-month-panel-table {
+      height: 100%;
+      tr > td {
+        background: #121b1a;
+        border-right: 1px solid #0a0e0d;
+        border-bottom: 1px solid #0a0e0d;
+        &.ant-fullcalendar-month-panel-selected-cell {
+          background: #192e2c;
+          outline: 1px solid #193d37;
+        }
+        &:hover {
+          background: #192e2c;
+          outline: 1px solid #193d37;
+        }
+        .ant-fullcalendar-month {
+          height: auto;
+          min-height: 50px;
+          margin: 0;
+          padding: 4px 8px;
+          color: @c-white;
+          background: transparent;
+          border-top-width: 0;
+          .ant-fullcalendar-value {
+            color: @c-white;
+          }
+          .ant-fullcalendar-content {
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

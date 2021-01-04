@@ -27,6 +27,6 @@ ReactDOM.render(
 ```css
 .example {
   padding: 20px;
-  background: #1e1e1e;
+  background: #000;
 }
 ```

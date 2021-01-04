@@ -7,21 +7,23 @@ title:
 
 ## zh-CN
 
-多层dom是否垂直显示
+多层 dom 是否垂直显示
 
 ## en-US
 
-多层dom是否垂直显示
+多层 dom 是否垂直显示
 
 ```jsx
 import { Empty } from 'ss-ui-library';
 
 ReactDOM.render(
   <div className="example">
-    <Empty icon="&#xe7c1;" vertical />
-  </div>
-, mountNode);
+    <Empty icon="&#xe7b5;" iconSize={20} vertical />
+  </div>,
+  mountNode,
+);
 ```
+
 <style>
 .example {
     width: 100%;

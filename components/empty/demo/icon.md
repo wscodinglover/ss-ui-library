@@ -18,11 +18,12 @@ import { Empty } from 'ss-ui-library';
 
 ReactDOM.render(
   <div className="example">
-    <Empty icon="&#xe7c1;" />
-    <Empty icon="&#xe7c1;" vertical />
-  </div>
-, mountNode);
+    <Empty icon="&#xe7b5;" />
+  </div>,
+  mountNode,
+);
 ```
+
 <style>
 .example {
     width: 100%;

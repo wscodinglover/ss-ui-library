@@ -15,7 +15,7 @@ title:
 
 ```jsx
 import { Calendar } from 'ss-ui-library';
-import { Badge } from 'antd'
+import { Badge } from 'antd';
 
 function getListData(value) {
   let listData;
@@ -50,6 +50,7 @@ function getListData(value) {
 
 function dateCellRender(value) {
   const listData = getListData(value);
+  console.log(listData);
   return (
     <ul className="events">
       {listData.map(item => (
@@ -65,8 +66,10 @@ ReactDOM.render(
   <div className="example">
     <Calendar dateCellRender={dateCellRender} />
   </div>,
- mountNode);
+  mountNode,
+);
 ```
+
 ```css
 .events {
   list-style: none;

@@ -72,10 +72,34 @@ export { default as Pagination } from './pagination';
 export { default as CheckBox } from './checkbox';
 
 /**
+ * @moduleName DatePicker 日期选择框
+ * @catalog 数据录入组件
+ * */
+export { default as DatePicker } from './date-picker';
+
+/**
+ * @moduleName Radio 单选框
+ * @catalog 数据录入组件
+ * */
+export { default as Radio } from './radio';
+
+/**
  * @moduleName Collapse 折叠面板
  * @catalog 数据展示组件
  * */
-export { default as Collapse } from './collapse/index';
+export { default as Collapse } from './collapse';
+
+/**
+ * @moduleName Calendar 日历
+ * @catalog 数据展示组件
+ * */
+export { default as Calendar } from './calendar';
+
+/**
+ * @moduleName Empty 空状态
+ * @catalog 数据展示组件
+ * */
+export { default as Empty } from './empty';
 
 /**
  * @moduleName Alert 警告提示
@@ -125,13 +149,9 @@ export { default as Table } from './table';
 
 export { default as Tabs } from './tabs';
 
-export { default as DatePicker } from './date-picker';
-
 export { default as DrawerPanel } from './drawer-panel/index';
 
 export { default as Input } from './input/index';
-
-export { default as Radio } from './radio';
 
 export { default as Slider } from './slider';
 
@@ -140,8 +160,6 @@ export { default as Switch } from './switch';
 export { default as InputNumber } from './input-number';
 
 export { default as Select } from './select';
-
-export { default as Empty } from './empty';
 
 export { default as Form } from './form';
 
@@ -152,8 +170,6 @@ export { default as Tooltip } from './tooltip';
 export { default as Tree } from './tree';
 
 export { default as Transfer } from './transfer';
-
-export { default as Calendar } from './calendar';
 
 export { default as BarChart } from './echarts-bar';
 

@@ -16,16 +16,12 @@ order: 4
 
 ## API
 
-```jsx
-<Empty>
-  <Button>创建</Button>
-</Empty>
-```
-
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
+| className | 自定义 class 名称 | string | - |  |
 | icon | 自定义图标 | string | - |  |
-| vertical | 当多层 dom，如添加 icon 显示，是否垂直显示 | boolean | - |  |
+| iconSize | 自定义图标大小 | number \| string | 12 |  |
+| vertical | 当多层 dom，如添加 icon 显示，是否垂直显示 | boolean | false |  |
 | description | 自定义描述内容 | string \| ReactNode | - |  |
 | imageStyle | 图片样式 | CSSProperties | - |  |
 | image | 设置显示图片，为 string 时表示自定义图片地址。 | string \| ReactNode | `Empty.PRESENTED_IMAGE_DEFAULT` | 3.12.0 |

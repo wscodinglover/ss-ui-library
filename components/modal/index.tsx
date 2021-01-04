@@ -1,4 +1,4 @@
-import Modal from './modal-model'
+import Modal from './modal-model1';
 
 /**
  * 可再次扩展confirm / update / config等方法
@@ -6,4 +6,4 @@ import Modal from './modal-model'
  *
  * */
 
-export default Modal
+export default Modal;
