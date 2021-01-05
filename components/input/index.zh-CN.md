@@ -93,3 +93,13 @@ const suffix = condition ? <Icon type="smile" /> : <span />;
 
 <Input suffix={suffix} />;
 ```
+
+<style>
+[id^="components-input-demo-addon"] .ant-input-group-wrapper,
+[id^="components-input-demo-password"] .ant-input-affix-wrapper,
+[id^="components-input-demo-allowclear"] .ant-input-affix-wrapper,
+[id^="components-input-demo-search"] .ant-input-affix-wrapper,
+[id^="components-input-demo-disabled"] .ant-input-affix-wrapper {
+    margin-bottom: 20px;
+}
+</style>

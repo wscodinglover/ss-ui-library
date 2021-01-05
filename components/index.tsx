@@ -78,6 +78,12 @@ export { default as CheckBox } from './checkbox';
 export { default as DatePicker } from './date-picker';
 
 /**
+ * @moduleName Input 输入框
+ * @catalog 数据录入组件
+ * */
+export { default as Input } from './input';
+
+/**
  * @moduleName Radio 单选框
  * @catalog 数据录入组件
  * */
@@ -150,8 +156,6 @@ export { default as Table } from './table';
 export { default as Tabs } from './tabs';
 
 export { default as DrawerPanel } from './drawer-panel/index';
-
-export { default as Input } from './input/index';
 
 export { default as Slider } from './slider';
 

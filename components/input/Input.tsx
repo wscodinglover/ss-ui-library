@@ -1,105 +1,108 @@
-/*
- * @Author Davis.qi
- * @Date 2020/9/11
- * */
 import React from 'react';
 import { Input } from 'antd';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import { InputProps } from 'antd/lib/input';
+import classnames from 'classnames';
+import SSIcon from '../icon';
 
-type InputProps = {
-  className: string;
-  allowClear: boolean;
-  defaultValue: any;
-  onChange: any;
-  suffix: React.ReactNode | undefined;
-};
+const { Password, TextArea, Search } = Input;
 
-type SuffixIconProps = {
-  className: string;
-  parent: any;
-};
+class SSInput extends React.PureComponent<InputProps, any> {
+  static Password: any;
 
-// clear icon
-function SuffixIcon(props: SuffixIconProps) {
-  // 点击清除按钮，清除内容
-  const clearValue = () => {
-    props.parent.refs.inputRef.setState({
-      value: '',
-    });
-    props.parent.setState({
-      clearIconShow: false,
-    });
-    const { onChange } = props.parent.props;
-    if (onChange) {
-      props.parent.props.onChange('');
-    }
-  };
-  return (
-    <div className={classNames('ss-clear-icon', props.className)} onClick={clearValue.bind(this)}>
-      <span className="sumscope-icon">&#xe777;</span>
-    </div>
-  );
-}
+  static TextArea: any;
 
-class SS_Input extends React.Component<InputProps> {
-  // 类型检测
-  static propTypes = {
-    // class
-    className: PropTypes.string,
-  };
+  static Search: any;
 
-  state = {
-    // 清除图标是否显示
-    clearIconShow: false,
-  };
+  constructor(props: InputProps) {
+    super(props);
+    const { defaultValue, value } = this.props;
+    this.state = {
+      value: value || defaultValue || '',
+    };
+  }
 
-  // 输入流输入
-  OnChange(e: any) {
-    const { value } = e.target;
-    // 无输入内容时，clearIcon不显示，反之显示
+  /**
+   * 点击清除按钮，清空内容
+   *
+   * */
+  clearVal = () => {
     this.setState(
       {
-        clearIconShow: value !== '',
+        value: '',
       },
       () => {
-        if (this.props.onChange) {
-          this.props.onChange(value);
+        this.inputChange(null);
+      },
+    );
+  };
+
+  /**
+   * 自定义前缀图标
+   *
+   * */
+  prefixRender = () => {
+    const { prefix } = this.props;
+    return typeof prefix === 'string' ? <SSIcon value={prefix} /> : prefix;
+  };
+
+  /**
+   * 自定义后缀图标 + clear icon
+   *
+   * */
+  suffixRender = () => {
+    const { value } = this.state;
+    const { suffix, allowClear } = this.props;
+    const customSuffix = typeof suffix === 'string' ? <SSIcon value={suffix} /> : suffix;
+    const clearIcon = allowClear && value && value !== '' && (
+      <div className="ss-input-clear-icon" onClick={this.clearVal}>
+        <SSIcon value="&#xe777;" />
+      </div>
+    );
+    return (
+      <>
+        {clearIcon}
+        {customSuffix}
+      </>
+    );
+  };
+
+  /**
+   * 输入框内容变化时的回调
+   *
+   * */
+  inputChange = (e: any) => {
+    const value = e && e.target ? e.target.value : '';
+    const { onChange } = this.props;
+    // 更新state
+    this.setState(
+      {
+        value,
+      },
+      () => {
+        if (onChange) {
+          onChange(value);
         }
       },
     );
-  }
-
-  componentDidMount() {
-    // 无默认内容时，clearIcon不显示，反之显示
-    this.setState({
-      clearIconShow: this.props.defaultValue && this.props.defaultValue !== '',
-    });
-  }
+  };
 
   render() {
-    // @ts-ignore
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, allowClear, suffix, onChange, ...reset } = this.props;
-    // @ts-ignore
-    return (
-      <Input
-        ref="inputRef"
-        className={classNames(className, 'ss-input')}
-        // @ts-ignore
-        suffix={
-          allowClear ? (
-            // @ts-ignore
-            <SuffixIcon className={{ show: this.state.clearIconShow }} parent={this} />
-          ) : (
-            suffix
-          )
-        }
-        onChange={this.OnChange.bind(this)}
-        {...reset}
-      />
-    );
+    const { value } = this.state;
+    const { className, ...reset } = this.props;
+    const InputParams = {
+      className: classnames('ss-input', className),
+      ...reset,
+      value,
+      prefix: this.prefixRender(),
+      suffix: this.suffixRender(),
+      onChange: this.inputChange,
+    };
+    return <Input {...InputParams} />;
   }
 }
 
-export default SS_Input;
+SSInput.Password = Password;
+SSInput.TextArea = TextArea;
+SSInput.Search = Search;
+
+export default SSInput;

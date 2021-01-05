@@ -18,8 +18,9 @@ import { Input, Icon } from 'ss-ui-library';
 
 ReactDOM.render(
   <div className="example">
-    <Input placeholder="请输入姓名" addonBefore="Http://" addonAfter=".com" />
-    <Input placeholder="请输入姓名" addonAfter={<Icon value="&#xe797;" />} />
-  </div>
-, mountNode);
+    <Input placeholder="请输入姓名" allowClear addonBefore="Http://" addonAfter=".com" />
+    <Input placeholder="请输入姓名" allowClear addonAfter={<Icon value="&#xe797;" />} />
+  </div>,
+  mountNode,
+);
 ```

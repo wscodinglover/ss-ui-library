@@ -16,25 +16,17 @@ title:
 ```jsx
 import { Input } from 'ss-ui-library';
 
-function onchange (value) {
+const { TextArea } = Input;
+
+function onchange(value) {
   console.log(value);
 }
 
 ReactDOM.render(
   <div className="example">
     <Input placeholder="请输入姓名" allowClear onChange={onchange} />
-  </div>
-, mountNode);
+    <TextArea placeholder="请输入姓名" allowClear />
+  </div>,
+  mountNode,
+);
 ```
-```css
-.example{
-    padding: 20px;
-    background: #1e1e1e;
-}
-```
-<style>
-.ss-input {
-   margin-bottom: 20px;
-}
-</style>
-

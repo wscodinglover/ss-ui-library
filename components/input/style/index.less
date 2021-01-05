@@ -1,134 +1,136 @@
-@import '../../style/var/variable';
+@import '../../color/input';
 
-.ss-input.ant-input,
-.ss-input.ant-input-group-wrapper,
-.ss-input.ant-input-affix-wrapper {
-  margin-left: 0;
-}
-.ss-input.ant-input,
-.ss-input.ant-input-group-wrapper .ant-input,
-.ss-input.ant-input-affix-wrapper .ant-input {
-  height: 22px;
-  color: @color_yellow;
-  font-size: 12px;
-  background-color: @basic_input_back;
-  border-color: @basic_color;
-  border-radius: 2px;
-  box-shadow: none;
-  &:hover {
-    border-color: @yellow_hover;
-  }
-  &:focus {
-    color: @color_black;
-    background-color: @yellow_color;
-    border-color: @yellow_hover;
-  }
-  &::placeholder {
-    color: #8f9598;
-  }
-}
-
-.ss-input.ant-input[disabled],
-.ss-input.ant-input-group-wrapper .ant-input[disabled],
-.ss-input.ss-input-search .ant-input[disabled] {
-  color: @color_basic_disabled;
-  background-color: @gray_input_back;
-  border-color: @basic_disabled;
-}
-
-.ss-input-search-disabled .icon-ss-search {
-  color: @color_basic_disabled !important;
-}
-.ss-input-password.ant-input-affix-wrapper .ant-input-suffix {
-  color: @color_basic;
-  .ant-input-password-icon:hover {
-    color: @gray_hover;
-  }
-}
-
-.ss-input.ant-input-group-wrapper {
-  .ant-input-group-addon {
-    color: @color_basic;
-    font-size: 12px;
-    background-color: @basic_input_back;
-    border-color: @basic_color;
-    border-radius: 2px;
-  }
-  .ant-input-group > .ant-input:first-child,
-  .ant-input-group-addon:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  .ant-input-group > .ant-input:last-child,
-  .ant-input-group-addon:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-}
-
-.ss-input.ant-input-affix-wrapper {
-  &:hover .ant-input:not(.ant-input-disabled) {
-    border-color: @yellow_hover;
-  }
-  .icon-ss-search {
-    color: @color_basic;
-  }
-  .ss-clear-icon {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 12px;
-    height: 12px;
-    color: @color_basic;
-    background-color: @basic_color;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.3s;
-    &.show {
-      display: flex;
-    }
-    &:hover {
-      background-color: @basic_light;
-    }
-    .sumscope-icon {
-      display: block;
-      -webkit-transform: scale(0.7); /*兼容-webkit-引擎浏览器*/
-      -moz-transform: scale(0.7); /*兼容-moz-引擎浏览器*/
-      transform: scale(0.7);
-    }
-  }
-  .ant-input-prefix {
-    color: @color_basic;
-  }
-}
-
-.ss-input.ant-input-affix-wrapper .ant-input {
-  &:focus {
-    & + .ant-input-suffix .ss-clear-icon {
-      background-color: #68420f;
-      &:hover {
-        background-color: #a35000;
-      }
-    }
-  }
-}
-
-.ss-input.ss-textarea {
-  padding: 10px;
-  &::-webkit-scrollbar {
-    /*滚动条整体样式*/
-    width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
-    height: 1px;
-  }
-  &::-webkit-scrollbar-thumb {
-    /*滚动条里面小方块*/
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-    background: @basic_color;
-  }
-  &::-webkit-scrollbar-track {
-    /*滚动条里面轨道*/
-    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-    background: @basic_hover;
-  }
-}
+//@import '../../style/var/variable';
+//
+//.ss-input.ant-input,
+//.ss-input.ant-input-group-wrapper,
+//.ss-input.ant-input-affix-wrapper {
+//  margin-left: 0;
+//}
+//.ss-input.ant-input,
+//.ss-input.ant-input-group-wrapper .ant-input,
+//.ss-input.ant-input-affix-wrapper .ant-input {
+//  height: 22px;
+//  color: @color_yellow;
+//  font-size: 12px;
+//  background-color: @basic_input_back;
+//  border-color: @basic_color;
+//  border-radius: 2px;
+//  box-shadow: none;
+//  &:hover {
+//    border-color: @yellow_hover;
+//  }
+//  &:focus {
+//    color: @color_black;
+//    background-color: @yellow_color;
+//    border-color: @yellow_hover;
+//  }
+//  &::placeholder {
+//    color: #8f9598;
+//  }
+//}
+//
+//.ss-input.ant-input[disabled],
+//.ss-input.ant-input-group-wrapper .ant-input[disabled],
+//.ss-input.ss-input-search .ant-input[disabled] {
+//  color: @color_basic_disabled;
+//  background-color: @gray_input_back;
+//  border-color: @basic_disabled;
+//}
+//
+//.ss-input-search-disabled .icon-ss-search {
+//  color: @color_basic_disabled !important;
+//}
+//.ss-input-password.ant-input-affix-wrapper .ant-input-suffix {
+//  color: @color_basic;
+//  .ant-input-password-icon:hover {
+//    color: @gray_hover;
+//  }
+//}
+//
+//.ss-input.ant-input-group-wrapper {
+//  .ant-input-group-addon {
+//    color: @color_basic;
+//    font-size: 12px;
+//    background-color: @basic_input_back;
+//    border-color: @basic_color;
+//    border-radius: 2px;
+//  }
+//  .ant-input-group > .ant-input:first-child,
+//  .ant-input-group-addon:first-child {
+//    border-top-right-radius: 0;
+//    border-bottom-right-radius: 0;
+//  }
+//  .ant-input-group > .ant-input:last-child,
+//  .ant-input-group-addon:last-child {
+//    border-top-left-radius: 0;
+//    border-bottom-left-radius: 0;
+//  }
+//}
+//
+//.ss-input.ant-input-affix-wrapper {
+//  &:hover .ant-input:not(.ant-input-disabled) {
+//    border-color: @yellow_hover;
+//  }
+//  .icon-ss-search {
+//    color: @color_basic;
+//  }
+//  .ss-clear-icon {
+//    display: none;
+//    align-items: center;
+//    justify-content: center;
+//    width: 12px;
+//    height: 12px;
+//    color: @color_basic;
+//    background-color: @basic_color;
+//    border-radius: 2px;
+//    cursor: pointer;
+//    transition: all 0.3s;
+//    &.show {
+//      display: flex;
+//    }
+//    &:hover {
+//      background-color: @basic_light;
+//    }
+//    .sumscope-icon {
+//      display: block;
+//      -webkit-transform: scale(0.7); /*兼容-webkit-引擎浏览器*/
+//      -moz-transform: scale(0.7); /*兼容-moz-引擎浏览器*/
+//      transform: scale(0.7);
+//    }
+//  }
+//  .ant-input-prefix {
+//    color: @color_basic;
+//  }
+//}
+//
+//.ss-input.ant-input-affix-wrapper .ant-input {
+//  &:focus {
+//    & + .ant-input-suffix .ss-clear-icon {
+//      background-color: #68420f;
+//      &:hover {
+//        background-color: #a35000;
+//      }
+//    }
+//  }
+//}
+//
+//.ss-input.ss-textarea {
+//  padding: 10px;
+//  &::-webkit-scrollbar {
+//    /*滚动条整体样式*/
+//    width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+//    height: 1px;
+//  }
+//  &::-webkit-scrollbar-thumb {
+//    /*滚动条里面小方块*/
+//    border-radius: 10px;
+//    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+//    background: @basic_color;
+//  }
+//  &::-webkit-scrollbar-track {
+//    /*滚动条里面轨道*/
+//    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+//    background: @basic_hover;
+//  }
+//}

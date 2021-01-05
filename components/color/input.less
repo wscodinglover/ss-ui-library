@@ -1,0 +1,153 @@
+@import 'varible';
+span.ant-input-affix-wrapper {
+  color: @c-yellow-light;
+  font-size: 12px;
+  &:hover {
+    .ant-input:not(.ant-input-disabled) {
+      border-color: @c-yellow-hover;
+    }
+  }
+  &.ant-input-affix-wrapper-input-with-clear-btn .ant-input:not(:last-child) {
+    padding-right: 24px;
+  }
+  .ant-input-suffix {
+    right: 4px;
+  }
+  .ant-input-prefix {
+    left: 4px;
+  }
+  .ant-input:not(:first-child) {
+    padding-left: 18px;
+  }
+  .ant-input {
+    &:focus {
+      & + .ant-input-prefix {
+        .icon-ss-item {
+          color: @c-black;
+        }
+      }
+    }
+  }
+}
+.ant-input-wrapper.ant-input-group {
+  .ant-input-group-addon {
+    padding: 0 4px;
+    color: @c-gray-hover;
+    font-size: 12px;
+    background-color: @c-green-input;
+    border-color: @c-green-active;
+    border-radius: 2px;
+  }
+}
+.ant-input-search.ant-input-affix-wrapper {
+  .ant-input {
+    &:focus {
+      & + .ant-input-suffix {
+        color: @c-black;
+        .ant-input-password-icon:hover {
+          color: @c-black;
+        }
+      }
+    }
+    &:focus {
+      &:hover {
+        & + .ant-input-suffix {
+          color: @c-black;
+        }
+      }
+    }
+    &:hover {
+      & + .ant-input-suffix {
+        color: @c-white;
+      }
+    }
+  }
+  .ant-input-suffix {
+    color: @c-white;
+  }
+}
+.ant-input-password.ant-input-affix-wrapper {
+  .ant-input {
+    &:focus {
+      & + .ant-input-suffix {
+        color: @c-black;
+        .ant-input-password-icon:hover {
+          color: @c-black;
+        }
+      }
+    }
+    &:focus {
+      &:hover {
+        & + .ant-input-suffix {
+          color: @c-black;
+        }
+      }
+    }
+    &:hover {
+      & + .ant-input-suffix {
+        color: @c-white;
+      }
+    }
+  }
+  .ant-input-password-icon:hover {
+    color: @c-white;
+  }
+  .ant-input-suffix {
+    color: @c-white;
+  }
+}
+.ant-input {
+  height: 22px;
+  padding: 0 4px;
+  color: @c-yellow-light;
+  font-size: 12px;
+  background-color: @c-green-input;
+  border-color: @c-green-active;
+  border-radius: 2px;
+  &[disabled] {
+    background-color: @c-gray-active;
+    border-color: @c-gray-basic;
+    & + .ant-input-suffix {
+      .icon-ss-item {
+        color: @c-gray-hover;
+        cursor: not-allowed;
+      }
+    }
+    &:hover {
+      border-color: @c-gray-basic;
+    }
+  }
+  &:hover {
+    border-color: @c-yellow-hover;
+  }
+  &:focus {
+    color: @c-black;
+    background-color: @c-yellow-basic;
+    border-color: @c-yellow-hover;
+    box-shadow: none;
+  }
+}
+textarea.ant-input {
+  padding: 4px;
+}
+.ant-input-suffix {
+  .ant-input-clear-icon {
+    display: none;
+  }
+  .ss-input-clear-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    text-align: center;
+    background-color: @c-yellow-active;
+    border-radius: 2px;
+    cursor: pointer;
+    .icon-ss-item {
+      display: inline-block;
+      line-height: normal;
+      vertical-align: top;
+      transform: scale(0.75);
+    }
+  }
+}
