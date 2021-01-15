@@ -1,85 +1,87 @@
-@import "../../style/var/variable";
+@import '../../color/slider';
 
-.ss-slider.ant-slider{
-  &:hover{
-    .ant-slider-rail{
-      background-color: @basic_color;
-    }
-    .ant-slider-track{
-      background-color: @yellow_color;
-    }
-  }
-  .ant-slider-rail{
-    height: 8px;
-    background-color: @basic_color;
-  }
-  .ant-slider-track{
-    height: 8px;
-    background-color: @yellow_color;
-    border-radius: 2px;
-  }
-  .ant-slider-step{
-    height: 8px;
-  }
-  .ant-slider-handle{
-    width: 22px;
-    height: 22px;
-    margin-top: -7px;
-    background-color: @basic_light;
-    border: none;
-    border-radius: 2px;
-    box-shadow: none;
-    //position: relative;
-    &:before, &:after {
-      display: table;
-      content: '';
-      position: absolute;
-      top: 5px;
-      width: 2px;
-      height: 12px;
-      background-color: @color_basic;
-    }
-    &:before{
-      left: 7px;
-    }
-    &:after{
-      right: 7px;
-    }
-  }
-  .ant-slider-mark {
-    margin-top: 10px;
-    line-height: 12px;
-    .ant-slider-mark-text{
-      color: @color_basic_disabled;
-    }
-  }
-  .ant-slider-step{
-    .ant-slider-dot{
-      width: 4px;
-      height: 4px;
-      background-color: @basic_light;
-      border: none;
-      top: 2px;
-      &:first-child, &:last-child {
-        visibility: hidden;
-      }
-    }
-  }
-}
-
-.ss-slider-rainbow.ant-slider {
-  .ant-slider-rail{
-    background: -moz-linear-gradient(left, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
-    background: -webkit-gradient(linear, top left, bottom left, color-stop(0%,#DF201F), color-stop(0%,#F9C152), color-stop(0%,#00A74F), color-stop(100%,#2E3DB5));
-    background: -webkit-linear-gradient(left, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
-    background: -o-linear-gradient(left, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
-    background: -ms-linear-gradient(left, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
-    background: linear-gradient(to right, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
-  }
-  .ant-slider-track{
-    background-color: transparent;
-  }
-  //.ant-slider-handle{
-  //  outline: 1px solid #172422;
-  //}
-}
+//@import "../../style/var/variable";
+//
+//.ss-slider.ant-slider{
+//  &:hover{
+//    .ant-slider-rail{
+//      background-color: @basic_color;
+//    }
+//    .ant-slider-track{
+//      background-color: @yellow_color;
+//    }
+//  }
+//  .ant-slider-rail{
+//    height: 8px;
+//    background-color: @basic_color;
+//  }
+//  .ant-slider-track{
+//    height: 8px;
+//    background-color: @yellow_color;
+//    border-radius: 2px;
+//  }
+//  .ant-slider-step{
+//    height: 8px;
+//  }
+//  .ant-slider-handle{
+//    width: 22px;
+//    height: 22px;
+//    margin-top: -7px;
+//    background-color: @basic_light;
+//    border: none;
+//    border-radius: 2px;
+//    box-shadow: none;
+//    //position: relative;
+//    &:before, &:after {
+//      display: table;
+//      content: '';
+//      position: absolute;
+//      top: 5px;
+//      width: 2px;
+//      height: 12px;
+//      background-color: @color_basic;
+//    }
+//    &:before{
+//      left: 7px;
+//    }
+//    &:after{
+//      right: 7px;
+//    }
+//  }
+//  .ant-slider-mark {
+//    margin-top: 10px;
+//    line-height: 12px;
+//    .ant-slider-mark-text{
+//      color: @color_basic_disabled;
+//    }
+//  }
+//  .ant-slider-step{
+//    .ant-slider-dot{
+//      width: 4px;
+//      height: 4px;
+//      background-color: @basic_light;
+//      border: none;
+//      top: 2px;
+//      &:first-child, &:last-child {
+//        visibility: hidden;
+//      }
+//    }
+//  }
+//}
+//
+//.ss-slider-rainbow.ant-slider {
+//  .ant-slider-rail{
+//    background: -moz-linear-gradient(left, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
+//    background: -webkit-gradient(linear, top left, bottom left, color-stop(0%,#DF201F), color-stop(0%,#F9C152), color-stop(0%,#00A74F), color-stop(100%,#2E3DB5));
+//    background: -webkit-linear-gradient(left, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
+//    background: -o-linear-gradient(left, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
+//    background: -ms-linear-gradient(left, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
+//    background: linear-gradient(to right, #DF201F 0%, #F9C152 33.33%, #00A74F 66.66%, #2E3DB5 100%);
+//  }
+//  .ant-slider-track{
+//    background-color: transparent;
+//  }
+//  //.ant-slider-handle{
+//  //  outline: 1px solid #172422;
+//  //}
+//}

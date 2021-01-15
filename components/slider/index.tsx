@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react';
 import { Slider } from 'antd';
 import classnames from 'classnames';
-import gradient from '../_utils/gradient';
+// import gradient from '../_utils/gradient';
 
 /*
  * @notice: 基于antd Slider组件，以下是自定义新增部分
@@ -66,13 +66,14 @@ class SS_Slider extends Component<SliderProps, any> {
   // 彩虹主题滑块渐变计算
   rainbowTheme(value: any) {
     if (this.props.theme === 'rainbow') {
-      const colorList: any[] = gradient(value, this.props);
-      // @ts-ignore
-      const { handlesRefs }: any = this.sliderPart.current.rcSlider;
-      Object.keys(handlesRefs).forEach((handel: any) => {
-        const elem = handlesRefs[handel];
-        elem.handle.style.backgroundColor = colorList[handel].handelColor;
-      });
+      console.log(value);
+      // const colorList: any[] = gradient(value, this.props);
+      // // @ts-ignore
+      // const { handlesRefs }: any = this.sliderPart.current.rcSlider;
+      // Object.keys(handlesRefs).forEach((handel: any) => {
+      //   const elem = handlesRefs[handel];
+      //   elem.handle.style.backgroundColor = colorList[handel].handelColor;
+      // });
     }
   }
 

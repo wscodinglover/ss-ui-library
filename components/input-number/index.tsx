@@ -1,20 +1,15 @@
 import React from 'react';
-import {InputNumber} from 'antd'
+import { InputNumber } from 'antd';
+import { InputNumberProps } from 'antd/lib/input-number';
 import classNames from 'classnames';
 
-interface InputNumberProps {
-  className: string
-}
+const SSInputNumber: React.FC<InputNumberProps> = props => {
+  const { className, ...reset } = props;
+  const InputParams = {
+    className: classNames('ss-inputnumber', className),
+    ...reset,
+  };
+  return <InputNumber {...InputParams} />;
+};
 
-const SS_InputNumber: React.FC<InputNumberProps> = (props) => {
-  const {className, ...reset} = props;
-
-  return (
-    <InputNumber
-      className={classNames('ss-inputnumber', className)}
-      {...reset}
-    />
-  )
-}
-
-export default SS_InputNumber;
+export default SSInputNumber;

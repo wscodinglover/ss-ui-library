@@ -12,6 +12,8 @@ order: 2
 
 - 对复杂区域进行分组和隐藏，保持页面的整洁。
 
+- 其他部分如需保持页面整体协调，文档视图调整大小时，请使用 `window.addEventListener("resize", callback)`
+
 ## API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |

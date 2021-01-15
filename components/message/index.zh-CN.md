@@ -4,7 +4,7 @@ subtitle: 全局提示
 type: 反馈
 noinstant: true
 title: Message
-order: 3
+order: 4
 ---
 
 全局展示操作反馈信息。

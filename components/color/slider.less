@@ -1,0 +1,108 @@
+@import 'varible';
+
+.ant-slider {
+  height: auto;
+  padding: 0;
+  color: @c-white;
+  font-size: 12px;
+  .ant-slider-rail {
+    position: unset;
+    height: 8px;
+    background-color: @c-green-active;
+  }
+  .ant-slider-track {
+    top: 0;
+    height: 8px;
+    background-color: @c-yellow-basic;
+    border-radius: 2px;
+  }
+  .ant-slider-step {
+    top: 0;
+    height: 8px;
+    .ant-slider-dot {
+      top: 3px;
+      width: 2px;
+      height: 2px;
+      background-color: @c-green-hover;
+      border-width: 0;
+    }
+  }
+  .ant-slider-handle {
+    top: 0;
+    width: 22px;
+    height: 22px;
+    margin-top: -8px;
+    background-color: @c-green-basic;
+    border-width: 0;
+    border-radius: 2px;
+    &:focus {
+      box-shadow: none;
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      width: 2px;
+      height: 12px;
+      background-color: @c-white;
+    }
+    &::before {
+      left: 7px;
+    }
+    &::after {
+      right: 7px;
+    }
+  }
+  .ant-slider-mark {
+    top: 10px;
+    font-size: 12px;
+    .ant-slider-mark-text {
+      color: @c-gray-hover;
+      &-active {
+        color: @c-gray-active;
+      }
+    }
+  }
+  &:hover {
+    .ant-slider-rail {
+      background-color: @c-green-active;
+    }
+    .ant-slider-track {
+      background-color: @c-yellow-basic;
+    }
+  }
+  &-disabled {
+    .ant-slider-rail {
+      background-color: @c-gray-basic;
+    }
+    .ant-slider-track {
+      background-color: @c-gray-hover !important;
+    }
+    .ant-slider-handle {
+      background-color: @c-gray-hover;
+    }
+  }
+  &.ant-slider-with-marks {
+    margin-bottom: 20px;
+  }
+  &.ss-slider-rainbow {
+    .ant-slider-rail {
+      background-image: linear-gradient(
+        to right,
+        rgb(255, 0, 0),
+        rgb(255, 128, 0),
+        rgb(255, 255, 0),
+        rgb(128, 255, 0),
+        rgb(0, 255, 0),
+        rgb(0, 255, 128),
+        rgb(0, 255, 255),
+        rgb(0, 128, 255),
+        rgb(0, 0, 255)
+      );
+    }
+    .ant-slider-track {
+      background-color: transparent;
+    }
+  }
+}

@@ -80,7 +80,6 @@ class SSModal extends React.PureComponent<SSModalProps, any> {
   };
 
   move = (event: any) => {
-    console.log(123123123);
     const { top, left, right, bottom, width, height } = this.contain.getBoundingClientRect();
     const { limit } = this.props;
     this.contain.style.top = `${top + event.movementY}px`;
@@ -113,7 +112,6 @@ class SSModal extends React.PureComponent<SSModalProps, any> {
         const node = document.getElementsByClassName(this.simpleClass)[0];
         this.contain = node.getElementsByClassName('ant-modal')[0];
         this.contain.style.paddingBottom = 0;
-        this.contain.style.display = 'inline-block';
         this.header = this.contain.getElementsByClassName('ant-modal-header')[0];
         this.header.style.cursor = 'all-scroll';
         this.header.onmousedown = () => {

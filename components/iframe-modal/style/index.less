@@ -1,0 +1,40 @@
+.ss-modal-iframe-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  width: 100%;
+  height: 100%;
+  &.show {
+    display: block;
+  }
+  &.ss-modal-iframe-wrap-auto {
+    width: auto;
+    height: auto;
+  }
+}
+.ss-modal-iframe-mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  &.show {
+    display: block;
+  }
+}
+.ss-modal-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  display: none;
+  width: 520px;
+  height: auto;
+  color: #ffebc8;
+  font-size: 14px;
+  background: #0a0e0d;
+  &.show {
+    display: block;
+  }
+}

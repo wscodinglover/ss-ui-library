@@ -16,6 +16,17 @@ if (
   );
 }
 /* @remove-on-es-build-end */
+/**
+ * @moduleName Observer 订阅发布
+ * @catalog 公共方法API
+ * */
+export { default as Observer } from './observer';
+
+/**
+ * @moduleName Websocket socket推送
+ * @catalog 公共方法API
+ * */
+export { default as Websocket } from './websocket';
 
 /**
  * @moduleName Button 按钮
@@ -90,6 +101,18 @@ export { default as Input } from './input';
 export { default as Radio } from './radio';
 
 /**
+ * @moduleName Switch 开关
+ * @catalog 数据录入组件
+ * */
+export { default as Switch } from './switch';
+
+/**
+ * @moduleName Slider 滑动条
+ * @catalog 数据录入组件
+ * */
+export { default as Slider } from './slider/index11';
+
+/**
  * @moduleName Collapse 折叠面板
  * @catalog 数据展示组件
  * */
@@ -120,6 +143,12 @@ export { default as Alert } from './alert';
 export { default as Modal } from './modal';
 
 /**
+ * @moduleName IframeModal 操作型模态框
+ * @catalog 反馈组件
+ * */
+export { default as IframeModal } from './iframe-modal';
+
+/**
  * @moduleName message 全局提示
  * @catalog 反馈组件
  * */
@@ -147,6 +176,7 @@ export { default as Spin } from './spin';
  * @moduleName ConfigProvider 全局化配置
  * @catalog 其他
  * */
+
 export { default as ConfigProvider } from './config-provider';
 
 export { default as version } from './version';
@@ -156,10 +186,6 @@ export { default as Table } from './table';
 export { default as Tabs } from './tabs';
 
 export { default as DrawerPanel } from './drawer-panel/index';
-
-export { default as Slider } from './slider';
-
-export { default as Switch } from './switch';
 
 export { default as InputNumber } from './input-number';
 
@@ -186,7 +212,3 @@ export { default as RadarChart } from './echarts-radar';
 export { default as PieChart } from './echarts-pie';
 
 export { default as CandlestickChart } from './echarts-candlestick';
-
-export { default as Observer } from './observer';
-
-export { default as Websocket } from './websocket';

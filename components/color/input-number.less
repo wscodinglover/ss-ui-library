@@ -1,0 +1,89 @@
+@import 'varible';
+
+.ant-input-number {
+  height: 22px;
+  color: @c-yellow-light;
+  font-size: 12px;
+  background-color: @c-green-input;
+  border-color: @c-green-active;
+  border-radius: 2px;
+  &:hover {
+    border-color: @c-yellow-hover;
+  }
+  &.ant-input-number-focused {
+    color: @c-black;
+    background-color: @c-yellow-basic;
+    border-color: @c-yellow-hover;
+    box-shadow: none;
+    .ant-input-number-handler-wrap {
+      .ant-input-number-handler {
+        color: @c-black;
+        &:hover {
+          background: #a35000;
+          .ant-input-number-handler-down-inner,
+          .ant-input-number-handler-up-inner {
+            color: @c-black;
+          }
+        }
+        &-disabled {
+          color: @c-gray-hover;
+          background: @c-gray-basic;
+          &:hover {
+            background: @c-gray-basic;
+            .ant-input-number-handler-down-inner,
+            .ant-input-number-handler-up-inner {
+              color: @c-gray-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ant-input-number-input {
+    height: 20px;
+    padding: 0 4px;
+    border-radius: 2px;
+  }
+  .ant-input-number-handler-wrap {
+    background: transparent;
+    border-left-width: 0;
+    .ant-input-number-handler-up {
+      border-top-right-radius: 2px;
+    }
+    .ant-input-number-handler-down {
+      border-top-width: 0;
+      border-bottom-right-radius: 2px;
+    }
+    .ant-input-number-handler {
+      color: @c-white;
+      &:hover {
+        background: @c-green-basic;
+        .ant-input-number-handler-down-inner,
+        .ant-input-number-handler-up-inner {
+          color: @c-white;
+        }
+      }
+    }
+    .ant-input-number-handler-up-disabled,
+    .ant-input-number-handler-down-disabled {
+      color: @c-gray-hover !important;
+      background: @c-gray-active !important;
+      &:hover {
+        background: @c-gray-active !important;
+        .ant-input-number-handler-down-inner,
+        .ant-input-number-handler-up-inner {
+          color: @c-gray-hover !important;
+        }
+      }
+    }
+  }
+}
+
+.ant-input-number-disabled {
+  color: @c-gray-hover;
+  background-color: @c-gray-active;
+  border-color: @c-gray-basic;
+  &:hover {
+    border-color: @c-gray-basic;
+  }
+}

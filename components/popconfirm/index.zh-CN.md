@@ -3,7 +3,7 @@ category: Components
 subtitle: 气泡确认框
 type: 反馈
 title: Popconfirm
-order: 5
+order: 6
 ---
 
 点击元素，弹出气泡式的确认框。
