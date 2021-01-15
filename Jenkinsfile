@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('环境准备') {
+        stage('Environment Ckeck ') {
             steps {
                 script {
-                    echo "开始构建"
+                    echo "Start building"
                     if(!env.BRANCH_NAME.startsWith('feature-') && !env.BRANCH_NAME.startsWith('release-')){
-                        error("自动构建分支名称必须以feature-或release-开头，当前分支名称为: ${env.BRANCH_NAME}")
+                        error("The name of the automatic build branch must start with feature- or release-, and the current branch name is: ${env.BRANCH_NAME}")
                     }
 
                     if (env.BRANCH_NAME.startsWith('feature-') ) {
@@ -16,9 +16,9 @@ pipeline {
                         env.env = "stage"
                     }
 
-                    sh "echo 当前分支 : ${env.BRANCH_NAME}"
-                    sh "echo 当前环境 : ${env.env}"
-                    sh "echo 当前提交 : ${env.commit}"
+                    sh "echo Current branch : ${env.BRANCH_NAME}"
+                    sh "echo Current environment : ${env.env}"
+                    sh "echo Current submission : ${env.commit}"
                     sh "echo WORKSPACE : ${env.WORKSPACE}"
                     sh "echo GIT_BRANCH : ${env.GIT_BRANCH}"
                     sh "echo BUILD_NUMBER : ${env.BUILD_NUMBER}"
@@ -26,10 +26,10 @@ pipeline {
                 }
             }
         }
-        stage("打包文档"){
+        stage("Pack DOC"){
            steps{
                 script {
-                    echo "开始打包文档"
+                    echo "start package document"
                     sh "npm site"
                 }
            }
